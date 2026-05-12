@@ -4,3 +4,6 @@ $installRoot/
 .git/
 git-data/
 .ssh-temp/
+ssh-wrapper.cmd
+assets/
+gastronomia-bulgara-premium/

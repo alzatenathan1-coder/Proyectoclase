@@ -3,144 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biblioteca Aurora | Lectura en linea</title>
+  <title>Gastronomía Búlgara Premium</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <canvas class="ambient-canvas" id="ambientCanvas" aria-hidden="true"></canvas>
-  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
-  <div class="scroll-meter" aria-hidden="true"><span id="scrollMeter"></span></div>
+  <canvas id="emberCanvas" class="ember-canvas" aria-hidden="true"></canvas>
+  <div class="cursor-light" id="cursorLight" aria-hidden="true"></div>
+  <div class="scroll-line" aria-hidden="true"><span id="scrollLine"></span></div>
 
-  <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="Biblioteca Aurora">
-      <span class="brand-mark">A</span>
-      <span>Biblioteca Aurora</span>
+  <header class="navbar">
+    <a class="brand" href="#inicio" aria-label="Inicio">
+      <span class="brand-mark">BG</span>
+      <span>Fuego Búlgaro</span>
     </a>
-    <nav class="nav" aria-label="Principal">
-      <a href="#coleccion">Coleccion</a>
-      <a href="#lectura">Lectura</a>
-      <a href="#favoritos">Favoritos</a>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#tradicion">Tradición</a>
+      <a href="#moderna">Moderna</a>
+      <a href="#regiones">Regiones</a>
+      <a href="#galeria">Galería</a>
     </nav>
-    <button class="icon-button" id="themeToggle" type="button" aria-label="Cambiar tema" title="Cambiar tema">
-      <span aria-hidden="true">◐</span>
-    </button>
   </header>
 
   <main>
     <section class="hero" id="inicio">
-      <div class="hero-scene" aria-hidden="true">
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
-        <div class="page-flutter page-a"></div>
-        <div class="page-flutter page-b"></div>
-        <div class="page-flutter page-c"></div>
-        <div class="floating-book book-one"><span></span></div>
-        <div class="floating-book book-two"><span></span></div>
-        <div class="floating-book book-three"><span></span></div>
-        <div class="shelf shelf-one"></div>
-        <div class="shelf shelf-two"></div>
-        <div class="light-beam"></div>
-      </div>
-
-      <div class="hero-content">
-        <p class="eyebrow">Lectura en linea</p>
-        <h1>Biblioteca Aurora</h1>
-        <p class="hero-copy">Una coleccion elegante de grandes novelas del mundo, con portadas vivas, busqueda rapida y una experiencia de lectura cuidada.</p>
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="smoke smoke-one"></div>
+      <div class="smoke smoke-two"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">Documental gastronómico · Bulgaria</p>
+        <h1>Lo mejor de la gastronomía búlgara</h1>
+        <p class="hero-subtitle">Un viaje entre fuego, montaña, mar, tradición y cocina moderna.</p>
         <div class="hero-actions">
-          <a class="primary-action" href="#coleccion">Explorar novelas</a>
-          <button class="secondary-action" id="openFeatured" type="button">Abrir destacada</button>
+          <a class="btn btn-primary" href="#tradicion">Explorar cocina tradicional</a>
+          <a class="btn btn-secondary" href="#moderna">Descubrir cocina moderna</a>
         </div>
       </div>
-
-      <article class="featured-book" aria-label="Novela destacada">
-        <div class="mini-cover cover-quixote real-mini-cover" data-cover="quijote" role="button" tabindex="0" aria-label="Ver portada de Don Quijote de la Mancha">
-          <img src="assets/covers/quijote.jpg" alt="Portada de Don Quijote de la Mancha">
-        </div>
-        <div>
-          <p class="book-kicker">Destacada</p>
-          <h2>Don Quijote de la Mancha</h2>
-          <p>Miguel de Cervantes</p>
-        </div>
-      </article>
+      <aside class="hero-card reveal">
+        <span>Plato protagonista</span>
+        <h2>Cheverme / Чеверме</h2>
+        <p>Cordero entero asado lentamente sobre brasas, girado durante horas en los Ródopes.</p>
+      </aside>
     </section>
 
-    <section class="catalog-band" id="coleccion">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Novelas imprescindibles</p>
-          <h2>Una sala para viajar por epocas, mundos y voces</h2>
+    <section class="intro section">
+      <div class="intro-grid">
+        <div class="section-copy reveal">
+          <p class="eyebrow">Bulgaria se cuenta con historia</p>
+          <h2>Pero se recuerda con sabor.</h2>
         </div>
-        <div class="library-stats" aria-label="Resumen de biblioteca">
-          <span><strong id="totalBooks">0</strong> novelas</span>
-          <span><strong id="totalFavorites">0</strong> favoritas</span>
-        </div>
-      </div>
-
-      <div class="toolbar" role="search">
-        <label class="search-field" for="searchInput">
-          <span aria-hidden="true">⌕</span>
-          <input id="searchInput" type="search" placeholder="Buscar por titulo, autor o pais">
-        </label>
-        <div class="filter-row" aria-label="Filtrar por genero">
-          <button class="filter is-active" type="button" data-filter="todos">Todo</button>
-          <button class="filter" type="button" data-filter="clasico">Clasico</button>
-          <button class="filter" type="button" data-filter="romance">Romance</button>
-          <button class="filter" type="button" data-filter="existencial">Existencial</button>
-          <button class="filter" type="button" data-filter="aventura">Aventura</button>
-        </div>
-      </div>
-
-      <div class="book-grid" id="bookGrid" aria-live="polite"></div>
-    </section>
-
-    <section class="reader-band" id="lectura">
-      <div class="reader-layout">
-        <div class="reader-copy">
-          <p class="eyebrow">Modo lectura</p>
-          <h2 id="readerTitle">Elige una novela</h2>
-          <p id="readerMeta">Tu lectura aparecera aqui con tipografia comoda, progreso visual y un ambiente tranquilo.</p>
-          <div class="reading-controls" aria-label="Preferencias de lectura">
-            <button class="icon-button size-control" type="button" data-size="-1" aria-label="Reducir texto" title="Reducir texto">A-</button>
-            <button class="icon-button size-control" type="button" data-size="1" aria-label="Aumentar texto" title="Aumentar texto">A+</button>
-            <button class="icon-button" id="focusMode" type="button" aria-label="Modo enfoque" title="Modo enfoque">◌</button>
-          </div>
-        </div>
-        <article class="reader-panel" id="readerPanel">
-          <div class="reader-progress"><span id="readerProgress"></span></div>
-          <p id="readerText">Selecciona "Leer" en cualquier portada para abrir una muestra editorial original, escrita para esta experiencia visual.</p>
-        </article>
+        <p class="intro-text reveal">Bulgaria se descubre a través de su comida: sus montañas, sus costas, sus productos, sus celebraciones y esa hospitalidad que convierte una mesa en memoria. Cada plato habla de territorio, fuego lento, pan caliente, yogur vivo, vino profundo y recetas que han sobrevivido al tiempo.</p>
       </div>
     </section>
 
-    <section class="favorites-band" id="favoritos">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Estanteria personal</p>
-          <h2>Favoritos guardados</h2>
+    <section class="featured section" id="tradicion">
+      <div class="feature-photo reveal">
+        <div class="kenburns image-cheverme"></div>
+      </div>
+      <div class="feature-copy reveal">
+        <p class="eyebrow">Ródopes · Fuego ceremonial</p>
+        <h2>Cheverme / Чеверме</h2>
+        <p>Cordero entero asado lentamente sobre brasas y girado durante horas. Plato ceremonial, festivo y profundamente ligado a la cultura de los Ródopes.</p>
+        <div class="feature-panel">
+          <span>Versión moderna</span>
+          <p>Cordero cocinado a baja temperatura, glaseado con miel de montaña, tomillo silvestre, yogur ahumado y reducción de vino búlgaro.</p>
         </div>
       </div>
-      <div class="favorites-list" id="favoritesList"></div>
+    </section>
+
+    <section class="worlds section">
+      <div class="world-card traditional reveal">
+        <p class="eyebrow">Cocina tradicional búlgara</p>
+        <h2>Raíces, familia y territorio</h2>
+        <p>Aquí empieza la memoria de una mesa antigua: fuego lento, pan caliente y recetas que han sobrevivido al tiempo.</p>
+      </div>
+      <div class="world-card modern reveal" id="moderna">
+        <p class="eyebrow">Cocina búlgara moderna</p>
+        <h2>Creatividad, técnica y alta cocina</h2>
+        <p>La nueva cocina búlgara no rompe con la tradición: la eleva.</p>
+      </div>
+    </section>
+
+    <section class="section dishes-section" id="regiones">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Mapa gastronómico</p>
+        <h2>Del fuego de los Ródopes a la frescura del Mar Negro</h2>
+      </div>
+      <div class="region-tabs reveal" id="regionTabs" aria-label="Filtrar por regiones"></div>
+      <div class="dish-grid" id="dishGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="modern-section section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Nueva cocina búlgara</p>
+        <h2>La nueva cocina búlgara transforma la herencia en arte.</h2>
+      </div>
+      <div class="modern-list" id="modernList"></div>
+    </section>
+
+    <section class="gallery section" id="galeria">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Galería inmersiva</p>
+        <h2>Humo, vino, cerámica, pan y costa</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item tall reveal"><div class="gallery-image image-fire"></div><figcaption>Fuego lento en los Ródopes</figcaption></figure>
+        <figure class="gallery-item reveal"><div class="gallery-image image-banitsa"></div><figcaption>Pan, lino y desayuno búlgaro</figcaption></figure>
+        <figure class="gallery-item reveal"><div class="gallery-image image-salad"></div><figcaption>Sirene, verduras y frescura</figcaption></figure>
+        <figure class="gallery-item wide reveal"><div class="gallery-image image-sea"></div><figcaption>Cocina costera del Mar Negro</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="closing section">
+      <p class="eyebrow reveal">Desde los Ródopes hasta el Mar Negro</p>
+      <h2 class="reveal">Bulgaria no solo se visita. Bulgaria se saborea.</h2>
     </section>
   </main>
 
   <footer class="footer">
-    <span>Biblioteca Aurora</span>
-    <span>Diseño editorial para lectura online</span>
+    <span>Fuego Búlgaro</span>
+    <span>Experiencia gastronómica premium</span>
   </footer>
-
-  <div class="cover-modal" id="coverModal" aria-hidden="true">
-    <div class="cover-modal-backdrop" data-close-cover></div>
-    <section class="cover-modal-panel" role="dialog" aria-modal="true" aria-labelledby="coverModalTitle">
-      <button class="icon-button cover-close" type="button" data-close-cover aria-label="Cerrar portada" title="Cerrar">×</button>
-      <img id="coverModalImage" src="" alt="">
-      <div class="cover-modal-copy">
-        <p class="eyebrow">Portada real</p>
-        <h2 id="coverModalTitle">Titulo</h2>
-        <p id="coverModalMeta">Autor</p>
-        <button class="primary-action" id="coverModalRead" type="button">Leer esta novela</button>
-      </div>
-    </section>
-  </div>
 
   <script src="script.js"></script>
 </body>
