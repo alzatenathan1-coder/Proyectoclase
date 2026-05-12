@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Venezuela: Cartografía del Mestizaje – Un viaje profundo por la geografía del sabor venezolano.">
+    <title>Venezuela: Cartografía del Mestizaje | Gastronomía</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <!-- Tailwind config -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#974400",
+                        secondary: "#705d00",
+                        tertiary: "#006c0c",
+                        background: "#fff8f6",
+                        surface: "#fff8f6",
+                        "on-background": "#231914",
+                        "on-surface": "#231914",
+                        "surface-variant": "#f2dfd5",
+                        "outline": "#8a7266",
+                        "primary-container": "#bb5808",
+                        "on-primary-container": "#ffffff",
+                        "secondary-container": "#fcd400",
+                        "tertiary-container": "#1c871e",
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        body: ["Plus Jakarta Sans", "sans-serif"],
+                        mono: ["Space Grotesk", "monospace"],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass {
+            background: rgba(255, 248, 246, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(138, 114, 102, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #974400 0%, #705d00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(151, 68, 0, 0.1);
+        }
+        .card-img-zoom {
+            overflow: hidden;
+        }
+        .card-img-zoom img {
+            transition: transform 0.5s ease;
+        }
+        .card-img-zoom:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary/20 selection:text-primary">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-outline/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <span class="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform duration-500">restaurant</span>
+                <span class="font-mono font-bold tracking-tighter text-xl uppercase">VENEZUELA</span>
+            </a>
+            <div class="hidden md:flex gap-8 text-sm font-semibold tracking-wider uppercase">
+                <a href="#maiz" class="hover:text-primary transition-colors">El Maíz</a>
+                <a href="#platos" class="hover:text-primary transition-colors">Estructura</a>
+                <a href="#regiones" class="hover:text-primary transition-colors">Geografía</a>
+                <a href="#dulces" class="hover:text-primary transition-colors">Dulcería</a>
+            </div>
+            <button class="bg-primary text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary-container transition-all shadow-lg">
+                Reservar Mesa
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden parallax" style="background-image: url('venezuela_gastronomy_hero_1778583599100.png')">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 text-center px-6">
+            <span class="font-mono text-white/80 tracking-[0.4em] uppercase text-xs mb-4 block reveal">Sabor & Mestizaje</span>
+            <h1 class="font-display text-5xl md:text-8xl text-white mb-6 leading-tight reveal">Cartografía del <br><span class="italic font-normal">Sabor Venezolano</span></h1>
+            <p class="text-white/90 max-w-2xl mx-auto text-lg md:text-xl font-light reveal">Un viaje por la geografía, el relieve y la historia que se fusionan en cada bocado de nuestra tierra.</p>
+            <div class="mt-12 reveal">
+                <a href="#maiz" class="inline-flex items-center gap-2 text-white border border-white/30 px-8 py-4 rounded-full hover:bg-white hover:text-primary transition-all backdrop-blur-sm">
+                    Descubrir más <span class="material-symbols-outlined">arrow_downward</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-24">
+        
+        <!-- Intro Narrative -->
+        <section class="grid md:grid-cols-2 gap-16 items-center mb-32 reveal">
+            <div>
+                <h2 class="font-display text-4xl md:text-5xl mb-8 leading-tight">Más que una receta, <br>una <span class="text-primary italic">historia de fusión</span>.</h2>
+                <p class="text-lg text-on-background/70 leading-relaxed mb-6">
+                    La gastronomía de Venezuela no es solo una lista de ingredientes; es una cartografía del mestizaje. Cada plato cuenta la historia de cómo los ingredientes indígenas se fusionaron con las influencias europeas y africanas.
+                </p>
+                <div class="flex gap-4">
+                    <div class="flex-1 p-6 bg-surface-variant/30 rounded-2xl border border-outline/5">
+                        <span class="text-3xl mb-2 block">🌽</span>
+                        <h4 class="font-bold text-sm uppercase mb-1">Indígena</h4>
+                        <p class="text-xs text-on-background/60">Maíz, yuca, ají dulce y cacao.</p>
+                    </div>
+                    <div class="flex-1 p-6 bg-surface-variant/30 rounded-2xl border border-outline/5">
+                        <span class="text-3xl mb-2 block">🏺</span>
+                        <h4 class="font-bold text-sm uppercase mb-1">Europeo</h4>
+                        <p class="text-xs text-on-background/60">Trigo, carnes y técnicas coloniales.</p>
+                    </div>
+                    <div class="flex-1 p-6 bg-surface-variant/30 rounded-2xl border border-outline/5">
+                        <span class="text-3xl mb-2 block">🥁</span>
+                        <h4 class="font-bold text-sm uppercase mb-1">Africano</h4>
+                        <p class="text-xs text-on-background/60">Frituras, plátano y sazón de costa.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700">
+                <img src="https://images.unsplash.com/photo-1598214886806-c87b84b7078b?auto=format&fit=crop&w=800&q=80" alt="Ingredientes venezolanos" class="w-full h-full object-cover">
+            </div>
+        </section>
+
+        <!-- Eje Central: Maíz -->
+        <section id="maiz" class="mb-32">
+            <div class="text-center mb-16 reveal">
+                <span class="font-mono text-primary tracking-widest uppercase text-xs">El Cimiento</span>
+                <h2 class="font-display text-4xl md:text-5xl mt-2">El Eje Central: Cultura del Maíz</h2>
+                <p class="text-on-background/60 mt-4 max-w-xl mx-auto">El hilo conductor que une a todo el país, desde las costas del Caribe hasta las selvas del Amazonas.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 reveal">
+                <!-- Arepa Card -->
+                <div class="group bg-white rounded-[2.5rem] overflow-hidden shadow-xl hover-lift">
+                    <div class="h-80 card-img-zoom relative">
+                        <img src="venezuelan_arepas_variety_1778583899873.png" alt="Arepas variadas" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8 text-white">
+                            <h3 class="text-3xl font-display">La Arepa</h3>
+                            <p class="text-sm opacity-80 mt-2">El "pan" del venezolano, versátil y omnipresente.</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 bg-background rounded-2xl border border-outline/5">
+                                <h4 class="font-bold text-primary text-sm uppercase">Reina Pepiada</h4>
+                                <p class="text-xs text-on-background/60 mt-1">Pollo, aguacate y mayonesa.</p>
+                            </div>
+                            <div class="p-4 bg-background rounded-2xl border border-outline/5">
+                                <h4 class="font-bold text-primary text-sm uppercase">Pelúa</h4>
+                                <p class="text-xs text-on-background/60 mt-1">Carne mechada y queso amarillo.</p>
+                            </div>
+                            <div class="p-4 bg-background rounded-2xl border border-outline/5">
+                                <h4 class="font-bold text-primary text-sm uppercase">Sifrina</h4>
+                                <p class="text-xs text-on-background/60 mt-1">Reina pepiada con queso extra.</p>
+                            </div>
+                            <div class="p-4 bg-background rounded-2xl border border-outline/5">
+                                <h4 class="font-bold text-primary text-sm uppercase">Dominó</h4>
+                                <p class="text-xs text-on-background/60 mt-1">Caraotas negras y queso duro.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cachapa Card -->
+                <div class="group bg-white rounded-[2.5rem] overflow-hidden shadow-xl hover-lift">
+                    <div class="h-80 card-img-zoom relative">
+                        <img src="https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&w=800&q=80" alt="Cachapa" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8 text-white">
+                            <h3 class="text-3xl font-display">La Cachapa</h3>
+                            <p class="text-sm opacity-80 mt-2">Tortilla de maíz tierno, dulce y fundente.</p>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col justify-center h-full">
+                        <p class="text-on-background/70 leading-relaxed italic">
+                            "Servida tradicionalmente con una generosa porción de queso de mano y mantequilla, la cachapa es el abrazo dulce del campo venezolano."
+                        </p>
+                        <div class="mt-6 flex items-center gap-2 text-primary font-bold">
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="text-sm uppercase tracking-tighter">Favorito Local</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platos Estructurales -->
+        <section id="platos" class="mb-32">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+                <div class="max-w-xl">
+                    <span class="font-mono text-primary tracking-widest uppercase text-xs">Identidad</span>
+                    <h2 class="font-display text-4xl md:text-5xl mt-2">Platos Estructurales</h2>
+                    <p class="text-on-background/60 mt-4">Representan el crisol de razas y la identidad nacional que se consume en todo el territorio.</p>
+                </div>
+                <div class="hidden md:block">
+                    <span class="material-symbols-outlined text-outline/20 text-8xl">local_dining</span>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 reveal">
+                <!-- Pabellón -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-lift border border-outline/5">
+                    <div class="aspect-square rounded-2xl overflow-hidden mb-6">
+                        <img src="pabellon_criollo_plate_1778583953825.png" alt="Pabellón Criollo" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-display text-2xl mb-4">Pabellón Criollo</h3>
+                    <p class="text-sm text-on-background/60 mb-6">Representa el crisol de razas: el arroz (blanco), las caraotas (negro) y la carne (mestizo).</p>
+                    <ul class="space-y-2 text-sm font-semibold text-primary">
+                        <li>• Arroz blanco</li>
+                        <li>• Caraotas negras</li>
+                        <li>• Carne mechada</li>
+                        <li>• Tajadas de plátano</li>
+                    </ul>
+                </div>
+
+                <!-- Hallaca -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-lift border border-outline/5">
+                    <div class="aspect-square rounded-2xl overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1608244512995-171891961427?auto=format&fit=crop&w=800&q=80" alt="Hallaca" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-display text-2xl mb-4">Hallaca</h3>
+                    <p class="text-sm text-on-background/60 mb-6">El corazón de la Navidad. Su preparación es un evento social que une familias en todo el país.</p>
+                    <ul class="space-y-2 text-sm font-semibold text-primary">
+                        <li>• Masa con onoto</li>
+                        <li>• Guiso de tres carnes</li>
+                        <li>• Adornos (aceitunas, pasas)</li>
+                        <li>• Hojas de plátano ahumadas</li>
+                    </ul>
+                </div>
+
+                <!-- Asado Negro -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-lift border border-outline/5">
+                    <div class="aspect-square rounded-2xl overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=800&q=80" alt="Asado Negro" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-display text-2xl mb-4">Asado Negro</h3>
+                    <p class="text-sm text-on-background/60 mb-6">Originario de la región capital, muestra la elegante influencia de las cocinas coloniales.</p>
+                    <ul class="space-y-2 text-sm font-semibold text-primary">
+                        <li>• Muchacho redondo</li>
+                        <li>• Salsa de papelón</li>
+                        <li>• Cebollas y especias</li>
+                        <li>• Cocción lenta</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Variaciones Regionales -->
+        <section id="regiones" class="mb-32">
+            <div class="bg-on-background text-white rounded-[3rem] p-12 md:p-20 relative overflow-hidden reveal">
+                <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/20 to-transparent"></div>
+                
+                <div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="font-mono text-primary-container tracking-widest uppercase text-xs">Pisos Térmicos</span>
+                        <h2 class="font-display text-4xl md:text-5xl mt-2 mb-8">El Paisaje en el Plato</h2>
+                        <p class="text-white/60 text-lg leading-relaxed mb-8">
+                            La geografía dicta la disponibilidad de productos, creando sabores únicos por zona. Desde el frío andino hasta el calor caribeño.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <!-- Oriente -->
+                            <div class="flex gap-4 items-start group">
+                                <div class="bg-white/10 p-3 rounded-xl group-hover:bg-primary transition-colors">
+                                    <span class="material-symbols-outlined">waves</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold uppercase tracking-wider text-primary-container">Oriente y Costas</h4>
+                                    <p class="text-sm text-white/50">Pescado frito, Pastel de Chucho y el aroma inconfundible del ají dulce.</p>
+                                </div>
+                            </div>
+                            <!-- Andes -->
+                            <div class="flex gap-4 items-start group">
+                                <div class="bg-white/10 p-3 rounded-xl group-hover:bg-primary transition-colors">
+                                    <span class="material-symbols-outlined">landscape</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold uppercase tracking-wider text-primary-container">Los Andes</h4>
+                                    <p class="text-sm text-white/50">Arepa de trigo y la Pizca Andina: sopa de leche, papa y cilantro para el frío.</p>
+                                </div>
+                            </div>
+                            <!-- Llanos/Zulia -->
+                            <div class="flex gap-4 items-start group">
+                                <div class="bg-white/10 p-3 rounded-xl group-hover:bg-primary transition-colors">
+                                    <span class="material-symbols-outlined">agriculture</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold uppercase tracking-wider text-primary-container">Llanos y Zulia</h4>
+                                    <p class="text-sm text-white/50">Carne en vara, Patacón zuliano y el exótico Chivo en Coco.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <img src="https://images.unsplash.com/photo-1590012314607-cda9d9b6a2a1?auto=format&fit=crop&w=800&q=80" alt="Paisaje de Venezuela" class="rounded-3xl shadow-2xl scale-105 group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute -bottom-6 -left-6 bg-primary p-6 rounded-2xl shadow-xl hidden md:block">
+                            <span class="text-white font-mono text-xs uppercase tracking-widest">Dato de Geógrafo</span>
+                            <p class="text-white text-xs mt-2 max-w-[180px]">Venezuela tiene una de las mayores variedades de quesos frescos del mundo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dulcería y Bebidas -->
+        <section id="dulces" class="mb-32">
+            <div class="text-center mb-16 reveal">
+                <span class="font-mono text-primary tracking-widest uppercase text-xs">El Toque Final</span>
+                <h2 class="font-display text-4xl md:text-5xl mt-2">Dulcería & Bebidas</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 reveal">
+                <!-- Papelón -->
+                <div class="text-center group">
+                    <div class="aspect-square rounded-full overflow-hidden mb-4 border-4 border-outline/5 group-hover:border-primary transition-all">
+                        <img src="https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?auto=format&fit=crop&w=400&q=80" alt="Papelón con Limón" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                    </div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest">Papelón con Limón</h4>
+                    <p class="text-[10px] text-on-background/50 mt-1 uppercase">Refrescante</p>
+                </div>
+                <!-- Chicha -->
+                <div class="text-center group">
+                    <div class="aspect-square rounded-full overflow-hidden mb-4 border-4 border-outline/5 group-hover:border-primary transition-all">
+                        <img src="https://images.unsplash.com/photo-1541167760496-162955ed8a9f?auto=format&fit=crop&w=400&q=80" alt="Chicha" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                    </div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest">Chicha de Arroz</h4>
+                    <p class="text-[10px] text-on-background/50 mt-1 uppercase">Cremosa</p>
+                </div>
+                <!-- Tizana -->
+                <div class="text-center group">
+                    <div class="aspect-square rounded-full overflow-hidden mb-4 border-4 border-outline/5 group-hover:border-primary transition-all">
+                        <img src="https://images.unsplash.com/photo-1563223552-30d01fda3ead?auto=format&fit=crop&w=400&q=80" alt="Tizana" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                    </div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest">Tizana</h4>
+                    <p class="text-[10px] text-on-background/50 mt-1 uppercase">Tropical</p>
+                </div>
+                <!-- Quesillo -->
+                <div class="text-center group">
+                    <div class="aspect-square rounded-full overflow-hidden mb-4 border-4 border-outline/5 group-hover:border-primary transition-all">
+                        <img src="venezuelan_quesillo_dessert_1778583971667.png" alt="Quesillo" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                    </div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest">Quesillo</h4>
+                    <p class="text-[10px] text-on-background/50 mt-1 uppercase">Legendario</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-on-background text-white py-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 items-center">
+            <div>
+                <span class="font-mono text-primary-container text-2xl font-bold uppercase">Venezuela</span>
+                <p class="text-white/40 mt-4 text-sm max-w-xs">
+                    Explorando la geografía del sabor venezolano como una cartografía del mestizaje.
+                </p>
+            </div>
+            <div class="flex justify-center gap-8 font-mono text-xs uppercase tracking-widest">
+                <a href="#" class="hover:text-primary transition-colors">Instagram</a>
+                <a href="#" class="hover:text-primary transition-colors">Twitter</a>
+                <a href="#" class="hover:text-primary transition-colors">Facebook</a>
+            </div>
+            <div class="flex justify-end">
+                <button class="bg-white text-on-background px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all">
+                    Volver arriba
+                </button>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/10 text-center text-[10px] uppercase tracking-widest text-white/30">
+            &copy; 2024 Cartografía del Mestizaje. Diseñado con pasión por la gastronomía.
+        </div>
+    </footer>
+
+    <!-- Reveal Script -->
+    <script>
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
