@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Aurora | Lectura en linea</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas class="ambient-canvas" id="ambientCanvas" aria-hidden="true"></canvas>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-meter" aria-hidden="true"><span id="scrollMeter"></span></div>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Biblioteca Aurora">
+      <span class="brand-mark">A</span>
+      <span>Biblioteca Aurora</span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#coleccion">Coleccion</a>
+      <a href="#lectura">Lectura</a>
+      <a href="#favoritos">Favoritos</a>
+    </nav>
+    <button class="icon-button" id="themeToggle" type="button" aria-label="Cambiar tema" title="Cambiar tema">
+      <span aria-hidden="true">◐</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-scene" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="page-flutter page-a"></div>
+        <div class="page-flutter page-b"></div>
+        <div class="page-flutter page-c"></div>
+        <div class="floating-book book-one"><span></span></div>
+        <div class="floating-book book-two"><span></span></div>
+        <div class="floating-book book-three"><span></span></div>
+        <div class="shelf shelf-one"></div>
+        <div class="shelf shelf-two"></div>
+        <div class="light-beam"></div>
+      </div>
+
+      <div class="hero-content">
+        <p class="eyebrow">Lectura en linea</p>
+        <h1>Biblioteca Aurora</h1>
+        <p class="hero-copy">Una coleccion elegante de grandes novelas del mundo, con portadas vivas, busqueda rapida y una experiencia de lectura cuidada.</p>
+        <div class="hero-actions">
+          <a class="primary-action" href="#coleccion">Explorar novelas</a>
+          <button class="secondary-action" id="openFeatured" type="button">Abrir destacada</button>
+        </div>
+      </div>
+
+      <article class="featured-book" aria-label="Novela destacada">
+        <div class="mini-cover cover-quixote real-mini-cover" data-cover="quijote" role="button" tabindex="0" aria-label="Ver portada de Don Quijote de la Mancha">
+          <img src="assets/covers/quijote.jpg" alt="Portada de Don Quijote de la Mancha">
+        </div>
+        <div>
+          <p class="book-kicker">Destacada</p>
+          <h2>Don Quijote de la Mancha</h2>
+          <p>Miguel de Cervantes</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="catalog-band" id="coleccion">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Novelas imprescindibles</p>
+          <h2>Una sala para viajar por epocas, mundos y voces</h2>
+        </div>
+        <div class="library-stats" aria-label="Resumen de biblioteca">
+          <span><strong id="totalBooks">0</strong> novelas</span>
+          <span><strong id="totalFavorites">0</strong> favoritas</span>
+        </div>
+      </div>
+
+      <div class="toolbar" role="search">
+        <label class="search-field" for="searchInput">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="Buscar por titulo, autor o pais">
+        </label>
+        <div class="filter-row" aria-label="Filtrar por genero">
+          <button class="filter is-active" type="button" data-filter="todos">Todo</button>
+          <button class="filter" type="button" data-filter="clasico">Clasico</button>
+          <button class="filter" type="button" data-filter="romance">Romance</button>
+          <button class="filter" type="button" data-filter="existencial">Existencial</button>
+          <button class="filter" type="button" data-filter="aventura">Aventura</button>
+        </div>
+      </div>
+
+      <div class="book-grid" id="bookGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="reader-band" id="lectura">
+      <div class="reader-layout">
+        <div class="reader-copy">
+          <p class="eyebrow">Modo lectura</p>
+          <h2 id="readerTitle">Elige una novela</h2>
+          <p id="readerMeta">Tu lectura aparecera aqui con tipografia comoda, progreso visual y un ambiente tranquilo.</p>
+          <div class="reading-controls" aria-label="Preferencias de lectura">
+            <button class="icon-button size-control" type="button" data-size="-1" aria-label="Reducir texto" title="Reducir texto">A-</button>
+            <button class="icon-button size-control" type="button" data-size="1" aria-label="Aumentar texto" title="Aumentar texto">A+</button>
+            <button class="icon-button" id="focusMode" type="button" aria-label="Modo enfoque" title="Modo enfoque">◌</button>
+          </div>
+        </div>
+        <article class="reader-panel" id="readerPanel">
+          <div class="reader-progress"><span id="readerProgress"></span></div>
+          <p id="readerText">Selecciona "Leer" en cualquier portada para abrir una muestra editorial original, escrita para esta experiencia visual.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="favorites-band" id="favoritos">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Estanteria personal</p>
+          <h2>Favoritos guardados</h2>
+        </div>
+      </div>
+      <div class="favorites-list" id="favoritesList"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Biblioteca Aurora</span>
+    <span>Diseño editorial para lectura online</span>
+  </footer>
+
+  <div class="cover-modal" id="coverModal" aria-hidden="true">
+    <div class="cover-modal-backdrop" data-close-cover></div>
+    <section class="cover-modal-panel" role="dialog" aria-modal="true" aria-labelledby="coverModalTitle">
+      <button class="icon-button cover-close" type="button" data-close-cover aria-label="Cerrar portada" title="Cerrar">×</button>
+      <img id="coverModalImage" src="" alt="">
+      <div class="cover-modal-copy">
+        <p class="eyebrow">Portada real</p>
+        <h2 id="coverModalTitle">Titulo</h2>
+        <p id="coverModalMeta">Autor</p>
+        <button class="primary-action" id="coverModalRead" type="button">Leer esta novela</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

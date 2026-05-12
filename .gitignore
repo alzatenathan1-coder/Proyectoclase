@@ -1,0 +1,6 @@
+.tools/
+tmp-git-test/
+$installRoot/
+.git/
+git-data/
+.ssh-temp/
