@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Crónicas del Caldero de Cobre – Rumanía: El Sabor del Tiempo. Un viaje inmersivo por la gastronomía, la cultura y las tradiciones de Rumanía.">
+    <meta name="description" content="Crónicas del Caldero de Cobre – Rumanía: El Sabor del Tiempo">
     <meta name="theme-color" content="#1a1410">
     <title>Crónicas del Caldero de Cobre · Rumanía</title>
 
@@ -19,20 +19,11 @@
             theme: {
                 extend: {
                     colors: {
-                        wood:       "#2c1810",
-                        "wood-light":"#5c3a28",
-                        "wood-dark": "#0f0906",
-                        gold:       "#c8a84e",
-                        "gold-dim":  "#a8883a",
-                        "gold-pale": "#e8d48e",
-                        linen:      "#f5efe6",
-                        "linen-dim": "#d4c8b8",
-                        "linen-pale":"#faf6f0",
-                        blood:      "#7a1e1e",
-                        "blood-light":"#a83232",
-                        "blood-bright":"#d44242",
-                        charcoal:   "#1a1410",
-                        "charcoal-light":"#2a221e",
+                        wood:       "#2c1810", "wood-light":"#5c3a28", "wood-dark": "#0f0906",
+                        gold:       "#c8a84e", "gold-dim": "#a8883a", "gold-pale": "#e8d48e",
+                        linen:      "#f5efe6", "linen-dim": "#d4c8b8", "linen-pale":"#faf6f0",
+                        blood:      "#7a1e1e", "blood-light":"#a83232", "blood-bright":"#d44242",
+                        charcoal:   "#1a1410", "charcoal-light":"#2a221e",
                     },
                     fontFamily: {
                         display: ["Playfair Display", "serif"],
@@ -42,54 +33,15 @@
                     },
                     animation: {
                         "float":      "float 6s ease-in-out infinite",
-                        "fade-in":    "fadeIn 0.8s ease-out forwards",
                         "steam":      "steam 4s ease-in-out infinite",
                         "glow":       "glowPulse 3s ease-in-out infinite",
-                        "drift":      "drift 12s ease-in-out infinite",
                         "pulse-soft": "pulseSoft 4s ease-in-out infinite",
-                        "sparkle":    "sparkle 2s ease-in-out infinite",
-                        "gold-shimmer":"goldShimmer 3s ease-in-out infinite",
-                        "ken-burns":  "kenBurns 12s ease-in-out infinite alternate",
                     },
                     keyframes: {
-                        float: {
-                            "0%,100%":  { transform: "translateY(0)" },
-                            "50%":       { transform: "translateY(-12px)" },
-                        },
-                        fadeIn: {
-                            "0%":    { opacity: "0" },
-                            "100%":  { opacity: "1" },
-                        },
-                        steam: {
-                            "0%,100%": { transform: "translateY(0) scale(1) rotate(0deg)", opacity: "0.4" },
-                            "50%":     { transform: "translateY(-25px) scale(1.3) rotate(5deg)", opacity: "0.08" },
-                        },
-                        glowPulse: {
-                            "0%,100%": { boxShadow: "0 0 20px rgba(200,168,78,0.15)" },
-                            "50%":     { boxShadow: "0 0 50px rgba(200,168,78,0.3)" },
-                        },
-                        drift: {
-                            "0%,100%": { transform: "translate(0, 0)" },
-                            "25%":     { transform: "translate(10px, -10px)" },
-                            "50%":     { transform: "translate(-5px, -15px)" },
-                            "75%":     { transform: "translate(-10px, -5px)" },
-                        },
-                        pulseSoft: {
-                            "0%,100%": { opacity: "0.6" },
-                            "50%":     { opacity: "1" },
-                        },
-                        sparkle: {
-                            "0%,100%": { opacity: "0.3", transform: "scale(0.8)" },
-                            "50%":     { opacity: "1", transform: "scale(1.2)" },
-                        },
-                        goldShimmer: {
-                            "0%,100%": { backgroundPosition: "0% 50%" },
-                            "50%":     { backgroundPosition: "100% 50%" },
-                        },
-                        kenBurns: {
-                            "0%":    { transform: "scale(1) translate(0, 0)" },
-                            "100%":  { transform: "scale(1.1) translate(-2%, -1%)" },
-                        },
+                        float: { "0%,100%":{transform:"translateY(0)"},"50%":{transform:"translateY(-12px)"} },
+                        steam: { "0%,100%":{transform:"translateY(0) scale(1)",opacity:"0.4"},"50%":{transform:"translateY(-25px) scale(1.3)",opacity:"0.08"} },
+                        glowPulse: { "0%,100%":{boxShadow:"0 0 20px rgba(200,168,78,0.15)"},"50%":{boxShadow:"0 0 50px rgba(200,168,78,0.3)"} },
+                        pulseSoft: { "0%,100%":{opacity:"0.6"},"50%":{opacity:"1"} },
                     },
                 }
             }
@@ -99,11 +51,7 @@
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
         html { scroll-behavior: smooth; }
-        body {
-            background:#1a1410; color:#f5efe6;
-            font-family:'Plus Jakarta Sans',sans-serif;
-            overflow-x:hidden;
-        }
+        body { background:#1a1410; color:#f5efe6; font-family:'Plus Jakarta Sans',sans-serif; overflow-x:hidden; }
         ::-webkit-scrollbar { width:6px; }
         ::-webkit-scrollbar-track { background:#0f0906; }
         ::-webkit-scrollbar-thumb { background:linear-gradient(180deg,#c8a84e,#a8883a); border-radius:3px; }
@@ -117,220 +65,98 @@
         /* Navbar */
         #navbar {
             position:fixed; top:0; left:0; right:0; z-index:100;
-            padding:1.2rem 2rem;
-            transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+            padding:1.2rem 2rem; transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
             background:transparent;
         }
         #navbar.scrolled {
-            background:rgba(15,9,6,0.94);
-            backdrop-filter:blur(24px) saturate(1.4);
-            padding:0.6rem 2rem;
-            border-bottom:1px solid rgba(200,168,78,0.1);
+            background:rgba(15,9,6,0.94); backdrop-filter:blur(24px) saturate(1.4);
+            padding:0.6rem 2rem; border-bottom:1px solid rgba(200,168,78,0.1);
         }
         .nav-link {
-            position:relative;
-            color:rgba(245,239,230,0.5);
-            transition:color 0.3s ease;
-            font-size:0.7rem;
-            letter-spacing:0.18em;
-            text-transform:uppercase;
-            font-weight:500;
+            position:relative; color:rgba(245,239,230,0.5);
+            transition:color 0.3s ease; font-size:0.7rem;
+            letter-spacing:0.18em; text-transform:uppercase; font-weight:500;
         }
         .nav-link:hover { color:#c8a84e; }
         .nav-link::after {
             content:''; position:absolute; bottom:-4px; left:0; right:0;
-            height:1px; background:#c8a84e;
-            transform:scaleX(0); transition:transform 0.3s ease;
+            height:1px; background:#c8a84e; transform:scaleX(0); transition:transform 0.3s ease;
         }
         .nav-link:hover::after { transform:scaleX(1); }
 
         /* Hero */
-        .hero-vignette {
-            background:radial-gradient(ellipse at center, transparent 30%, #1a1410 100%);
-        }
-        .dust-char {
-            display:inline-block;
-            transition:all 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
-            cursor:default;
-        }
-        .dust-char.dispersing {
-            opacity:0;
-            filter:blur(10px);
-            transform:translate(var(--dx,0),var(--dy,-50px)) scale(0.2) rotate(var(--dr,20deg));
-            transition-duration:1.2s;
-        }
-        .hero-gold-line {
-            width:60px; height:1.5px;
-            background:linear-gradient(90deg,transparent,#c8a84e,transparent);
-            margin:1.5rem auto;
-            border-radius:1px;
-        }
-        .hero-parallax-bg {
-            will-change:transform;
-            animation:kenBurns 14s ease-in-out infinite alternate;
-        }
+        .dust-char { display:inline-block; transition:all 0.6s cubic-bezier(0.25,0.46,0.45,0.94); cursor:default; }
+        .dust-char.dispersing { opacity:0; filter:blur(10px); transform:translate(var(--dx,0),var(--dy,-50px)) scale(0.2) rotate(var(--dr,20deg)); transition-duration:1.2s; }
 
         /* Embroidery Dividers */
         .embroidery-divider {
             height:28px; max-width:500px; margin:0 auto; opacity:0.4;
-            background:
-                repeating-linear-gradient(90deg,
-                    transparent 0, transparent 12px,
-                    #c8a84e 12px, #c8a84e 14px,
-                    transparent 14px, transparent 20px,
-                    #7a1e1e 20px, #7a1e1e 22px,
-                    transparent 22px, transparent 32px
-                ),
-                repeating-linear-gradient(90deg,
-                    transparent 0, transparent 4px,
-                    rgba(200,168,78,0.15) 4px, rgba(200,168,78,0.15) 6px,
-                    transparent 6px, transparent 16px
-                );
+            background: repeating-linear-gradient(90deg,transparent 0,transparent 12px,#c8a84e 12px,#c8a84e 14px,transparent 14px,transparent 20px,#7a1e1e 20px,#7a1e1e 22px,transparent 22px,transparent 32px), repeating-linear-gradient(90deg,transparent 0,transparent 4px,rgba(200,168,78,0.15) 4px,rgba(200,168,78,0.15) 6px,transparent 6px,transparent 16px);
             background-blend-mode:overlay;
         }
         .embroidery-divider-lg {
             height:40px; max-width:700px; margin:0 auto; opacity:0.35;
-            background:
-                repeating-linear-gradient(90deg,
-                    transparent 0, transparent 20px,
-                    #c8a84e 20px, #c8a84e 22px,
-                    transparent 22px, transparent 34px,
-                    #7a1e1e 34px, #7a1e1e 36px,
-                    transparent 36px, transparent 52px
-                ),
-                repeating-linear-gradient(90deg,
-                    transparent 0, transparent 10px,
-                    rgba(200,168,78,0.1) 10px, rgba(200,168,78,0.1) 12px,
-                    transparent 12px, transparent 26px
-                );
+            background: repeating-linear-gradient(90deg,transparent 0,transparent 20px,#c8a84e 20px,#c8a84e 22px,transparent 22px,transparent 34px,#7a1e1e 34px,#7a1e1e 36px,transparent 36px,transparent 52px), repeating-linear-gradient(90deg,transparent 0,transparent 10px,rgba(200,168,78,0.1) 10px,rgba(200,168,78,0.1) 12px,transparent 12px,transparent 26px);
             background-blend-mode:overlay;
-        }
-        .embroidery-divider-sm {
-            height:16px; max-width:200px; margin:0 auto; opacity:0.3;
-            background:repeating-linear-gradient(90deg,
-                transparent 0, transparent 6px,
-                #c8a84e 6px, #c8a84e 7px,
-                transparent 7px, transparent 12px,
-                #7a1e1e 12px, #7a1e1e 13px,
-                transparent 13px, transparent 20px
-            );
         }
 
         /* Steam */
         .steam-container { position:absolute; inset:0; pointer-events:none; overflow:hidden; z-index:2; }
         .steam-particle {
-            position:absolute; bottom:10%;
-            width:14px; height:60px;
+            position:absolute; bottom:10%; width:14px; height:60px;
             background:linear-gradient(to top,rgba(200,168,78,0.1),transparent);
-            border-radius:50%;
-            animation:steam 5s ease-in-out infinite;
-            filter:blur(5px);
+            border-radius:50%; animation:steam 5s ease-in-out infinite; filter:blur(5px);
         }
         .steam-particle:nth-child(1) { left:15%; animation-delay:0s; width:16px; height:75px; }
         .steam-particle:nth-child(2) { left:35%; animation-delay:1.8s; width:9px; height:50px; }
         .steam-particle:nth-child(3) { left:55%; animation-delay:3.2s; width:18px; height:85px; }
         .steam-particle:nth-child(4) { left:75%; animation-delay:0.9s; width:11px; height:55px; }
-        .steam-particle:nth-child(5) { left:90%; animation-delay:2.4s; width:7px; height:40px; }
-
-        /* Scroll indicator */
-        .scroll-indicator {
-            position:absolute; bottom:2rem; left:50%; transform:translateX(-50%);
-            display:flex; flex-direction:column; align-items:center; gap:0.75rem;
-            z-index:10;
-            animation:float 4s ease-in-out infinite;
-        }
-        .scroll-line {
-            width:1px; height:50px;
-            background:linear-gradient(to bottom,#c8a84e,transparent);
-        }
 
         /* Dish Cards */
         .dish-card {
             border-radius:2rem; overflow:hidden;
             background:linear-gradient(160deg,#2c1810,#1a1410);
             border:1px solid rgba(200,168,78,0.1);
-            transition:all 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
-            cursor:default;
-            will-change:transform;
+            transition:all 0.6s cubic-bezier(0.25,0.46,0.45,0.94); cursor:default;
         }
         .dish-card:hover {
-            border-color:rgba(200,168,78,0.35);
-            transform:translateY(-10px) scale(1.01);
+            border-color:rgba(200,168,78,0.35); transform:translateY(-10px) scale(1.01);
             box-shadow:0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(200,168,78,0.08);
         }
-        .dish-card-image {
-            height:280px; overflow:hidden; position:relative;
-        }
-        .dish-card-image img {
-            width:100%; height:100%; object-fit:cover;
-            transition:transform 0.8s ease;
-        }
+        .dish-card-image { height:280px; overflow:hidden; position:relative; }
+        .dish-card-image img { width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease; }
         .dish-card:hover .dish-card-image img { transform:scale(1.12); }
-        .dish-card-image::after {
-            content:''; position:absolute; inset:0;
-            background:linear-gradient(to top,#1a1410 30%,transparent 70%);
-        }
-        .dish-card-badge {
-            position:absolute; top:1rem; right:1rem; z-index:3;
-            background:rgba(200,168,78,0.12); backdrop-filter:blur(12px);
-            border:1px solid rgba(200,168,78,0.2); border-radius:9999px;
-            padding:0.3rem 1rem; font-size:0.55rem; text-transform:uppercase;
-            letter-spacing:0.15em; color:#c8a84e;
-        }
+        .dish-card-image::after { content:''; position:absolute; inset:0; background:linear-gradient(to top,#1a1410 30%,transparent 70%); }
         .dish-card-body { padding:2rem; position:relative; }
-        .dish-title {
-            font-family:'Playfair Display',serif;
-            font-size:1.8rem; color:#c8a84e; font-weight:700;
-        }
-        .dish-subtitle {
-            font-family:'Caveat',cursive;
-            font-size:1.25rem;
-            color:rgba(200,168,78,0.5);
-            margin-top:0.15rem;
-        }
-        .dish-poem {
-            font-weight:300; font-size:0.9rem; line-height:1.9;
-            color:rgba(245,239,230,0.7);
-            font-style:italic; margin-top:1rem;
-        }
-        .ingredients-panel {
-            max-height:0; overflow:hidden;
-            transition:max-height 0.6s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.4s ease;
-            opacity:0;
-        }
-        .dish-card:hover .ingredients-panel {
-            max-height:400px; opacity:1;
-        }
-        .ingredient-item {
-            font-family:'Caveat',cursive;
-            font-size:1.15rem; padding:0.35rem 0;
-            color:rgba(245,239,230,0.6);
-            border-bottom:1px solid rgba(200,168,78,0.06);
-            display:flex; align-items:center; gap:0.75rem;
-        }
-        .ingredient-item::before {
-            content:'✦'; color:#c8a84e; font-size:0.55rem;
-        }
+        .dish-title { font-family:'Playfair Display',serif; font-size:1.8rem; color:#c8a84e; font-weight:700; }
+        .dish-subtitle { font-family:'Caveat',cursive; font-size:1.25rem; color:rgba(200,168,78,0.5); margin-top:0.15rem; }
+        .dish-poem { font-weight:300; font-size:0.9rem; line-height:1.9; color:rgba(245,239,230,0.7); font-style:italic; margin-top:1rem; }
+        .ingredients-panel { max-height:0; overflow:hidden; transition:max-height 0.6s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.4s ease; opacity:0; }
+        .dish-card:hover .ingredients-panel { max-height:400px; opacity:1; }
+        .ingredient-item { font-family:'Caveat',cursive; font-size:1.15rem; padding:0.35rem 0; color:rgba(245,239,230,0.6); border-bottom:1px solid rgba(200,168,78,0.06); display:flex; align-items:center; gap:0.75rem; }
+        .ingredient-item::before { content:'✦'; color:#c8a84e; font-size:0.55rem; }
 
-        /* Dish Grid Cards */
-        .dish-grid-card {
+        /* Dish Grid Cards (icon-based for extra dishes) */
+        .dish-icon-card {
             border-radius:1.25rem; overflow:hidden;
             background:linear-gradient(160deg,#2c1810,#1a1410);
             border:1px solid rgba(200,168,78,0.06);
-            transition:all 0.5s ease;
-            cursor:pointer;
+            transition:all 0.5s ease; cursor:pointer;
         }
-        .dish-grid-card:hover {
-            border-color:rgba(200,168,78,0.25);
-            transform:translateY(-6px);
+        .dish-icon-card:hover {
+            border-color:rgba(200,168,78,0.25); transform:translateY(-6px);
             box-shadow:0 20px 50px rgba(0,0,0,0.5);
         }
-        .dish-grid-card .thumb { height:180px; overflow:hidden; }
-        .dish-grid-card .thumb img { width:100%; height:100%; object-fit:cover; transition:transform 0.6s ease; }
-        .dish-grid-card:hover .thumb img { transform:scale(1.12); }
-        .dish-grid-card .info { padding:1.25rem; }
-        .dish-grid-card .info h4 { font-family:'Playfair Display',serif; color:#c8a84e; font-size:1.05rem; }
-        .dish-grid-card .info p { font-size:0.78rem; color:rgba(245,239,230,0.45); margin-top:0.25rem; font-weight:300; line-height:1.6; }
+        .dish-icon-card .icon-area {
+            height:160px; display:flex; align-items:center; justify-content:center;
+            background:radial-gradient(ellipse at center, rgba(200,168,78,0.05) 0%, transparent 70%);
+            border-bottom:1px solid rgba(200,168,78,0.06);
+        }
+        .dish-icon-card .icon-area .emoji-big { font-size:4rem; transition:transform 0.5s ease; }
+        .dish-icon-card:hover .icon-area .emoji-big { transform:scale(1.2) rotate(-5deg); }
+        .dish-icon-card .info { padding:1.25rem; }
+        .dish-icon-card .info h4 { font-family:'Playfair Display',serif; color:#c8a84e; font-size:1.05rem; }
+        .dish-icon-card .info p { font-size:0.78rem; color:rgba(245,239,230,0.45); margin-top:0.25rem; font-weight:300; line-height:1.6; }
 
         /* Map */
         #romania-map { width:100%; max-width:550px; }
@@ -341,155 +167,58 @@
         #map-container:hover .map-region:hover { opacity:1; }
         .map-tooltip {
             background:linear-gradient(160deg,#2c1810,#1a1410);
-            border:1px solid rgba(200,168,78,0.18);
-            border-radius:1.25rem; padding:1.5rem;
-            width:280px; pointer-events:none;
+            border:1px solid rgba(200,168,78,0.18); border-radius:1.25rem;
+            padding:1.5rem; width:280px; pointer-events:none;
             opacity:0; transition:opacity 0.5s ease, transform 0.5s ease;
-            transform:translateY(12px);
-            box-shadow:0 25px 70px rgba(0,0,0,0.6);
+            transform:translateY(12px); box-shadow:0 25px 70px rgba(0,0,0,0.6);
         }
         .map-tooltip.active { opacity:1; transform:translateY(0); }
         .map-tooltip h4 { font-family:'Playfair Display',serif; color:#c8a84e; font-size:1.3rem; }
-        .map-tooltip .monument { font-size:0.8rem; color:rgba(245,239,230,0.5); margin:0.25rem 0; }
-        .map-tooltip .dish-label { font-family:'Caveat',cursive; font-size:1.15rem; color:rgba(245,239,230,0.85); }
-
-        /* Timeline */
-        .timeline-track { position:relative; }
-        .timeline-track::before {
-            content:''; position:absolute; left:50%; top:0; bottom:0;
-            width:1px;
-            background:linear-gradient(to bottom,transparent,#c8a84e33 15%,#c8a84e33 85%,transparent);
-            transform:translateX(-50%);
-        }
-        .timeline-item { display:flex; margin-bottom:4rem; position:relative; }
-        .timeline-item:nth-child(odd) { flex-direction:row; }
-        .timeline-item:nth-child(even) { flex-direction:row-reverse; }
-        .timeline-dot {
-            position:absolute; left:50%; top:0.5rem;
-            width:14px; height:14px; border-radius:50%;
-            background:#c8a84e; transform:translateX(-50%);
-            z-index:2; box-shadow:0 0 20px rgba(200,168,78,0.3);
-        }
-        .timeline-content {
-            width:42%; padding:1.5rem;
-            background:rgba(44,24,16,0.5); backdrop-filter:blur(10px);
-            border:1px solid rgba(200,168,78,0.08);
-            border-radius:1.25rem; transition:all 0.4s ease;
-        }
-        .timeline-content:hover {
-            border-color:rgba(200,168,78,0.2);
-            transform:translateY(-4px);
-            box-shadow:0 15px 40px rgba(0,0,0,0.4);
-        }
 
         /* Gallery */
-        .gallery-grid {
-            display:grid;
-            grid-template-columns:repeat(4,1fr);
-            grid-template-rows:repeat(2,220px);
-            gap:0.75rem;
-        }
-        .gallery-item {
-            border-radius:1rem; overflow:hidden; position:relative; cursor:pointer;
-        }
-        .gallery-item img {
-            width:100%; height:100%; object-fit:cover;
-            transition:transform 0.6s ease, filter 0.6s ease;
-        }
+        .gallery-grid { display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:repeat(2,220px); gap:0.75rem; }
+        .gallery-item { border-radius:1rem; overflow:hidden; position:relative; cursor:pointer; }
+        .gallery-item img { width:100%; height:100%; object-fit:cover; transition:transform 0.6s ease, filter 0.6s ease; }
         .gallery-item:hover img { transform:scale(1.08); filter:brightness(0.65) saturate(1.1); }
         .gallery-item:nth-child(1) { grid-column:span 2; grid-row:span 2; }
         .gallery-item:nth-child(2) { grid-column:span 1; grid-row:span 1; }
         .gallery-item:nth-child(3) { grid-column:span 1; grid-row:span 1; }
         .gallery-item:nth-child(4) { grid-column:span 2; grid-row:span 1; }
         .gallery-item:nth-child(5) { grid-column:span 2; grid-row:span 1; }
-        .gallery-item:nth-child(6) { grid-column:span 1; grid-row:span 1; }
-        .gallery-item:nth-child(7) { grid-column:span 1; grid-row:span 1; }
-        .gallery-item:nth-child(8) { grid-column:span 2; grid-row:span 1; }
-        .gallery-item-overlay {
-            position:absolute; inset:0;
-            background:linear-gradient(to top,rgba(26,20,16,0.75),transparent 40%);
-            opacity:0; transition:opacity 0.4s ease;
-            display:flex; align-items:flex-end; padding:1rem;
-        }
+        .gallery-item-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(26,20,16,0.75),transparent 40%); opacity:0; transition:opacity 0.4s ease; display:flex; align-items:flex-end; padding:1rem; }
         .gallery-item:hover .gallery-item-overlay { opacity:1; }
         .gallery-item-overlay span { font-family:'Caveat',cursive; font-size:1.1rem; color:#f5efe6; }
 
         /* Drink cards */
-        .drink-card {
-            text-align:center; padding:2.5rem 1.5rem;
-            border-radius:1.5rem;
-            background:rgba(44,24,16,0.35);
-            border:1px solid rgba(200,168,78,0.06);
-            transition:all 0.5s ease;
-        }
-        .drink-card:hover {
-            border-color:rgba(200,168,78,0.2);
-            background:rgba(44,24,16,0.7);
-            transform:translateY(-8px);
-            box-shadow:0 20px 50px rgba(0,0,0,0.4);
-        }
+        .drink-card { text-align:center; padding:2.5rem 1.5rem; border-radius:1.5rem; background:rgba(44,24,16,0.35); border:1px solid rgba(200,168,78,0.06); transition:all 0.5s ease; }
+        .drink-card:hover { border-color:rgba(200,168,78,0.2); background:rgba(44,24,16,0.7); transform:translateY(-8px); box-shadow:0 20px 50px rgba(0,0,0,0.4); }
         .drink-card .icon-emoji { font-size:3.5rem; display:block; margin-bottom:0.75rem; }
         .drink-card h4 { font-family:'Playfair Display',serif; color:#c8a84e; font-size:1.25rem; }
         .drink-card p { font-size:0.8rem; color:rgba(245,239,230,0.45); margin-top:0.5rem; font-weight:300; line-height:1.7; }
 
-        /* Quote block */
+        /* Quote */
         .quote-block { position:relative; padding:3rem 4rem; text-align:center; max-width:700px; margin:0 auto; }
-        .quote-block::before {
-            content:'\201C'; font-family:'Playfair Display',serif;
-            font-size:6rem; color:#c8a84e; opacity:0.15;
-            position:absolute; top:-0.5rem; left:0; line-height:1;
+        .quote-block::before { content:'\201C'; font-family:'Playfair Display',serif; font-size:6rem; color:#c8a84e; opacity:0.15; position:absolute; top:-0.5rem; left:0; line-height:1; }
+        .quote-block p { font-family:'Playfair Display',serif; font-style:italic; font-size:1.5rem; line-height:1.6; color:rgba(245,239,230,0.85); }
+        .quote-block cite { display:block; margin-top:1rem; font-family:'Plus Jakarta Sans',sans-serif; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.2em; color:rgba(200,168,78,0.4); font-style:normal; }
+
+        /* Image variant filters */
+        .img-duotone-gold {
+            filter: sepia(0.6) hue-rotate(5deg) saturate(0.8) brightness(0.9);
         }
-        .quote-block p {
-            font-family:'Playfair Display',serif; font-style:italic;
-            font-size:1.5rem; line-height:1.6;
-            color:rgba(245,239,230,0.85);
+        .img-duotone-blood {
+            filter: sepia(0.3) hue-rotate(320deg) saturate(0.9) brightness(0.7);
         }
-        .quote-block cite {
-            display:block; margin-top:1rem;
-            font-family:'Plus Jakarta Sans',sans-serif;
-            font-size:0.7rem; text-transform:uppercase;
-            letter-spacing:0.2em; color:rgba(200,168,78,0.4);
-            font-style:normal;
+        .img-duotone-dark {
+            filter: grayscale(0.7) brightness(0.5) contrast(1.3);
+        }
+        .img-duotone-warm {
+            filter: sepia(0.5) saturate(1.1) brightness(0.85);
         }
 
-        /* Parallax break */
-        .parallax-break {
-            position:relative; overflow:hidden; height:50vh; min-height:400px;
-            background-attachment:fixed;
-            background-position:center;
-            background-size:cover;
-        }
-
-        /* Section titles */
-        .section-label {
-            font-family:'Uncial Antiqua',serif;
-            font-size:0.65rem; letter-spacing:0.35em;
-            color:rgba(200,168,78,0.3);
-            text-transform:uppercase;
-        }
-        .section-title {
-            font-family:'Playfair Display',serif;
-            font-size:3rem; line-height:1.15; color:#f5efe6;
-        }
+        .section-label { font-family:'Uncial Antiqua',serif; font-size:0.65rem; letter-spacing:0.35em; color:rgba(200,168,78,0.3); text-transform:uppercase; }
+        .section-title { font-family:'Playfair Display',serif; font-size:3rem; line-height:1.15; color:#f5efe6; }
         .section-title .highlight { color:#c8a84e; }
-        @media (max-width:768px) {
-            .section-title { font-size:2rem; }
-            .timeline-item:nth-child(odd),.timeline-item:nth-child(even) { flex-direction:column; }
-            .timeline-content { width:90%; margin-left:auto; margin-right:auto; }
-            .timeline-dot { left:1.5rem; }
-            .timeline-track::before { left:1.5rem; }
-            .gallery-grid { grid-template-columns:repeat(2,1fr); grid-template-rows:auto; }
-            .gallery-item:nth-child(1) { grid-column:span 2; grid-row:span 1; }
-            .gallery-item:nth-child(2),.gallery-item:nth-child(3) { grid-column:span 1; grid-row:span 1; }
-            .gallery-item:nth-child(5) { grid-column:span 2; grid-row:span 1; }
-            .gallery-item:nth-child(6),.gallery-item:nth-child(7) { grid-column:span 1; grid-row:span 1; }
-            .gallery-item:nth-child(8) { grid-column:span 2; grid-row:span 1; }
-            .dish-card-image { height:220px; }
-            .map-tooltip { width:200px; padding:1rem; }
-            .quote-block { padding:2rem 1.5rem; }
-            .quote-block p { font-size:1.2rem; }
-            .parallax-break { height:30vh; min-height:250px; background-attachment:scroll; }
-        }
 
         .reveal       { opacity:0; transform:translateY(40px); transition:all 0.9s cubic-bezier(0.25,0.46,0.45,0.94); }
         .reveal.active{ opacity:1; transform:translateY(0); }
@@ -500,6 +229,18 @@
         .reveal-scale { opacity:0; transform:scale(0.9); transition:all 0.9s cubic-bezier(0.25,0.46,0.45,0.94); }
         .reveal-scale.active { opacity:1; transform:scale(1); }
         .text-glow { text-shadow:0 0 40px rgba(200,168,78,0.2); }
+
+        @media (max-width:768px) {
+            .section-title { font-size:2rem; }
+            .gallery-grid { grid-template-columns:repeat(2,1fr); grid-template-rows:auto; }
+            .gallery-item:nth-child(1) { grid-column:span 2; grid-row:span 1; }
+            .gallery-item:nth-child(2),.gallery-item:nth-child(3) { grid-column:span 1; grid-row:span 1; }
+            .gallery-item:nth-child(5) { grid-column:span 2; grid-row:span 1; }
+            .dish-card-image { height:220px; }
+            .map-tooltip { width:200px; padding:1rem; }
+            .quote-block { padding:2rem 1.5rem; }
+            .quote-block p { font-size:1.2rem; }
+        }
     </style>
 </head>
 <body>
@@ -509,7 +250,7 @@
     <!-- ═══ NAVBAR ═══ -->
     <nav id="navbar">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <a href="index.html" class="nav-logo flex items-center gap-2 group" style="font-family:'Playfair Display',serif; color:#c8a84e; font-size:1.1rem; transition:font-size 0.5s ease;">
+            <a href="index.html" class="flex items-center gap-2 group" style="font-family:'Playfair Display',serif; color:#c8a84e; font-size:1.1rem; transition:font-size 0.5s ease;">
                 <span class="material-symbols-outlined text-gold/60 group-hover:rotate-180 transition-transform duration-700" style="font-size:1.4rem;">local_fire_department</span>
                 <span class="hidden sm:inline">Crónicas</span>
             </a>
@@ -524,28 +265,21 @@
         </div>
     </nav>
 
-    <!-- ═══ HERO ═══ -->
+    <!-- ═══ HERO — foto hero.png ═══ -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0">
             <div class="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/20 to-charcoal/95 z-10"></div>
-            <div class="absolute inset-0 hero-vignette z-[2]"></div>
-            <div class="absolute inset-0 bg-noise z-[1]" style="background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%220.06%22/%3E%3C/svg%3E');"></div>
-            <div class="w-full h-full bg-cover bg-center hero-parallax-bg" style="background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1600&q=80'); filter:saturate(0.5) brightness(0.35) blur(2px);"></div>
+            <div class="absolute inset-0 z-[2]" style="background:radial-gradient(ellipse at center, transparent 30%, #1a1410 100%);"></div>
+            <div class="absolute inset-0 z-[1]" style="background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%220.06%22/%3E%3C/svg%3E');"></div>
+            <div class="w-full h-full bg-cover bg-center" style="background-image:url('public/images/hero.png'); filter:saturate(0.5) brightness(0.35);"></div>
         </div>
-
         <div class="steam-container z-[3]">
-            <div class="steam-particle"></div>
-            <div class="steam-particle"></div>
-            <div class="steam-particle"></div>
-            <div class="steam-particle"></div>
-            <div class="steam-particle"></div>
+            <div class="steam-particle"></div><div class="steam-particle"></div>
+            <div class="steam-particle"></div><div class="steam-particle"></div>
         </div>
-
         <div class="relative z-10 text-center px-6 max-w-6xl">
             <div class="reveal" style="transition-delay:0.1s">
-                <span class="font-uncial text-gold/25 text-xs md:text-sm tracking-[0.5em] uppercase block mb-4">
-                    Crónicas del Caldero de Cobre
-                </span>
+                <span class="font-uncial text-gold/25 text-xs md:text-sm tracking-[0.5em] uppercase block mb-4">Crónicas del Caldero de Cobre</span>
             </div>
             <div class="reveal" style="transition-delay:0.2s">
                 <h1 id="hero-title" class="font-display text-5xl md:text-7xl lg:text-9xl text-linen leading-[1.05] mb-6">
@@ -553,81 +287,49 @@
                     <span class="dust-text text-gold block text-4xl md:text-6xl lg:text-7xl mt-2">El Sabor del Tiempo</span>
                 </h1>
             </div>
-            <div class="hero-gold-line reveal" style="transition-delay:0.35s"></div>
+            <div class="w-16 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto my-6 reveal" style="transition-delay:0.35s"></div>
             <p class="reveal text-linen-dim/50 max-w-xl mx-auto text-base md:text-lg font-light leading-relaxed" style="transition-delay:0.4s">
                 Donde cada receta es un pergamino que guarda la memoria milenaria de los Cárpatos,<br class="hidden md:block">
                 y cada bocado cuenta una historia de fuego, tierra y hospitalidad.
             </p>
             <div class="mt-12 reveal flex flex-wrap justify-center gap-4" style="transition-delay:0.55s">
                 <a href="#origenes" class="group inline-flex items-center gap-2 bg-gold/10 text-gold border border-gold/25 px-8 py-4 rounded-full hover:bg-gold hover:text-wood-dark transition-all duration-500 backdrop-blur-sm font-body text-xs uppercase tracking-[0.2em] font-semibold">
-                    Iniciar el Viaje
-                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    Iniciar el Viaje <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
-                <a href="#recetario" class="group inline-flex items-center gap-2 text-linen/50 border border-linen/10 px-8 py-4 rounded-full hover:border-gold/30 hover:text-gold transition-all duration-500 font-body text-xs uppercase tracking-[0.2em]">
-                    Ver Platos
-                </a>
+                <a href="#recetario" class="group inline-flex items-center gap-2 text-linen/50 border border-linen/10 px-8 py-4 rounded-full hover:border-gold/30 hover:text-gold transition-all duration-500 font-body text-xs uppercase tracking-[0.2em]">Ver Platos</a>
             </div>
         </div>
-
-        <div class="scroll-indicator">
+        <div class="scroll-indicator" style="position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:0.75rem; z-index:10; animation:float 4s ease-in-out infinite;">
             <span class="text-gold/25 text-[10px] uppercase tracking-[0.4em] font-body">Descubre</span>
-            <div class="scroll-line"></div>
+            <div class="w-px h-12" style="background:linear-gradient(to bottom,#c8a84e,transparent);"></div>
         </div>
     </section>
 
-    <!-- ═══ PARALLAX BREAK 1 ═══ -->
-    <div class="parallax-break" style="background-image:url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1600&q=80');">
-        <div class="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-transparent to-charcoal/80"></div>
-        <div class="absolute inset-0 flex items-center justify-center">
-            <div class="embroidery-divider-sm"></div>
-        </div>
-    </div>
-
-    <!-- ═══ ORÍGENES ═══ -->
+    <!-- ═══ ORÍGENES — foto hero.png con duotone dorado ═══ -->
     <section id="origenes" class="relative py-32 md:py-48 px-6 section-dark">
         <div class="embroidery-divider-lg mb-20"></div>
-
         <div class="relative z-10 max-w-7xl mx-auto">
             <div class="text-center mb-20 reveal">
                 <span class="section-label block">Capítulo I</span>
-                <h2 class="section-title mt-2">
-                    Raíces de <span class="highlight">Trigo y Sangre</span>
-                </h2>
+                <h2 class="section-title mt-2">Raíces de <span class="highlight">Trigo y Sangre</span></h2>
             </div>
-
-            <div class="grid md:grid-cols-2 gap-16 lg:gap-24 items-center mb-32">
+            <div class="grid md:grid-cols-2 gap-16 lg:gap-24 items-center mb-10">
                 <div class="reveal-left">
                     <p class="font-script text-gold/40 text-xl mb-4">— Ospitalitatea —</p>
                     <div class="space-y-6 text-linen-dim/65 leading-relaxed text-base md:text-lg font-light">
-                        <p>
-                            Antes de que existieran los restaurantes, existía <span class="text-linen font-medium">la mesa del campesino rumano</span>. Una puerta siempre abierta, un banco tallado a mano, un plato humeante de ciorbă esperando al viajero cansado.
-                        </p>
-                        <p>
-                            Aquí la comida no se pesa en gramos, sino en <span class="text-gold font-medium">corazón</span>. El dacio que cazaba en los bosques sagrados de Brașov se volvió pastor, y su fogata se transformó en el hogar de la cocina rumana.
-                        </p>
-                        <p class="font-script text-xl text-gold/50 italic">
-                            "Cada bocado que cruje entre los dientes es un eco de siglos de compartir."
-                        </p>
+                        <p>Antes de que existieran los restaurantes, existía <span class="text-linen font-medium">la mesa del campesino rumano</span>. Una puerta siempre abierta, un banco tallado a mano, un plato humeante de ciorbă esperando al viajero cansado.</p>
+                        <p>Aquí la comida no se pesa en gramos, sino en <span class="text-gold font-medium">corazón</span>. El dacio que cazaba en los bosques sagrados de Brașov se volvió pastor, y su fogata se transformó en el hogar de la cocina rumana.</p>
+                        <p class="font-script text-xl text-gold/50 italic">"Cada bocado que cruje entre los dientes es un eco de siglos de compartir."</p>
                     </div>
-                    <div class="mt-10 flex gap-6 flex-wrap">
-                        <div class="flex items-center gap-3 bg-wood/30 px-4 py-2 rounded-full border border-gold/5">
-                            <span class="text-xl">🏛️</span>
-                            <span class="text-[10px] uppercase tracking-widest text-linen-dim/40">Herencia Romana</span>
-                        </div>
-                        <div class="flex items-center gap-3 bg-wood/30 px-4 py-2 rounded-full border border-gold/5">
-                            <span class="text-xl">🕌</span>
-                            <span class="text-[10px] uppercase tracking-widest text-linen-dim/40">Influencia Otomana</span>
-                        </div>
-                        <div class="flex items-center gap-3 bg-wood/30 px-4 py-2 rounded-full border border-gold/5">
-                            <span class="text-xl">🌲</span>
-                            <span class="text-[10px] uppercase tracking-widest text-linen-dim/40">Tradición Campesina</span>
-                        </div>
+                    <div class="mt-10 flex gap-4 flex-wrap">
+                        <span class="text-xs uppercase tracking-widest text-linen-dim/40 bg-wood/30 px-4 py-2 rounded-full border border-gold/5 flex items-center gap-2"><span class="text-lg">🏛️</span> Herencia Romana</span>
+                        <span class="text-xs uppercase tracking-widest text-linen-dim/40 bg-wood/30 px-4 py-2 rounded-full border border-gold/5 flex items-center gap-2"><span class="text-lg">🕌</span> Influencia Otomana</span>
+                        <span class="text-xs uppercase tracking-widest text-linen-dim/40 bg-wood/30 px-4 py-2 rounded-full border border-gold/5 flex items-center gap-2"><span class="text-lg">🌲</span> Tradición Campesina</span>
                     </div>
                 </div>
-
                 <div class="reveal-right relative">
-                    <div class="rounded-3xl overflow-hidden border border-gold/10 shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800&q=80" alt="Campo rumano" class="w-full h-[450px] md:h-[550px] object-cover hover:scale-105 transition-transform duration-700">
+                    <div class="rounded-3xl overflow-hidden border border-gold/10 shadow-2xl img-duotone-gold">
+                        <img src="public/images/hero.png" alt="Tradición rumana" class="w-full h-[450px] md:h-[550px] object-cover hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="absolute -bottom-6 -left-6 bg-wood/90 backdrop-blur-xl border border-gold/15 rounded-2xl p-6 max-w-[220px] shadow-2xl hidden md:block reveal" style="transition-delay:0.6s">
                         <span class="font-script text-gold text-xl leading-none">"Ospitalitatea"</span>
@@ -635,91 +337,35 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Timeline -->
-            <div class="mt-20 reveal">
-                <div class="text-center mb-20">
-                    <span class="section-label block">Línea del Sabor</span>
-                    <h3 class="font-display text-3xl md:text-4xl text-linen mt-2">
-                        Hitos de la <span class="highlight">Cocina Rumana</span>
-                    </h3>
-                </div>
-
-                <div class="timeline-track max-w-4xl mx-auto">
-                    <div class="timeline-item reveal-left">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="text-gold/40 text-xs uppercase tracking-widest font-body">Siglo II d.C.</span>
-                            <h4 class="font-display text-xl text-linen mt-1">Herencia Romana</h4>
-                            <p class="text-linen-dim/50 text-sm mt-2 leading-relaxed font-light">Los colonos romanos trajeron el trigo, el vino y las técnicas de conservación que hoy definen la despensa rumana. Nace la tradición del pan y el cultivo de la vid.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal-right">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="text-gold/40 text-xs uppercase tracking-widest font-body">Siglos XIV–XVII</span>
-                            <h4 class="font-display text-xl text-linen mt-1">Influencia Otomana</h4>
-                            <p class="text-linen-dim/50 text-sm mt-2 leading-relaxed font-light">El Imperio Otomano dejó los <em>sarmale</em> (dolmas), los dulces almibarados y la técnica del café turco. La cocina rumana adopta especias como la pimienta y el tomillo.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal-left">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="text-gold/40 text-xs uppercase tracking-widest font-body">Siglo XIX</span>
-                            <h4 class="font-display text-xl text-linen mt-1">Despertar Nacional</h4>
-                            <p class="text-linen-dim/50 text-sm mt-2 leading-relaxed font-light">Los boyardos rumanos fusionan la cocina francesa con las recetas campesinas. Nacen la alta repostería y los pasteles de influencia balcánica.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal-right">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="text-gold/40 text-xs uppercase tracking-widest font-body">Actualidad</span>
-                            <h4 class="font-display text-xl text-linen mt-1">Renacimiento Rural</h4>
-                            <p class="text-linen-dim/50 text-sm mt-2 leading-relaxed font-light">Chefs rumanos redescubren los ingredientes olvidados: el queso burduf, la polenta de montaña y los fermentos naturales. La <em>ospitalitatea</em> vuelve a ser protagonista.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-
         <div class="embroidery-divider-lg mt-32"></div>
     </section>
 
-    <!-- ═══ RECETARIO POÉTICO ═══ -->
+    <!-- ═══ RECETARIO POÉTICO — las 3 fotos reales de comida rumana ═══ -->
     <section id="recetario" class="relative py-32 md:py-48 px-6 section-wood">
         <div class="relative z-10 max-w-7xl mx-auto text-center mb-20">
             <div class="reveal">
                 <span class="section-label block">Capítulo II</span>
-                <h2 class="section-title mt-2">
-                    El Recetario <span class="highlight">Poético</span>
-                </h2>
-                <p class="text-linen-dim/35 max-w-lg mx-auto mt-4 font-light text-sm">
-                    Donde el fuego cuenta historias y cada plato es un poema escrito con ingredientes.
-                </p>
+                <h2 class="section-title mt-2">El Recetario <span class="highlight">Poético</span></h2>
+                <p class="text-linen-dim/35 max-w-lg mx-auto mt-4 font-light text-sm">Donde el fuego cuenta historias y cada plato es un poema escrito con ingredientes.</p>
             </div>
             <div class="embroidery-divider mt-10"></div>
         </div>
 
-        <!-- 3 main dishes - ALL UNIQUE IMAGES -->
         <div class="relative z-10 max-w-7xl mx-auto grid md:grid-cols-3 gap-8 mb-24">
+            <!-- Sarmale — foto sarmale.png -->
             <div class="dish-card reveal" style="transition-delay:0.1s">
                 <div class="dish-card-image">
-                    <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=800&q=80" alt="Sarmale">
-                    <div class="steam-container">
-                        <div class="steam-particle"></div><div class="steam-particle"></div>
-                        <div class="steam-particle"></div><div class="steam-particle"></div>
-                    </div>
-                    <span class="dish-card-badge">★ Emblemático</span>
+                    <img src="public/images/sarmale.png" alt="Sarmale">
+                    <div class="steam-container"><div class="steam-particle"></div><div class="steam-particle"></div><div class="steam-particle"></div><div class="steam-particle"></div></div>
                 </div>
                 <div class="dish-card-body">
                     <div class="dish-title">Sarmale</div>
                     <div class="dish-subtitle">El Corazón Envuelto</div>
-                    <p class="dish-poem">
-                        "Hojas de col fermentadas que abrazan con ternura una amalgama de carnes especiadas, cocinadas a fuego lento hasta que el tiempo se detiene. Es el abrazo de una abuela en una tarde de invierno."
-                    </p>
+                    <p class="dish-poem">"Hojas de col fermentadas que abrazan con ternura una amalgama de carnes especiadas, cocinadas a fuego lento hasta que el tiempo se detiene. Es el abrazo de una abuela en una tarde de invierno."</p>
                     <div class="ingredients-panel">
                         <div class="mt-6 pt-5 border-t border-gold/10">
-                            <span class="text-[10px] uppercase tracking-[0.2em] text-gold/35 font-body">Ingredientes Secretos</span>
+                            <span class="text-[10px] uppercase tracking-[0.2em] text-gold/35 font-body">Ingredientes</span>
                             <div class="mt-4 space-y-1">
                                 <div class="ingredient-item">Hojas de col fermentada en salmuera</div>
                                 <div class="ingredient-item">Carne de cerdo con tocino y arroz</div>
@@ -732,24 +378,19 @@
                 </div>
             </div>
 
+            <!-- Mămăligă — foto mamaliga.png -->
             <div class="dish-card reveal" style="transition-delay:0.2s">
                 <div class="dish-card-image">
-                    <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=800&q=80" alt="Mămăligă">
-                    <div class="steam-container">
-                        <div class="steam-particle"></div><div class="steam-particle"></div>
-                        <div class="steam-particle"></div><div class="steam-particle"></div>
-                    </div>
-                    <span class="dish-card-badge">★ Tradicional</span>
+                    <img src="public/images/mamaliga.png" alt="Mămăligă">
+                    <div class="steam-container"><div class="steam-particle"></div><div class="steam-particle"></div><div class="steam-particle"></div><div class="steam-particle"></div></div>
                 </div>
                 <div class="dish-card-body">
                     <div class="dish-title">Mămăligă</div>
                     <div class="dish-subtitle">El Oro de la Tierra</div>
-                    <p class="dish-poem">
-                        "Harina de maíz que captura el sol dorado de los campos rumanos, fundiéndose en una textura de seda que espera ser coronada por el frescor ácido de la smântână."
-                    </p>
+                    <p class="dish-poem">"Harina de maíz que captura el sol dorado de los campos rumanos, fundiéndose en una textura de seda que espera ser coronada por el frescor ácido de la smântână."</p>
                     <div class="ingredients-panel">
                         <div class="mt-6 pt-5 border-t border-gold/10">
-                            <span class="text-[10px] uppercase tracking-[0.2em] text-gold/35 font-body">Ingredientes Secretos</span>
+                            <span class="text-[10px] uppercase tracking-[0.2em] text-gold/35 font-body">Ingredientes</span>
                             <div class="mt-4 space-y-1">
                                 <div class="ingredient-item">Harina de maíz amarilla de los Cárpatos</div>
                                 <div class="ingredient-item">Agua de manantial y sal marina</div>
@@ -762,24 +403,19 @@
                 </div>
             </div>
 
+            <!-- Papanași — foto papanasi.png -->
             <div class="dish-card reveal" style="transition-delay:0.3s">
                 <div class="dish-card-image">
-                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&q=80" alt="Papanași">
-                    <div class="steam-container">
-                        <div class="steam-particle"></div><div class="steam-particle"></div>
-                        <div class="steam-particle"></div><div class="steam-particle"></div>
-                    </div>
-                    <span class="dish-card-badge">★ Postre</span>
+                    <img src="public/images/papanasi.png" alt="Papanași">
+                    <div class="steam-container"><div class="steam-particle"></div><div class="steam-particle"></div><div class="steam-particle"></div><div class="steam-particle"></div></div>
                 </div>
                 <div class="dish-card-body">
                     <div class="dish-title">Papanași</div>
                     <div class="dish-subtitle">El Pecado de Nieve y Fuego</div>
-                    <p class="dish-poem">
-                        "Nubes de queso fresco fritas hasta alcanzar un dorado celestial, bañadas en una lluvia de mermelada de frutos del bosque. El calor del postre se encuentra con el frío de la crema."
-                    </p>
+                    <p class="dish-poem">"Nubes de queso fresco fritas hasta alcanzar un dorado celestial, bañadas en una lluvia de mermelada de frutos del bosque. El calor del postre se encuentra con el frío de la crema."</p>
                     <div class="ingredients-panel">
                         <div class="mt-6 pt-5 border-t border-gold/10">
-                            <span class="text-[10px] uppercase tracking-[0.2em] text-gold/35 font-body">Ingredientes Secretos</span>
+                            <span class="text-[10px] uppercase tracking-[0.2em] text-gold/35 font-body">Ingredientes</span>
                             <div class="mt-4 space-y-1">
                                 <div class="ingredient-item">Queso fresco de vaca (urda)</div>
                                 <div class="ingredient-item">Harina blanca y huevos de campo</div>
@@ -793,71 +429,77 @@
             </div>
         </div>
 
-        <!-- Extended grid - ALL UNIQUE IMAGES -->
+        <!-- Más platos rumanos — con iconos, sin inventar imágenes -->
         <div class="relative z-10 max-w-7xl mx-auto">
             <div class="text-center mb-14 reveal">
-                <span class="font-script text-gold/35 text-xl">Más sabores que descubrir</span>
+                <span class="font-script text-gold/35 text-xl">Más platos rumanos</span>
                 <div class="embroidery-divider mt-6" style="max-width:300px;"></div>
             </div>
-
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="dish-grid-card reveal" style="transition-delay:0.1s">
-                    <div class="thumb"><img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80" alt="Ciorbă"></div>
+                <div class="dish-icon-card reveal" style="transition-delay:0.1s">
+                    <div class="icon-area"><span class="emoji-big">🍜</span></div>
                     <div class="info">
                         <h4>Ciorbă</h4>
-                        <p>Sopa agria fermentada con borș natural, verduras de temporada y el alma de la tierra.</p>
+                        <p>Sopa agria fermentada con borș natural, verduras de temporada y el alma curativa de la tierra rumana.</p>
                     </div>
                 </div>
-                <div class="dish-grid-card reveal" style="transition-delay:0.2s">
-                    <div class="thumb"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Mici"></div>
+                <div class="dish-icon-card reveal" style="transition-delay:0.2s">
+                    <div class="icon-area"><span class="emoji-big">🥩</span></div>
                     <div class="info">
                         <h4>Mici</h4>
-                        <p>Salchichas a la parrilla sin tripa, con ajo y especias secretas. La reina del street food.</p>
+                        <p>Salchichas a la parrilla sin tripa, con ajo y especias secretas. La reina indiscutible del street food rumano.</p>
                     </div>
                 </div>
-                <div class="dish-grid-card reveal" style="transition-delay:0.3s">
-                    <div class="thumb"><img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=600&q=80" alt="Cozonac"></div>
+                <div class="dish-icon-card reveal" style="transition-delay:0.3s">
+                    <div class="icon-area"><span class="emoji-big">🥮</span></div>
                     <div class="info">
                         <h4>Cozonac</h4>
-                        <p>Pan dulce trenzado con cacao, nueces y turrón. Solo en las grandes celebraciones.</p>
+                        <p>Pan dulce trenzado con cacao, nueces y turrón. Solo se hornea en las grandes celebraciones rumanas.</p>
                     </div>
                 </div>
-                <div class="dish-grid-card reveal" style="transition-delay:0.4s">
-                    <div class="thumb"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="Tochitură"></div>
+                <div class="dish-icon-card reveal" style="transition-delay:0.4s">
+                    <div class="icon-area"><span class="emoji-big">🍲</span></div>
                     <div class="info">
                         <h4>Tochitură</h4>
-                        <p>Festín de carnes en su jugo servido sobre mămăligă, coronado con huevo y crema.</p>
+                        <p>Festín de carnes en su jugo servido sobre cama de mămăligă caliente, coronado con huevo frito y crema.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+                <div class="dish-icon-card reveal" style="transition-delay:0.1s">
+                    <div class="icon-area"><span class="emoji-big">🥧</span></div>
+                    <div class="info">
+                        <h4>Plăcintă</h4>
+                        <p>Empanada horneada rellena de queso telemea, eneldo y huevo. Cada región tiene su propia versión.</p>
+                    </div>
+                </div>
+                <div class="dish-icon-card reveal" style="transition-delay:0.2s">
+                    <div class="icon-area"><span class="emoji-big">🐟</span></div>
+                    <div class="info">
+                        <h4>Saramură de Pește</h4>
+                        <p>Pescado fresco del Danubio cocido en salmuera con ajos, tomates y verduras. El alma del Delta.</p>
+                    </div>
+                </div>
+                <div class="dish-icon-card reveal" style="transition-delay:0.3s">
+                    <div class="icon-area"><span class="emoji-big">🥗</span></div>
+                    <div class="info">
+                        <h4>Salată de Vinete</h4>
+                        <p>Puré de berenjenas asadas con cebolla, aceite y limón. La entrada fría más querida de Rumanía.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ═══ PARALLAX BREAK 2 ═══ -->
-    <div class="parallax-break" style="background-image:url('https://images.unsplash.com/photo-1559847844-5315695dadae?w=1600&q=80');">
-        <div class="absolute inset-0 bg-gradient-to-b from-charcoal/70 via-transparent to-charcoal/70"></div>
-        <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-center px-6">
-                <span class="font-script text-gold/30 text-2xl md:text-3xl block reveal">"La tierra da lo que el alma necesita"</span>
-            </div>
-        </div>
-    </div>
-
     <!-- ═══ MAPA INTERACTIVO ═══ -->
     <section id="mapa" class="relative py-32 md:py-48 px-6 section-dark">
         <div class="embroidery-divider-lg mb-20"></div>
-
         <div class="relative z-10 max-w-7xl mx-auto">
             <div class="text-center mb-16 reveal">
                 <span class="section-label block">Capítulo III</span>
-                <h2 class="section-title mt-2">
-                    La Despensa <span class="highlight">Geográfica</span>
-                </h2>
-                <p class="text-linen-dim/35 max-w-lg mx-auto mt-4 font-light text-sm">
-                    Un país dividido por montañas y ríos, unido por el amor a la mesa. Pasa el cursor sobre cada región.
-                </p>
+                <h2 class="section-title mt-2">La Despensa <span class="highlight">Geográfica</span></h2>
+                <p class="text-linen-dim/35 max-w-lg mx-auto mt-4 font-light text-sm">Un país dividido por montañas y ríos, unido por el amor a la mesa. Pasa el cursor sobre cada región.</p>
             </div>
-
             <div id="map-container" class="relative flex flex-col lg:flex-row items-center gap-12 justify-center">
                 <div class="relative w-full max-w-[500px] shrink-0 reveal-left">
                     <svg id="romania-map" viewBox="0 0 500 420" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -873,18 +515,16 @@
                         <text x="250" y="400" fill="rgba(200,168,78,0.12)" font-size="7" text-anchor="middle" font-family="serif" font-style="italic">Crónicas del Caldero de Cobre · Cartografía del Sabor</text>
                     </svg>
                 </div>
-
                 <div id="map-tooltip" class="map-tooltip relative lg:absolute">
                     <div class="flex items-center gap-2 mb-2">
                         <span id="region-dot" class="w-3 h-3 rounded-full bg-gold/50"></span>
                         <h4 id="region-name">Transilvania</h4>
                     </div>
-                    <div class="monument" id="region-monument">🏰 Castillo de Bran</div>
-                    <div class="dish-label mt-3" id="region-dish">🍲 Gulyás transilvano</div>
+                    <div class="monument" id="region-monument" style="font-size:0.8rem; color:rgba(245,239,230,0.5); margin:0.25rem 0;">🏰 Castillo de Bran</div>
+                    <div class="dish-label mt-3" id="region-dish" style="font-family:'Caveat',cursive; font-size:1.15rem; color:rgba(245,239,230,0.85);">🍲 Gulyás transilvano</div>
                     <p class="text-xs text-linen-dim/25 mt-3 italic font-light" id="region-desc">Tierras altas bañadas por leyendas y bosques milenarios.</p>
                 </div>
             </div>
-
             <div class="flex flex-wrap justify-center gap-3 mt-12 reveal">
                 <button class="region-pill bg-gold/10 text-gold border border-gold/20 px-6 py-2.5 rounded-full text-xs uppercase tracking-[0.15em] hover:bg-gold hover:text-wood-dark transition-all duration-300 font-medium" data-region="transilvania">Transilvania</button>
                 <button class="region-pill bg-blood/10 text-blood-light border border-blood/20 px-6 py-2.5 rounded-full text-xs uppercase tracking-[0.15em] hover:bg-blood hover:text-linen transition-all duration-300 font-medium" data-region="moldavia">Moldavia</button>
@@ -892,55 +532,37 @@
                 <button class="region-pill bg-blood/10 text-blood-light border border-blood/20 px-6 py-2.5 rounded-full text-xs uppercase tracking-[0.15em] hover:bg-blood hover:text-linen transition-all duration-300 font-medium" data-region="dobrogea">Dobrogea</button>
             </div>
         </div>
-
         <div class="embroidery-divider-lg mt-32"></div>
     </section>
 
-    <!-- ═══ GALERÍA VISUAL ═══ -->
+    <!-- ═══ GALERÍA — solo las 4 fotos locales con tratamientos distintos ═══ -->
     <section id="galeria" class="relative py-32 md:py-48 px-6 section-wood">
         <div class="relative z-10 max-w-7xl mx-auto">
             <div class="text-center mb-16 reveal">
                 <span class="section-label block">Galería</span>
-                <h2 class="section-title mt-2">
-                    Estampas de <span class="highlight">Tradición</span>
-                </h2>
-                <p class="text-linen-dim/35 max-w-md mx-auto mt-4 font-light text-sm">
-                    Una ventana a los paisajes, los rostros y los sabores que hacen única a Rumanía.
-                </p>
+                <h2 class="section-title mt-2">Estampas de <span class="highlight">Tradición</span></h2>
+                <p class="text-linen-dim/35 max-w-md mx-auto mt-4 font-light text-sm">Una ventana a los sabores que hacen única a la cocina rumana.</p>
             </div>
-
             <div class="gallery-grid reveal-scale">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80" alt="Paisaje rumano">
+                    <img src="public/images/hero.png" alt="Paisaje rumano">
                     <div class="gallery-item-overlay"><span>Los Cárpatos al atardecer</span></div>
                 </div>
                 <div class="gallery-item">
-                    <img src="public/images/sarmale.png" alt="Sarmale">
+                    <img src="public/images/sarmale.png" alt="Sarmale" class="img-duotone-gold">
                     <div class="gallery-item-overlay"><span>Sarmale recién hechas</span></div>
                 </div>
                 <div class="gallery-item">
-                    <img src="public/images/papanasi.png" alt="Papanași">
+                    <img src="public/images/papanasi.png" alt="Papanași" class="img-duotone-warm">
                     <div class="gallery-item-overlay"><span>Papanași con frutos rojos</span></div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&q=80" alt="Mercado tradicional">
-                    <div class="gallery-item-overlay"><span>Mercado campesino</span></div>
+                    <img src="public/images/mamaliga.png" alt="Mămăligă" class="img-duotone-gold" style="object-position:50% 30%;">
+                    <div class="gallery-item-overlay"><span>Mămăligă con queso</span></div>
                 </div>
                 <div class="gallery-item">
-                    <img src="public/images/mamaliga.png" alt="Mămăligă">
-                    <div class="gallery-item-overlay"><span>Mămăligă con queso y crema</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&q=80" alt="Cocina tradicional">
-                    <div class="gallery-item-overlay"><span>Fogón tradicional</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="public/images/hero.png" alt="Mesa rumana">
+                    <img src="public/images/hero.png" alt="Mesa tradicional" class="img-duotone-dark" style="object-position:50% 60%;">
                     <div class="gallery-item-overlay"><span>Hospitalidad rumana</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=800&q=80" alt="Panes tradicionales">
-                    <div class="gallery-item-overlay"><span>Panes de celebración</span></div>
                 </div>
             </div>
         </div>
@@ -951,14 +573,9 @@
         <div class="relative z-10 max-w-7xl mx-auto">
             <div class="text-center mb-20 reveal">
                 <span class="section-label block">Brindis</span>
-                <h2 class="section-title mt-2">
-                    Bebidas que <span class="highlight">Cuentan Historias</span>
-                </h2>
-                <p class="text-linen-dim/35 max-w-lg mx-auto mt-4 font-light text-sm">
-                    Desde el fuego de la țuică hasta la dulzura del vișinată, cada trago es un viaje.
-                </p>
+                <h2 class="section-title mt-2">Bebidas que <span class="highlight">Cuentan Historias</span></h2>
+                <p class="text-linen-dim/35 max-w-lg mx-auto mt-4 font-light text-sm">Desde el fuego de la țuică hasta la dulzura del vișinată, cada trago es un viaje.</p>
             </div>
-
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="drink-card reveal" style="transition-delay:0.1s">
                     <span class="icon-emoji">🥃</span>
@@ -978,20 +595,9 @@
                 <div class="drink-card reveal" style="transition-delay:0.4s">
                     <span class="icon-emoji">🍷</span>
                     <h4>Vino de Cotnari</h4>
-                    <p>Uno de los vinos más antiguos de Europa, dulce y dorado. Los catadores lo llaman "el oro líquido de Moldavia". Acompaña quesos y postres.</p>
+                    <p>Uno de los vinos más antiguos de Europa, dulce y dorado. Los catadores lo llaman "el oro líquido de Moldavia".</p>
                 </div>
             </div>
-
-            <div class="mt-16 flex justify-center reveal">
-                <div class="bg-wood/30 border border-gold/10 rounded-2xl p-4 md:p-6 inline-flex items-center gap-4">
-                    <span class="text-3xl">🍷</span>
-                    <div class="text-left">
-                        <span class="font-script text-gold/50 text-sm block">Dato curioso</span>
-                        <p class="text-linen-dim/50 text-xs">Rumanía es el 6º productor de vino de Europa, con más de 2.000 años de tradición vinícola.</p>
-                    </div>
-                </div>
-            </div>
-
             <div class="quote-block mt-24 reveal">
                 <p>El vino rumano es la poesía líquida de una tierra que ha visto pasar imperios y ha guardado sus cepas como un tesoro.</p>
                 <cite>— Proverbio de Moldavia</cite>
@@ -1002,67 +608,43 @@
     <!-- ═══ TRADICIONES ═══ -->
     <section id="tradiciones" class="relative py-32 md:py-48 px-6" style="background:linear-gradient(180deg,#1a1410 0%,#2c1810 30%,#1a1410 100%);">
         <div class="embroidery-divider-lg mb-20"></div>
-
         <div class="relative z-10 max-w-7xl mx-auto">
             <div class="text-center mb-20 reveal">
                 <span class="section-label block">Capítulo IV</span>
-                <h2 class="section-title mt-2">
-                    Fuego, Fiesta y <span class="highlight">Tradición</span>
-                </h2>
-                <p class="text-linen-dim/35 max-w-lg mx-auto mt-4 font-light text-sm">
-                    La comida rumana no se come sola: viene acompañada de rituales, música y celebraciones que unen a comunidades enteras.
-                </p>
+                <h2 class="section-title mt-2">Fuego, Fiesta y <span class="highlight">Tradición</span></h2>
+                <p class="text-linen-dim/35 max-w-lg mx-auto mt-4 font-light text-sm">La comida rumana no se come sola: viene acompañada de rituales, música y celebraciones que unen a comunidades enteras.</p>
             </div>
-
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-wood/30 border border-gold/10 rounded-2xl p-8 hover:border-gold/25 transition-all duration-500 reveal" style="transition-delay:0.1s">
-                    <div class="w-16 h-16 rounded-full bg-wood/50 border border-gold/10 flex items-center justify-center mb-5 mx-auto">
-                        <span class="text-3xl">🐖</span>
-                    </div>
+                    <div class="w-16 h-16 rounded-full bg-wood/50 border border-gold/10 flex items-center justify-center mb-5 mx-auto"><span class="text-3xl">🐖</span></div>
                     <h3 class="font-display text-xl text-gold mb-3 text-center">Ignat · La Matanza</h3>
-                    <p class="text-linen-dim/45 text-sm leading-relaxed font-light text-center">Cada 20 de diciembre, las familias rumanas se reúnen para la matanza del cerdo. Es un ritual que marca el inicio de la Navidad: se preparan chiftele, tobă, caltaboș y el legendario piftie.</p>
+                    <p class="text-linen-dim/45 text-sm leading-relaxed font-light text-center">Cada 20 de diciembre, las familias rumanas se reúnen para la matanza del cerdo. Se preparan chiftele, tobă, caltaboș y el legendario piftie.</p>
                 </div>
                 <div class="bg-wood/30 border border-gold/10 rounded-2xl p-8 hover:border-gold/25 transition-all duration-500 reveal" style="transition-delay:0.2s">
-                    <div class="w-16 h-16 rounded-full bg-wood/50 border border-gold/10 flex items-center justify-center mb-5 mx-auto">
-                        <span class="text-3xl">🥚</span>
-                    </div>
+                    <div class="w-16 h-16 rounded-full bg-wood/50 border border-gold/10 flex items-center justify-center mb-5 mx-auto"><span class="text-3xl">🥚</span></div>
                     <h3 class="font-display text-xl text-gold mb-3 text-center">Paști · Pascua</h3>
-                    <p class="text-linen-dim/45 text-sm leading-relaxed font-light text-center">El cozonac (pan dulce trenzado), los huevos rojos teñidos con cebolla y el cordero asado son los protagonistas. Cada casa compite por el cozonac más esponjoso.</p>
+                    <p class="text-linen-dim/45 text-sm leading-relaxed font-light text-center">El cozonac, los huevos rojos teñidos con cebolla y el cordero asado son los protagonistas de la Pascua rumana.</p>
                 </div>
                 <div class="bg-wood/30 border border-gold/10 rounded-2xl p-8 hover:border-gold/25 transition-all duration-500 reveal" style="transition-delay:0.3s">
-                    <div class="w-16 h-16 rounded-full bg-wood/50 border border-gold/10 flex items-center justify-center mb-5 mx-auto">
-                        <span class="text-3xl">🌽</span>
-                    </div>
+                    <div class="w-16 h-16 rounded-full bg-wood/50 border border-gold/10 flex items-center justify-center mb-5 mx-auto"><span class="text-3xl">🌽</span></div>
                     <h3 class="font-display text-xl text-gold mb-3 text-center">Sărbătoarea Mălaiului</h3>
-                    <p class="text-linen-dim/45 text-sm leading-relaxed font-light text-center">La Fiesta de la Harina de Maíz celebra la cosecha de otoño. Pueblos enteros preparan mămăligă gigante en calderos de cobre mientras los violines llenan el aire.</p>
+                    <p class="text-linen-dim/45 text-sm leading-relaxed font-light text-center">La Fiesta de la Harina de Maíz celebra la cosecha de otoño. Pueblos enteros preparan mămăligă gigante en calderos de cobre.</p>
                 </div>
             </div>
-
             <div class="mt-24 max-w-4xl mx-auto bg-wood/20 border border-gold/10 rounded-3xl p-8 md:p-12 reveal">
                 <div class="flex flex-col md:flex-row gap-8 items-center">
-                    <div class="w-20 h-20 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
-                        <span class="text-4xl">🎻</span>
-                    </div>
+                    <div class="w-20 h-20 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0"><span class="text-4xl">🎻</span></div>
                     <div>
                         <h3 class="font-display text-2xl text-linen mb-2">Música y Mesa</h3>
-                        <p class="text-linen-dim/45 text-sm leading-relaxed font-light">En Rumanía no hay fiesta sin <em>lăutari</em> (músicos tradicionales). Mientras se sirve el sarmale, los violines y címbalos llenan la sala. La comida sin música es como un día sin sol — dicen los ancianos —, y el baile es el mejor digestivo.</p>
+                        <p class="text-linen-dim/45 text-sm leading-relaxed font-light">En Rumanía no hay fiesta sin <em>lăutari</em> (músicos tradicionales). Mientras se sirve el sarmale, los violines y címbalos llenan la sala. La comida sin música es como un día sin sol — dicen los ancianos.</p>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="embroidery-divider-lg mt-32"></div>
     </section>
 
-    <!-- ═══ PARALLAX BREAK 3 ═══ -->
-    <div class="parallax-break" style="background-image:url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1600&q=80');">
-        <div class="absolute inset-0 bg-gradient-to-b from-charcoal/70 via-transparent to-charcoal/80"></div>
-        <div class="absolute inset-0 flex items-center justify-center">
-            <div class="embroidery-divider-sm"></div>
-        </div>
-    </div>
-
-    <!-- ═══ CIERRE POÉTICO ═══ -->
+    <!-- ═══ CIERRE ═══ -->
     <section class="relative py-32 px-6 section-blood">
         <div class="relative z-10 max-w-4xl mx-auto text-center reveal">
             <span class="font-uncial text-gold/15 text-xs tracking-[0.5em] uppercase block mb-8">Epílogo</span>
@@ -1070,7 +652,6 @@
                 <p>La cocina rumana no se aprende en los libros: se hereda en las manos que amasan, en el fuego que nunca se apaga y en la mesa que siempre tiene un lugar para el que llega.</p>
                 <cite>— Crónicas del Caldero de Cobre</cite>
             </div>
-            <div class="embroidery-divider mt-12" style="max-width:150px;"></div>
         </div>
     </section>
 
@@ -1087,16 +668,12 @@
                 <a href="#galeria" class="hover:text-gold transition-colors duration-300">Galería</a>
             </div>
             <div class="mt-16 pt-8 border-t border-gold/5">
-                <p class="text-linen-dim/10 text-[9px] uppercase tracking-[0.3em] font-body">
-                    &copy; 2025 — Un viaje por el sabor del tiempo · Hecho con &hearts;
-                </p>
+                <p class="text-linen-dim/10 text-[9px] uppercase tracking-[0.3em] font-body">&copy; 2025 — Un viaje por el sabor del tiempo · Hecho con &hearts;</p>
             </div>
         </div>
     </footer>
 
     <!-- ═══ SCRIPTS ═══ -->
-
-    <!-- Smoke Canvas -->
     <script>
         (function(){
             const c=document.getElementById('smoke-canvas'),x=c.getContext('2d');
@@ -1117,34 +694,32 @@
         })();
     </script>
 
-    <!-- Dust Title -->
     <script>
         (function(){
-            const title=document.getElementById('hero-title'),chars=title.querySelectorAll('.dust-text');
-            let dispersed=false;
-            chars.forEach(el=>{
-                const t=el.textContent;
+            const t=document.getElementById('hero-title'),ch=t.querySelectorAll('.dust-text');
+            let d=false;
+            ch.forEach(el=>{
+                const tx=el.textContent;
                 el.innerHTML='';
-                t.split('').forEach((ch,i)=>{
+                tx.split('').forEach((c,i)=>{
                     const s=document.createElement('span');
                     s.className='dust-char';
-                    s.textContent=ch===' '?'\u00A0':ch;
+                    s.textContent=c===' '?'\u00A0':c;
                     s.style.setProperty('--dx',(Math.random()-0.5)*100+'px');
                     s.style.setProperty('--dy',-(40+Math.random()*80)+'px');
                     s.style.setProperty('--dr',(Math.random()-0.5)*50+'deg');
                     el.appendChild(s);
                 });
             });
-            const all=title.querySelectorAll('.dust-char');
+            const al=t.querySelectorAll('.dust-char');
             window.addEventListener('scroll',()=>{
                 const s=window.scrollY,h=document.getElementById('hero').offsetHeight,p=Math.min(s/(h*0.5),1);
-                if(p>0.12&&!dispersed){dispersed=true;all.forEach((ch,i)=>{setTimeout(()=>ch.classList.add('dispersing'),i*12)})}
-                else if(p<=0.04&&dispersed){dispersed=false;all.forEach(ch=>ch.classList.remove('dispersing'))}
+                if(p>0.12&&!d){d=true;al.forEach((c,i)=>{setTimeout(()=>c.classList.add('dispersing'),i*12)})}
+                else if(p<=0.04&&d){d=false;al.forEach(c=>c.classList.remove('dispersing'))}
             });
         })();
     </script>
 
-    <!-- Scroll Reveal -->
     <script>
         (function(){
             const o=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('active')})},{threshold:0.08});
@@ -1152,14 +727,13 @@
         })();
     </script>
 
-    <!-- Interactive Map -->
     <script>
         (function(){
             const r={
-                transilvania:{name:'Transilvania',monument:'🏰 Castillo de Bran',dish:'🍲 Gulyás transilvano',desc:'Tierras altas bañadas por leyendas y bosques milenarios. Aquí Drácula y la gastronomía se dan la mano.',dot:'#c8a84e'},
-                moldavia:{name:'Moldavia',monument:'⛪ Monasterios Pintados',dish:'🥟 Plăcinte (empanadas divinas)',desc:'Donde la fe ortodoxa y la cocina se encuentran, creando sabores que alimentan el alma.',dot:'#a83232'},
-                muntenia:{name:'Muntenia',monument:'🎭 El Ateneo Rumano',dish:'🔥 Mititei (la esencia de la parrilla)',desc:'El corazón cultural de Rumanía, donde la tradición parrillera alcanza su máxima expresión.',dot:'#c8a84e'},
-                dobrogea:{name:'Dobrogea',monument:'🌊 El Delta del Danubio',dish:'🐟 Saramură de pește (el alma del río)',desc:'Donde el río Danubio se funde con el Mar Negro, creando una cocina única de agua dulce y salada.',dot:'#a83232'}
+                transilvania:{name:'Transilvania',monument:'🏰 Castillo de Bran',dish:'🍲 Gulyás transilvano',desc:'Tierras altas bañadas por leyendas y bosques milenarios.',dot:'#c8a84e'},
+                moldavia:{name:'Moldavia',monument:'⛪ Monasterios Pintados',dish:'🥟 Plăcinte (empanadas divinas)',desc:'Donde la fe ortodoxa y la cocina se encuentran.',dot:'#a83232'},
+                muntenia:{name:'Muntenia',monument:'🎭 El Ateneo Rumano',dish:'🔥 Mititei (la esencia de la parrilla)',desc:'El corazón cultural de Rumanía.',dot:'#c8a84e'},
+                dobrogea:{name:'Dobrogea',monument:'🌊 El Delta del Danubio',dish:'🐟 Saramură de pește (el alma del río)',desc:'Donde el Danubio se funde con el Mar Negro.',dot:'#a83232'}
             };
             const t=document.getElementById('map-tooltip'),ne=document.getElementById('region-name'),me=document.getElementById('region-monument'),de=document.getElementById('region-dish'),se=document.getElementById('region-desc'),de2=document.getElementById('region-dot'),rp=document.querySelectorAll('.map-region'),pi=document.querySelectorAll('.region-pill');
             function sh(id){
@@ -1176,11 +750,10 @@
         })();
     </script>
 
-    <!-- Navbar scroll -->
     <script>
         (function(){
-            const nav=document.getElementById('navbar');
-            window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>80)});
+            const n=document.getElementById('navbar');
+            window.addEventListener('scroll',()=>{n.classList.toggle('scrolled',window.scrollY>80)});
         })();
     </script>
 
