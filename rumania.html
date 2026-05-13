@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rumanía: Tradición y Sazón – Un viaje por los sabores auténticos de la cocina rumana.">
+    <title>Rumanía: Tradición y Sazón | Gastronomía</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <!-- Tailwind config -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#974400",
+                        secondary: "#705d00",
+                        tertiary: "#006c0c",
+                        background: "#fff8f6",
+                        surface: "#fff8f6",
+                        "on-background": "#231914",
+                        "on-surface": "#231914",
+                        "surface-variant": "#f2dfd5",
+                        "outline": "#8a7266",
+                        "primary-container": "#bb5808",
+                        "on-primary-container": "#ffffff",
+                        "secondary-container": "#fcd400",
+                        "tertiary-container": "#1c871e",
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        body: ["Plus Jakarta Sans", "sans-serif"],
+                        mono: ["Space Grotesk", "monospace"],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass {
+            background: rgba(255, 248, 246, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(138, 114, 102, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #974400 0%, #705d00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(151, 68, 0, 0.1);
+        }
+        .card-img-zoom {
+            overflow: hidden;
+        }
+        .card-img-zoom img {
+            transition: transform 0.5s ease;
+        }
+        .card-img-zoom:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary/20 selection:text-primary">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-outline/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <span class="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform duration-500">restaurant</span>
+                <span class="font-mono font-bold tracking-tighter text-xl uppercase">RUMANÍA</span>
+            </a>
+            <div class="hidden md:flex gap-8 text-sm font-semibold tracking-wider uppercase">
+                <a href="#intro" class="hover:text-primary transition-colors">Orígenes</a>
+                <a href="#platos" class="hover:text-primary transition-colors">Platos</a>
+                <a href="#regiones" class="hover:text-primary transition-colors">Regiones</a>
+                <a href="#dulces" class="hover:text-primary transition-colors">Dulcería</a>
+            </div>
+            <button class="bg-primary text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary-container transition-all shadow-lg">
+                Reservar Mesa
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden parallax" style="background-image: url('public/images/hero.png')">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 text-center px-6">
+            <span class="font-mono text-white/80 tracking-[0.4em] uppercase text-xs mb-4 block reveal">Tradición & Sazón</span>
+            <h1 class="font-display text-5xl md:text-8xl text-white mb-6 leading-tight reveal">Rumanía: <br><span class="italic font-normal">Tierra de Sabores</span></h1>
+            <p class="text-white/90 max-w-2xl mx-auto text-lg md:text-xl font-light reveal">Un recorrido por los aromas y recetas que definen el alma de la cocina rumana, desde los Cárpatos hasta el Danubio.</p>
+            <div class="mt-12 reveal">
+                <a href="#intro" class="inline-flex items-center gap-2 text-white border border-white/30 px-8 py-4 rounded-full hover:bg-white hover:text-primary transition-all backdrop-blur-sm">
+                    Descubrir más <span class="material-symbols-outlined">arrow_downward</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-24">
+
+        <!-- Intro Narrative -->
+        <section id="intro" class="grid md:grid-cols-2 gap-16 items-center mb-32 reveal">
+            <div>
+                <h2 class="font-display text-4xl md:text-5xl mb-8 leading-tight">Más que una receta, <br>un <span class="text-primary italic">legado de siglos</span>.</h2>
+                <p class="text-lg text-on-background/70 leading-relaxed mb-6">
+                    La gastronomía rumana es el reflejo de siglos de historia entre Oriente y Occidente. Cada plato cuenta la historia de las influencias romanas, otomanas, húngaras y eslavas que moldearon esta tierra.
+                </p>
+                <div class="flex gap-4">
+                    <div class="flex-1 p-6 bg-surface-variant/30 rounded-2xl border border-outline/5">
+                        <span class="text-3xl mb-2 block">🏛️</span>
+                        <h4 class="font-bold text-sm uppercase mb-1">Latina</h4>
+                        <p class="text-xs text-on-background/60">Raíces romanas y tradición agrícola.</p>
+                    </div>
+                    <div class="flex-1 p-6 bg-surface-variant/30 rounded-2xl border border-outline/5">
+                        <span class="text-3xl mb-2 block">🕌</span>
+                        <h4 class="font-bold text-sm uppercase mb-1">Oriental</h4>
+                        <p class="text-xs text-on-background/60">Influencia otomana y balcánica.</p>
+                    </div>
+                    <div class="flex-1 p-6 bg-surface-variant/30 rounded-2xl border border-outline/5">
+                        <span class="text-3xl mb-2 block">🌲</span>
+                        <h4 class="font-bold text-sm uppercase mb-1">Campesina</h4>
+                        <p class="text-xs text-on-background/60">Setas, encurtidos y ahumados.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-3xl overflow-hidden shadow-2xl -rotate-2 hover:rotate-0 transition-transform duration-700">
+                <img src="public/images/sarmale.png" alt="Sarmale rumanas" class="w-full h-full object-cover">
+            </div>
+        </section>
+
+        <!-- Eje Central: Maíz -->
+        <section id="maiz" class="mb-32">
+            <div class="text-center mb-16 reveal">
+                <span class="font-mono text-primary tracking-widest uppercase text-xs">El Cimiento</span>
+                <h2 class="font-display text-4xl md:text-5xl mt-2">El Alma Campesina: Mămăligă</h2>
+                <p class="text-on-background/60 mt-4 max-w-xl mx-auto">La humilde polenta rumana que conquistó todas las mesas del país.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 reveal">
+                <!-- Mamaliga Card -->
+                <div class="group bg-white rounded-[2.5rem] overflow-hidden shadow-xl hover-lift">
+                    <div class="h-80 card-img-zoom relative">
+                        <img src="public/images/mamaliga.png" alt="Mămăligă tradicional" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8 text-white">
+                            <h3 class="text-3xl font-display">Mămăligă</h3>
+                            <p class="text-sm opacity-80 mt-2">La polenta que alimenta generaciones.</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 bg-background rounded-2xl border border-outline/5">
+                                <h4 class="font-bold text-primary text-sm uppercase">Clásica</h4>
+                                <p class="text-xs text-on-background/60 mt-1">Con crema agria y queso telemea.</p>
+                            </div>
+                            <div class="p-4 bg-background rounded-2xl border border-outline/5">
+                                <h4 class="font-bold text-primary text-sm uppercase">Con Sarmale</h4>
+                                <p class="text-xs text-on-background/60 mt-1">Acompaña a los rollos de col.</p>
+                            </div>
+                            <div class="p-4 bg-background rounded-2xl border border-outline/5">
+                                <h4 class="font-bold text-primary text-sm uppercase">Mămăligă Cu Brânză</h4>
+                                <p class="text-xs text-on-background/60 mt-1">Con queso burduf y mantequilla.</p>
+                            </div>
+                            <div class="p-4 bg-background rounded-2xl border border-outline/5">
+                                <h4 class="font-bold text-primary text-sm uppercase">Fiertă</h4>
+                                <p class="text-xs text-on-background/60 mt-1">Hervida con leche y mermelada.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tochitura Card -->
+                <div class="group bg-white rounded-[2.5rem] overflow-hidden shadow-xl hover-lift">
+                    <div class="h-80 card-img-zoom relative">
+                        <img src="public/images/mamaliga.png" alt="Tochitură" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8 text-white">
+                            <h3 class="text-3xl font-display">Tochitură</h3>
+                            <p class="text-sm opacity-80 mt-2">Festín de carnes en su jugo.</p>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col justify-center h-full">
+                        <p class="text-on-background/70 leading-relaxed italic">
+                            "Guiso de cerdo, carnitas ahumadas y mici servidos sobre una cama de mămăligă caliente, bañados en crema agria y acompañados de un huevo frito coronando el plato."
+                        </p>
+                        <div class="mt-6 flex items-center gap-2 text-primary font-bold">
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="text-sm uppercase tracking-tighter">Favorito Nacional</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platos Estructurales -->
+        <section id="platos" class="mb-32">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+                <div class="max-w-xl">
+                    <span class="font-mono text-primary tracking-widest uppercase text-xs">Identidad</span>
+                    <h2 class="font-display text-4xl md:text-5xl mt-2">Platos Emblemáticos</h2>
+                    <p class="text-on-background/60 mt-4">Sabores que definen la identidad culinaria rumana en cada rincón del país.</p>
+                </div>
+                <div class="hidden md:block">
+                    <span class="material-symbols-outlined text-outline/20 text-8xl">local_dining</span>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 reveal">
+                <!-- Sarmale -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-lift border border-outline/5">
+                    <div class="aspect-square rounded-2xl overflow-hidden mb-6">
+                        <img src="public/images/sarmale.png" alt="Sarmale" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-display text-2xl mb-4">Sarmale</h3>
+                    <p class="text-sm text-on-background/60 mb-6">Rollos de repollo rellenos de carne de cerdo, arroz y especias, cocidos lentamente en una salsa de tomate ahumada.</p>
+                    <ul class="space-y-2 text-sm font-semibold text-primary">
+                        <li>• Repollo fermentado</li>
+                        <li>• Carne de cerdo y arroz</li>
+                        <li>• Eneldo y tomillo</li>
+                        <li>• Salsa de tomate ahumada</li>
+                    </ul>
+                </div>
+
+                <!-- Mici -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-lift border border-outline/5">
+                    <div class="aspect-square rounded-2xl overflow-hidden mb-6">
+                        <img src="public/images/papanasi.png" alt="Mici" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-display text-2xl mb-4">Mici</h3>
+                    <p class="text-sm text-on-background/60 mb-6">Pequeñas salchichas a la parrilla sin tripa, hechas con una mezcla de carnes y especias secretas. Icono del street food rumano.</p>
+                    <ul class="space-y-2 text-sm font-semibold text-primary">
+                        <li>• Carne de res y cerdo</li>
+                        <li>• Ajo y pimienta</li>
+                        <li>• Bicarbonato (textura única)</li>
+                        <li>• Acompañados de mostaza</li>
+                    </ul>
+                </div>
+
+                <!-- Ciorbă -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-lift border border-outline/5">
+                    <div class="aspect-square rounded-2xl overflow-hidden mb-6">
+                        <img src="public/images/mamaliga.png" alt="Ciorbă" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-display text-2xl mb-4">Ciorbă</h3>
+                    <p class="text-sm text-on-background/60 mb-6">Sopa agria tradicional, fermentada naturalmente con salvado de trigo o jugo de limón. El alma reconfortante de los hogares rumanos.</p>
+                    <ul class="space-y-2 text-sm font-semibold text-primary">
+                        <li>• Caldo de verduras o carnes</li>
+                        <li>• Borș (fermento natural)</li>
+                        <li>• Apio, zanahoria y chirivía</li>
+                        <li>• Servida con crema agria</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Variaciones Regionales -->
+        <section id="regiones" class="mb-32">
+            <div class="bg-on-background text-white rounded-[3rem] p-12 md:p-20 relative overflow-hidden reveal">
+                <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/20 to-transparent"></div>
+
+                <div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="font-mono text-primary-container tracking-widest uppercase text-xs">Geografía</span>
+                        <h2 class="font-display text-4xl md:text-5xl mt-2 mb-8">El Terruño en el Plato</h2>
+                        <p class="text-white/60 text-lg leading-relaxed mb-8">
+                            De los Cárpatos al Danubio, cada región rumana aporta sus propios ingredientes y técnicas que enriquecen la cocina nacional.
+                        </p>
+
+                        <div class="space-y-6">
+                            <!-- Transilvania -->
+                            <div class="flex gap-4 items-start group">
+                                <div class="bg-white/10 p-3 rounded-xl group-hover:bg-primary transition-colors">
+                                    <span class="material-symbols-outlined">fort</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold uppercase tracking-wider text-primary-container">Transilvania</h4>
+                                    <p class="text-sm text-white/50">Carnes ahumadas, varză călită (repollo salteado) y influencia húngara con goulash y kürtőskalács.</p>
+                                </div>
+                            </div>
+                            <!-- Moldavia -->
+                            <div class="flex gap-4 items-start group">
+                                <div class="bg-white/10 p-3 rounded-xl group-hover:bg-primary transition-colors">
+                                    <span class="material-symbols-outlined">church</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold uppercase tracking-wider text-primary-container">Moldavia</h4>
+                                    <p class="text-sm text-white/50">Sarmale con hojas de parra, plăcintă (empanadas rellenas) y los mejores vinos de Rumanía.</p>
+                                </div>
+                            </div>
+                            <!-- Valaquia / Dobruja -->
+                            <div class="flex gap-4 items-start group">
+                                <div class="bg-white/10 p-3 rounded-xl group-hover:bg-primary transition-colors">
+                                    <span class="material-symbols-outlined">water</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold uppercase tracking-wider text-primary-container">Valaquia y Dobruja</h4>
+                                    <p class="text-sm text-white/50">Pescado del Danubio, mici a la parrilla y la influencia de la cocina balcánica y turca.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <img src="public/images/hero.png" alt="Paisaje de Rumanía" class="rounded-3xl shadow-2xl scale-105 group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute -bottom-6 -left-6 bg-primary p-6 rounded-2xl shadow-xl hidden md:block">
+                            <span class="text-white font-mono text-xs uppercase tracking-widest">Dato Curioso</span>
+                            <p class="text-white text-xs mt-2 max-w-[180px]">Rumanía es el segundo país del mundo con más variedad de quesos tradicionales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dulcería y Bebidas -->
+        <section id="dulces" class="mb-32">
+            <div class="text-center mb-16 reveal">
+                <span class="font-mono text-primary tracking-widest uppercase text-xs">El Toque Final</span>
+                <h2 class="font-display text-4xl md:text-5xl mt-2">Dulcería & Bebidas</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 reveal">
+                <!-- Papanași -->
+                <div class="text-center group">
+                    <div class="aspect-square rounded-full overflow-hidden mb-4 border-4 border-outline/5 group-hover:border-primary transition-all">
+                        <img src="public/images/papanasi.png" alt="Papanași" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                    </div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest">Papanași</h4>
+                    <p class="text-[10px] text-on-background/50 mt-1 uppercase">Tradicional</p>
+                </div>
+                <!-- Kürtőskalács -->
+                <div class="text-center group">
+                    <div class="aspect-square rounded-full overflow-hidden mb-4 border-4 border-outline/5 group-hover:border-primary transition-all">
+                        <img src="public/images/mamaliga.png" alt="Kürtőskalács" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                    </div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest">Kürtőskalács</h4>
+                    <p class="text-[10px] text-on-background/50 mt-1 uppercase">Chimney Cake</p>
+                </div>
+                <!-- Țuică -->
+                <div class="text-center group">
+                    <div class="aspect-square rounded-full overflow-hidden mb-4 border-4 border-outline/5 group-hover:border-primary transition-all">
+                        <img src="public/images/hero.png" alt="Țuică" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                    </div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest">Țuică</h4>
+                    <p class="text-[10px] text-on-background/50 mt-1 uppercase">Aguardiente</p>
+                </div>
+                <!-- Cozonac -->
+                <div class="text-center group">
+                    <div class="aspect-square rounded-full overflow-hidden mb-4 border-4 border-outline/5 group-hover:border-primary transition-all">
+                        <img src="public/images/papanasi.png" alt="Cozonac" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                    </div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest">Cozonac</h4>
+                    <p class="text-[10px] text-on-background/50 mt-1 uppercase">Pascual</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-on-background text-white py-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 items-center">
+            <div>
+                <span class="font-mono text-primary-container text-2xl font-bold uppercase">Rumanía</span>
+                <p class="text-white/40 mt-4 text-sm max-w-xs">
+                    Explorando la tradición y el sabor de la cocina rumana a través de sus recetas más auténticas.
+                </p>
+            </div>
+            <div class="flex justify-center gap-8 font-mono text-xs uppercase tracking-widest">
+                <a href="#" class="hover:text-primary transition-colors">Instagram</a>
+                <a href="#" class="hover:text-primary transition-colors">Twitter</a>
+                <a href="#" class="hover:text-primary transition-colors">Facebook</a>
+            </div>
+            <div class="flex justify-end">
+                <button class="bg-white text-on-background px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all">
+                    Volver arriba
+                </button>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/10 text-center text-[10px] uppercase tracking-widest text-white/30">
+            &copy; 2025 Tradición y Sazón. Diseñado con pasión por la gastronomía.
+        </div>
+    </footer>
+
+    <!-- Reveal Script -->
+    <script>
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
