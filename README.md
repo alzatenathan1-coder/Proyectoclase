@@ -32,6 +32,18 @@ npm run build
 npm run start
 ```
 
+## Despliegue en Netlify
+
+El archivo `netlify.toml` fija la configuración de despliegue para Next.js:
+
+```toml
+[build]
+  command = "npm run build"
+  publish = ".next"
+```
+
+Si Netlify conserva ajustes antiguos del panel, redeploya desde GitHub después de este cambio para que use la configuración del repo.
+
 ## Notas
 
 - El contenido visual existente se conserva mediante rutas React que inyectan el HTML ya migrado.
