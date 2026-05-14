@@ -34,15 +34,15 @@ npm run start
 
 ## Despliegue en Netlify
 
-El archivo `netlify.toml` fija la configuración de despliegue para Next.js:
+El proyecto se despliega en Netlify como export estático de Next.js. El archivo `netlify.toml` fija la configuración:
 
 ```toml
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "out"
 ```
 
-Si Netlify conserva ajustes antiguos del panel, redeploya desde GitHub después de este cambio para que use la configuración del repo.
+`next.config.mjs` usa `output: 'export'`, así que `npm run build` genera la carpeta `out/` con un `index.html` real en la raíz. Si Netlify conserva ajustes antiguos del panel, redeploya desde GitHub después de este cambio para que use la configuración del repo.
 
 ## Notas
 
