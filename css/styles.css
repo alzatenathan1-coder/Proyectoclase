@@ -238,7 +238,7 @@
     width: 40%;
     background-size: cover;
     background-position: center;
-    opacity: 0.08;
+    opacity: 0.15;
     mask-image: linear-gradient(to right, transparent, black);
     -webkit-mask-image: linear-gradient(to right, transparent, black);
     transition: opacity 0.4s ease;
@@ -246,7 +246,7 @@
 }
 
 .glass-card:hover .row-bg-image {
-    opacity: 0.28;
+    opacity: 0.45;
 }
 
 /* ── Z-index helper ── */
