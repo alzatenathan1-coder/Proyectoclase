@@ -1,29 +1,31 @@
-# Mali Gastro 🇲🇱🍲
+# Comidas del Mundo 🌍✈️
 
-Web gastronómica dedicada al patrimonio culinario auténtico de Malí, presentando platos tradicionales con su historia y cultura.
+Web gastronómica con temática de sala de embarque que presenta 8 destinos culinarios internacionales.
 
-## Estructura del Proyecto
+## Estructura
 
 ```
-├── index.html        # Página principal (Patrimonio Culinaire)
-├── style.css         # Diseño premium con animaciones y Glassmorphism
-├── script.js          # Funcionalidad interactiva
-└── [imágenes]        # Galería de platos tradicionales (Fonio, Zamei, Fakoye, etc.)
+├── index.html        # Página principal
+├── css/
+│   └── styles.css    # Estilos personalizados + efectos de fondo
+├── js/
+│   └── main.js       # Partículas flotantes, parallax, scroll reveal
+├── assets/
+│   └── screen.png    # Captura de pantalla
+└── README.md
 ```
 
 ## Características
 
-- **Diseño Premium**: Estética moderna con tipografía Outfit y efectos dinámicos.
-- **Contenido Auténtico**: Descripciones detalladas de platos como el Fini (Fonio), Zamei, Fakoye y más.
-- **Narrativa Histórica**: Cada plato incluye una sección de "L'Histoire" para entender sus raíces.
-- **Totalmente Responsivo**: Optimizado para móviles y escritorio.
+- Diseño "Boarding Pass" con tarjetas estilo pase de abordar
+- Efectos de fondo: orbs degradados animados + grid de puntos + partículas flotantes
+- 8 destinos: Venezuela, Colombia, Bulgaria, Rumanía, Malí, Marruecos, Japón, Italia
+- Parallax en el hero + animaciones flip-in en las filas
+- Totalmente responsivo (móvil y escritorio)
 
 ## Tecnologías
 
-- HTML5 Semántico
-- CSS3 (Vanilla) con variables y Grid/Flexbox
-- JavaScript Vanilla
-- Google Fonts (Outfit)
-
----
-*Desarrollado por alzatenathan1-coder*
+- HTML5 / CSS3 / JavaScript vanilla
+- [Tailwind CSS](https://tailwindcss.com/) (CDN)
+- Google Fonts: Montserrat, Space Grotesk, Plus Jakarta Sans
+- Material Symbols (Google Icons)
