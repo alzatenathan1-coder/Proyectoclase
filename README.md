@@ -1,31 +1,39 @@
-# Comidas del Mundo 🌍✈️
+# Comidas del Mundo
 
-Web gastronómica con temática de sala de embarque que presenta 8 destinos culinarios internacionales.
+Proyecto migrado a **Next.js App Router** con **Tailwind CSS**, **Framer Motion** y **Lucide React**.
 
 ## Estructura
 
 ```
-├── index.html        # Página principal
-├── css/
-│   └── styles.css    # Estilos personalizados + efectos de fondo
-├── js/
-│   └── main.js       # Partículas flotantes, parallax, scroll reveal
-├── assets/
-│   └── screen.png    # Captura de pantalla
-└── README.md
+├── src/
+│   ├── app/                 # Rutas Next: /, /venezuela, /mali, /rumania
+│   ├── components/
+│   │   ├── legacy/          # Render puente para contenido migrado
+│   │   └── ui/              # Base para nuevos componentes avanzados
+│   ├── content/legacy/      # HTML visual existente convertido a módulos JS
+│   └── lib/                 # Interacciones cliente heredadas
+├── public/
+│   ├── assets/              # Imágenes y media servidos por Next
+│   ├── legacy-css/          # CSS heredado por ruta
+│   └── og/                  # Imágenes estables para Open Graph/Twitter
+├── legacy/
+│   ├── html/                # HTML estático original archivado
+│   └── source-assets/       # Assets fuente previos a la migración
+├── tailwind.config.js
+├── postcss.config.js
+└── next.config.mjs
 ```
 
-## Características
+## Comandos
 
-- Diseño "Boarding Pass" con tarjetas estilo pase de abordar
-- Efectos de fondo: orbs degradados animados + grid de puntos + partículas flotantes
-- 8 destinos: Venezuela, Colombia, Bulgaria, Rumanía, Malí, Marruecos, Japón, Italia
-- Parallax en el hero + animaciones flip-in en las filas
-- Totalmente responsivo (móvil y escritorio)
+```bash
+npm run dev
+npm run build
+npm run start
+```
 
-## Tecnologías
+## Notas
 
-- HTML5 / CSS3 / JavaScript vanilla
-- [Tailwind CSS](https://tailwindcss.com/) (CDN)
-- Google Fonts: Montserrat, Space Grotesk, Plus Jakarta Sans
-- Material Symbols (Google Icons)
+- El contenido visual existente se conserva mediante rutas React que inyectan el HTML ya migrado.
+- Las interacciones antiguas viven en `src/lib/legacy-interactions.js` para poder sustituirlas progresivamente por componentes React.
+- El dominio SEO placeholder es `https://comidas-del-mundo.example`; cámbialo por el dominio real antes de publicar.
