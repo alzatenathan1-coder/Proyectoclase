@@ -2,8 +2,14 @@
 tmp-git-test/
 $installRoot/
 .git/
+.git-empty-backup-*/
 git-data/
 .ssh-temp/
 ssh-wrapper.cmd
-assets/
+server-*.log
+assets/*
+!assets/screen.png
+!assets/bulgaria/
+!assets/bulgaria/*.png
+assets/bulgaria/platos bulgaros/
 gastronomia-bulgara-premium/

@@ -1,129 +1,552 @@
-<!DOCTYPE html>
-<html lang="es">
+﻿<!DOCTYPE html>
+<html lang="es" class="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gastronomía Búlgara Premium</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comidas del Mundo – Un viaje gastronómico por 8 destinos internacionales.">
+    <title>Comidas del Mundo – Viajes &amp; Sabores</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Space+Grotesk:wght@500;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <!-- Tailwind config -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed":            "#ffdbc9",
+                        "on-tertiary-fixed":        "#002201",
+                        "on-error":                 "#ffffff",
+                        "primary-fixed-dim":        "#ffb68d",
+                        "on-tertiary":              "#ffffff",
+                        "surface-container-highest":"#f2dfd5",
+                        "on-primary-container":     "#fffbff",
+                        "surface":                  "#fff8f6",
+                        "on-tertiary-container":    "#f8fff0",
+                        "surface-container":        "#feeae0",
+                        "secondary":                "#705d00",
+                        "inverse-surface":          "#3a2e28",
+                        "on-secondary-container":   "#6e5c00",
+                        "surface-container-low":    "#fff1eb",
+                        "on-background":            "#231914",
+                        "background":               "#fff8f6",
+                        "on-secondary-fixed":       "#221b00",
+                        "surface-bright":           "#fff8f6",
+                        "secondary-container":      "#fcd400",
+                        "inverse-on-surface":       "#ffede5",
+                        "on-secondary-fixed-variant":"#544600",
+                        "error-container":          "#ffdad6",
+                        "inverse-primary":          "#ffb68d",
+                        "secondary-fixed-dim":      "#e9c400",
+                        "surface-container-high":   "#f8e4db",
+                        "surface-tint":             "#9a4600",
+                        "primary":                  "#974400",
+                        "on-primary-fixed":         "#321200",
+                        "tertiary-fixed-dim":       "#77dd6a",
+                        "on-surface":               "#231914",
+                        "secondary-fixed":          "#ffe16d",
+                        "surface-variant":          "#f2dfd5",
+                        "on-secondary":             "#ffffff",
+                        "tertiary":                 "#006c0c",
+                        "on-error-container":       "#93000a",
+                        "on-surface-variant":       "#564338",
+                        "primary-container":        "#bb5808",
+                        "on-primary":               "#ffffff",
+                        "error":                    "#ba1a1a",
+                        "outline-variant":          "#ddc1b3",
+                        "surface-dim":              "#ead6cd",
+                        "tertiary-container":       "#1c871e",
+                        "on-tertiary-fixed-variant":"#005307",
+                        "on-primary-fixed-variant": "#763400",
+                        "tertiary-fixed":           "#92fa83",
+                        "outline":                  "#8a7266",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg:      "0.5rem",
+                        xl:      "0.75rem",
+                        full:    "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile":   "16px",
+                        "container-max":   "1280px",
+                        "unit":            "8px",
+                        "gutter":          "24px",
+                        "margin-desktop":  "40px"
+                    },
+                    fontFamily: {
+                        "boarding-pass-title":  ["Space Grotesk"],
+                        "headline-lg-mobile":   ["Montserrat"],
+                        "label-caps":           ["Space Grotesk"],
+                        "headline-lg":          ["Montserrat"],
+                        "display-lg":           ["Montserrat"],
+                        "body-md":              ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "boarding-pass-title":  ["14px", { lineHeight:"1",   letterSpacing:"0.1em",  fontWeight:"600" }],
+                        "headline-lg-mobile":   ["28px", { lineHeight:"1.2",                          fontWeight:"700" }],
+                        "label-caps":           ["12px", { lineHeight:"1",                            fontWeight:"500" }],
+                        "headline-lg":          ["32px", { lineHeight:"1.2",                          fontWeight:"700" }],
+                        "display-lg":           ["48px", { lineHeight:"1.1", letterSpacing:"-0.02em", fontWeight:"700" }],
+                        "body-md":              ["16px", { lineHeight:"1.6",                          fontWeight:"400" }]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <canvas id="emberCanvas" class="ember-canvas" aria-hidden="true"></canvas>
-  <div class="cursor-light" id="cursorLight" aria-hidden="true"></div>
-  <div class="scroll-line" aria-hidden="true"><span id="scrollLine"></span></div>
 
-  <header class="navbar">
-    <a class="brand" href="#inicio" aria-label="Inicio">
-      <span class="brand-mark">BG</span>
-      <span>Fuego Búlgaro</span>
-    </a>
-    <nav class="nav-links" aria-label="Navegación principal">
-      <a href="#tradicion">Tradición</a>
-      <a href="#moderna">Moderna</a>
-      <a href="#regiones">Regiones</a>
-      <a href="#galeria">Galería</a>
+<body class="bg-background text-on-background font-body-md min-h-screen relative overflow-x-hidden paper-texture">
+
+    <!-- ═══ BACKGROUND EFFECTS LAYER ═══ -->
+    <div class="world-grid-bg" aria-hidden="true"></div>
+
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+    </div>
+
+    <div id="floating-particles" aria-hidden="true"></div>
+
+    <!-- ═══ NAVIGATION ═══ -->
+    <nav class="bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_10px_30px_rgba(151,68,0,0.05)] flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 z-50 top-0 sticky transition-all duration-300">
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-primary text-2xl" aria-hidden="true">restaurant</span>
+            <span class="font-boarding-pass-title text-boarding-pass-title uppercase tracking-widest text-primary hover:scale-105 transition-transform duration-300">
+                Comidas del Mundo
+            </span>
+        </div>
+
+        <div class="hidden md:flex items-center gap-8">
+            <a href="#" class="text-primary border-b-2 border-primary pb-1 font-headline-lg-mobile text-sm hover:scale-105 transition-transform duration-300 flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm" aria-hidden="true">flight</span> Inicio
+            </a>
+            <a href="#destinations" class="text-on-surface-variant hover:text-primary transition-colors font-headline-lg-mobile text-sm relative group flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm" aria-hidden="true">public</span>
+                <span class="flight-path">Destinos</span>
+            </a>
+            <a href="#" class="text-on-surface-variant hover:text-primary transition-colors font-headline-lg-mobile text-sm relative group flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm" aria-hidden="true">info</span>
+                <span class="flight-path">Nosotros</span>
+            </a>
+            <a href="#" class="text-on-surface-variant hover:text-primary transition-colors font-headline-lg-mobile text-sm relative group flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm" aria-hidden="true">mail</span>
+                <span class="flight-path">Contacto</span>
+            </a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <button id="btn-start" class="bg-primary text-on-primary px-6 py-2 rounded-full font-boarding-pass-title text-boarding-pass-title hover:bg-surface-tint hover:shadow-[0_0_20px_rgba(151,68,0,0.35)] transition-all duration-300 flex items-center gap-2">
+                <span class="material-symbols-outlined text-lg" aria-hidden="true">local_dining</span>
+                COMENZAR VIAJE
+            </button>
+        </div>
     </nav>
-  </header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="hero-media" aria-hidden="true"></div>
-      <div class="smoke smoke-one"></div>
-      <div class="smoke smoke-two"></div>
-      <div class="hero-content reveal">
-        <p class="eyebrow">Documental gastronómico · Bulgaria</p>
-        <h1>Lo mejor de la gastronomía búlgara</h1>
-        <p class="hero-subtitle">Un viaje entre fuego, montaña, mar, tradición y cocina moderna.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#tradicion">Explorar cocina tradicional</a>
-          <a class="btn btn-secondary" href="#moderna">Descubrir cocina moderna</a>
+    <!-- ═══ MAIN ═══ -->
+    <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 flex flex-col items-center">
+
+        <!-- Hero Section -->
+        <section class="w-full max-w-5xl text-center py-20 px-8 mb-12 flex flex-col items-center justify-center hero-bg rounded-3xl relative overflow-hidden border border-outline-variant/40 shadow-2xl">
+            <div class="absolute top-10 right-10 stamp text-primary" aria-hidden="true">
+                <span class="material-symbols-outlined text-8xl">local_airport</span>
+            </div>
+            <div class="absolute bottom-8 left-10 stamp text-primary rotate-[10deg]" aria-hidden="true">
+                <span class="material-symbols-outlined text-6xl">restaurant_menu</span>
+            </div>
+
+            <div class="flex items-center gap-3 mb-6 bg-surface/80 px-5 py-2.5 rounded-full border border-primary/20 backdrop-blur-sm shadow-sm reveal-ready">
+                <span class="material-symbols-outlined text-primary text-2xl animate-pulse" aria-hidden="true">explore</span>
+                <span class="font-boarding-pass-title text-primary tracking-[0.2em] text-xs font-bold uppercase">
+                    Lounge Gastronómico Activo
+                </span>
+            </div>
+
+            <h1 class="font-display-lg text-display-lg text-on-background mb-4 max-w-4xl uppercase tracking-tight flex flex-col md:flex-row items-center gap-4 drop-shadow-md reveal-ready">
+                <span>VIAJES</span>
+                <span class="hidden md:inline text-outline-variant">&amp;</span>
+                <span class="text-primary">SABORES</span>
+            </h1>
+
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl text-lg bg-surface/90 py-4 px-10 rounded-full inline-block backdrop-blur-md border border-outline-variant/30 shadow-md mt-4 reveal-ready">
+                Prepara tu paladar para el embarque. Descubre experiencias culinarias auténticas de 8 destinos internacionales.
+            </p>
+        </section>
+
+        <!-- Departures Dashboard -->
+        <div id="destinations" class="w-full bg-surface-container/60 backdrop-blur-2xl rounded-[2.5rem] p-6 md:p-10 border border-white shadow-[0_30px_60px_rgba(151,68,0,0.08)] relative mb-20">
+
+            <div class="absolute top-8 left-10 flex items-center gap-3">
+                <div class="w-2.5 h-2.5 rounded-full bg-tertiary glow-pulse shadow-[0_0_10px_rgba(0,108,12,0.5)]"></div>
+                <span class="font-boarding-pass-title text-[11px] tracking-[0.2em] text-on-surface-variant uppercase flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm" aria-hidden="true">flight_class</span>
+                    Terminal de Degustación
+                </span>
+            </div>
+
+            <div class="absolute top-8 right-10 flex gap-4 text-primary/40" aria-hidden="true">
+                <span class="material-symbols-outlined text-3xl">restaurant_menu</span>
+                <span class="material-symbols-outlined text-3xl">public</span>
+            </div>
+
+            <!-- Table header -->
+            <section class="flex flex-col gap-4 mt-16 w-full" aria-label="Destinos gastronómicos">
+                <div class="hidden lg:flex justify-between items-center px-8 py-3 border-b-2 border-outline-variant/30 text-on-surface-variant font-boarding-pass-title tracking-[0.2em] text-[11px] uppercase mb-4" role="row">
+                    <div class="w-1/4">DESTINO</div>
+                    <div class="w-1/6 text-center">TIEMPO EST.</div>
+                    <div class="w-1/6 text-center">EXPERIENCIA</div>
+                    <div class="w-1/12 text-center">PUERTA</div>
+                    <div class="w-1/6 text-center">ESTADO</div>
+                    <div class="w-1/6 text-right">ACCIÓN</div>
+                </div>
+
+                <!-- ══ ROW 1: VENEZUELA ══ -->
+                <article class="board-row glass-card rounded-2xl p-5 flex flex-col lg:flex-row lg:items-center justify-between gap-4 group">
+                    <div class="row-bg-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKCT6TNC6gaKmRmAB00EG6D56IlQl7eIOuSQ7UupN4vB8P_qrU94VmQGLSTygnN7GLSGydbGBMRdTahvpHs6U7lie2XhkPLe59siJ5wXgnn4tZOWL-VMupuOxbEBRdvLCgtpEtdYwQlfeGyZlNFk1jU2XLnrNq0u-c1e4DtIyIuompHOCLNtNePy5B-Io4rfTIGs326UDSiEKXLivT3L9rweC4VkTkcVE-xqLoBPMOTAnGuBnWpeKwF2hO0vMdaN6uQ8laFOzNJ_M');" aria-hidden="true"></div>
+                    <div class="content-z w-full lg:w-1/4 flex items-center gap-4">
+                        <div class="w-14 h-14 bg-surface rounded-xl flex items-center justify-center text-3xl shadow-sm border border-outline-variant/30 shrink-0" aria-label="Bandera de Venezuela">🇻🇪</div>
+                        <div>
+                            <div class="text-on-background font-boarding-pass-title tracking-[0.2em] uppercase text-xl font-bold">VENEZUELA</div>
+                            <div class="text-on-surface-variant text-xs font-body-md mt-1 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px]" aria-hidden="true">local_pizza</span> Arepas &amp; Pabellón
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">TIEMPO</span>
+                        <span class="font-boarding-pass-title text-on-surface-variant tracking-widest text-sm flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm" aria-hidden="true">schedule</span> 45 MIN
+                        </span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">EXP.</span>
+                        <span class="font-label-caps text-primary tracking-widest bg-primary/10 px-3 py-1 rounded-full border border-primary/20">TRADICIONAL</span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/12 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">PUERTA</span>
+                        <span class="font-boarding-pass-title text-secondary tracking-widest text-xl bg-surface-container-highest px-3 py-1 rounded-md shadow-inner border border-outline-variant/20">01</span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">ESTADO</span>
+                        <span class="font-label-caps text-tertiary-container tracking-widest flex items-center gap-2 bg-tertiary-container/10 px-4 py-1.5 rounded-full border border-tertiary-container/20">
+                            <span class="w-2 h-2 rounded-full bg-tertiary glow-pulse"></span> SIRVIENDO
+                        </span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-end">
+                        <a href="venezuela.html" class="w-full lg:w-auto bg-primary text-on-primary px-6 py-3 rounded-full font-label-caps text-label-caps hover:bg-surface-tint hover:shadow-[0_5px_15px_rgba(151,68,0,0.3)] transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105 no-underline">
+                            DEGUSTAR <span class="material-symbols-outlined text-sm" aria-hidden="true">restaurant</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- ══ ROW 2: COLOMBIA ══ -->
+                <article class="board-row glass-card rounded-2xl p-5 flex flex-col lg:flex-row lg:items-center justify-between gap-4 group">
+                    <div class="row-bg-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC1hq20AdX3p1BUw_c4SMdWqxa8U9AzdRXRI4yf8PZ_0hKFXorcN2EyAaOvpKl3s7YbHDlI7i95nbPrFRPv3uIVcHQ6EP9pPvqptSd14bbVN0Vy3o6cIKFzJhePQAtMtdg7H166zimXu1G2dxR2UiCDvU53yHeDa-kEF49u2WmLfcLC5Mytf7cjePZfL1vHgBwePNWsXKdlM_s8BMLIlyakngmbQK5gsiKP1l9qNG5R57UrlA9_fhBu9YZPexkv8tWKvdJ2G9Klbn4');" aria-hidden="true"></div>
+                    <div class="content-z w-full lg:w-1/4 flex items-center gap-4">
+                        <div class="w-14 h-14 bg-surface rounded-xl flex items-center justify-center text-3xl shadow-sm border border-outline-variant/30 shrink-0" aria-label="Bandera de Colombia">🇨🇴</div>
+                        <div>
+                            <div class="text-on-background font-boarding-pass-title tracking-[0.2em] uppercase text-xl font-bold">COLOMBIA</div>
+                            <div class="text-on-surface-variant text-xs font-body-md mt-1 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px]" aria-hidden="true">local_cafe</span> Café &amp; Bandeja Paisa
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">TIEMPO</span>
+                        <span class="font-boarding-pass-title text-on-surface-variant tracking-widest text-sm flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm" aria-hidden="true">schedule</span> 60 MIN
+                        </span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">EXP.</span>
+                        <span class="font-label-caps text-on-secondary-fixed tracking-widest bg-secondary-container/30 px-3 py-1 rounded-full border border-secondary-container/50">ABUNDANTE</span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/12 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">PUERTA</span>
+                        <span class="font-boarding-pass-title text-secondary tracking-widest text-xl bg-surface-container-highest px-3 py-1 rounded-md shadow-inner border border-outline-variant/20">02</span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">ESTADO</span>
+                        <span class="font-label-caps text-primary tracking-widest flex items-center gap-2 bg-primary/5 px-4 py-1.5 rounded-full border border-primary/20">
+                            <span class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></span> PREPARANDO
+                        </span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-end">
+                        <button class="w-full lg:w-auto bg-primary text-on-primary px-6 py-3 rounded-full font-label-caps text-label-caps hover:bg-surface-tint hover:shadow-[0_5px_15px_rgba(151,68,0,0.3)] transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105">
+                            DEGUSTAR <span class="material-symbols-outlined text-sm" aria-hidden="true">restaurant</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- ══ ROW 3: BULGARIA ══ -->
+                <article class="board-row glass-card rounded-2xl p-5 flex flex-col lg:flex-row lg:items-center justify-between gap-4 group">
+                    <div class="row-bg-image" style="background-image: url('assets/bulgaria/hero-bulgarian-feast.png');" aria-hidden="true"></div>
+                    <div class="content-z w-full lg:w-1/4 flex items-center gap-4">
+                        <div class="w-14 h-14 bg-surface rounded-xl flex items-center justify-center text-3xl shadow-sm border border-outline-variant/30 shrink-0" aria-label="Bandera de Bulgaria">🇧🇬</div>
+                        <div>
+                            <div class="text-on-background font-boarding-pass-title tracking-[0.2em] uppercase text-xl font-bold">BULGARIA</div>
+                            <div class="text-on-surface-variant text-xs font-body-md mt-1 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px]" aria-hidden="true">bakery_dining</span> Banitsa &amp; Tarator
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">TIEMPO</span>
+                        <span class="font-boarding-pass-title text-on-surface-variant tracking-widest text-sm flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm" aria-hidden="true">schedule</span> 90 MIN
+                        </span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">EXP.</span>
+                        <span class="font-label-caps text-outline tracking-widest bg-surface-variant/80 px-3 py-1 rounded-full border border-outline/30">DESCUBRIMIENTO</span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/12 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">PUERTA</span>
+                        <span class="font-boarding-pass-title text-secondary tracking-widest text-xl bg-surface-container-highest px-3 py-1 rounded-md shadow-inner border border-outline-variant/20">03</span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">ESTADO</span>
+                        <span class="font-label-caps text-tertiary-container tracking-widest flex items-center gap-2 bg-tertiary-container/10 px-4 py-1.5 rounded-full border border-tertiary-container/20">
+                            <span class="w-2 h-2 rounded-full bg-tertiary glow-pulse"></span> SIRVIENDO
+                        </span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-end">
+                        <a href="bulgaria.html" class="w-full lg:w-auto bg-primary text-on-primary px-6 py-3 rounded-full font-label-caps text-label-caps hover:bg-surface-tint hover:shadow-[0_5px_15px_rgba(151,68,0,0.3)] transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105 no-underline">
+                            DEGUSTAR <span class="material-symbols-outlined text-sm" aria-hidden="true">restaurant</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- ══ ROW 4: ROMANIA ══ -->
+                <article class="board-row glass-card rounded-2xl p-5 flex flex-col lg:flex-row lg:items-center justify-between gap-4 group">
+                    <div class="row-bg-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDfpxszKbovt57Q25K3w7eSeYQ2UXEpJla1HjBVJQfOr44kD8_clI53llhKU8C6s1k_-IsNqscDY25weOnl7dER7e6OsEHH0WNFTdITxoaMnMWGIiEAbYgnruB5KYpAhdwO_so6UhbtnQpsyU52NCgPMlT4DtQcytd0J6yHrd4Xwr1kolIVEZhDubizUrlRetGQvnNGroXv9QCIFChlU-_qq9T3ZjAiDb7wRdG4XvB0gSyLJ7dnl2TAOe_FKWEuoEWkGn-iaaOa2FM');" aria-hidden="true"></div>
+                    <div class="content-z w-full lg:w-1/4 flex items-center gap-4">
+                        <div class="w-14 h-14 bg-surface rounded-xl flex items-center justify-center text-3xl shadow-sm border border-outline-variant/30 shrink-0" aria-label="Bandera de Rumanía">🇷🇴</div>
+                        <div>
+                            <div class="text-on-background font-boarding-pass-title tracking-[0.2em] uppercase text-xl font-bold">RUMANÍA</div>
+                            <div class="text-on-surface-variant text-xs font-body-md mt-1 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px]" aria-hidden="true">set_meal</span> Sarmale &amp; Mici
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">TIEMPO</span>
+                        <span class="font-boarding-pass-title text-on-surface-variant tracking-widest text-sm flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm" aria-hidden="true">schedule</span> 120 MIN
+                        </span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">EXP.</span>
+                        <span class="font-label-caps text-outline tracking-widest bg-surface-variant/80 px-3 py-1 rounded-full border border-outline/30">HISTÓRICO</span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/12 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">PUERTA</span>
+                        <span class="font-boarding-pass-title text-secondary tracking-widest text-xl bg-surface-container-highest px-3 py-1 rounded-md shadow-inner border border-outline-variant/20">04</span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">ESTADO</span>
+                        <span class="font-label-caps text-on-surface-variant tracking-widest flex items-center gap-2 bg-surface-variant/50 px-4 py-1.5 rounded-full border border-outline-variant/40">
+                            <span class="w-2 h-2 rounded-full bg-outline"></span> EN HORNO
+                        </span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-end">
+                        <button class="w-full lg:w-auto bg-primary text-on-primary px-6 py-3 rounded-full font-label-caps text-label-caps hover:bg-surface-tint hover:shadow-[0_5px_15px_rgba(151,68,0,0.3)] transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105">
+                            RESERVAR <span class="material-symbols-outlined text-sm" aria-hidden="true">bookmark</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- ══ ROW 5: SENEGAL ══ -->
+                <article class="board-row glass-card rounded-2xl p-5 flex flex-col lg:flex-row lg:items-center justify-between gap-4 group">
+                    <div class="row-bg-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBT2rKIKPEMgjRDDKTe_2IYSsWVvEIfiQVCP6RUyCdJ4vmn6CwsdwMeac9eYW7-wFiwXqOdCHUhSU5WRSUvJ8Nn0YxmzKFXiibsEAwUOVn_Go9XA-A2S_eM-soUGoGpGi44XDeYptAAHSsJ8Nq_d978WW2DJcSVensOS6fkAHLfKJtmwRrQirPKkApM9kQ6wvX_mVZMLTECYXk1hnCnD13LxKKGpF9x9OsqR3cXj3RTUd5X6WEk9HpUXHNi-qkPJRJqDn0lVN-QxXY');" aria-hidden="true"></div>
+                    <div class="content-z w-full lg:w-1/4 flex items-center gap-4">
+                        <div class="w-14 h-14 bg-surface rounded-xl flex items-center justify-center text-3xl shadow-sm border border-outline-variant/30 shrink-0" aria-label="Bandera de Senegal">🇸🇳</div>
+                        <div>
+                            <div class="text-on-background font-boarding-pass-title tracking-[0.2em] uppercase text-xl font-bold">SENEGAL</div>
+                            <div class="text-on-surface-variant text-xs font-body-md mt-1 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px]" aria-hidden="true">ramen_dining</span> Thieboudienne
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">TIEMPO</span>
+                        <span class="font-boarding-pass-title text-on-surface-variant tracking-widest text-sm flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm" aria-hidden="true">schedule</span> 75 MIN
+                        </span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">EXP.</span>
+                        <span class="font-label-caps text-primary tracking-widest bg-primary/10 px-3 py-1 rounded-full border border-primary/20">EXÓTICO</span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/12 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">PUERTA</span>
+                        <span class="font-boarding-pass-title text-secondary tracking-widest text-xl bg-surface-container-highest px-3 py-1 rounded-md shadow-inner border border-outline-variant/20">05</span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">ESTADO</span>
+                        <span class="font-label-caps text-on-surface-variant tracking-widest flex items-center gap-2 bg-surface-variant/50 px-4 py-1.5 rounded-full border border-outline-variant/40">
+                            <span class="w-2 h-2 rounded-full bg-outline"></span> EN COCINA
+                        </span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-end">
+                        <button class="w-full lg:w-auto bg-primary text-on-primary px-6 py-3 rounded-full font-label-caps text-label-caps hover:bg-surface-tint hover:shadow-[0_5px_15px_rgba(151,68,0,0.3)] transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105">
+                            RESERVAR <span class="material-symbols-outlined text-sm" aria-hidden="true">bookmark</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- ══ ROW 6: MARRUECOS ══ -->
+                <article class="board-row glass-card rounded-2xl p-5 flex flex-col lg:flex-row lg:items-center justify-between gap-4 group">
+                    <div class="row-bg-image" style="background-image: url('https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=600&q=80');" aria-hidden="true"></div>
+                    <div class="content-z w-full lg:w-1/4 flex items-center gap-4">
+                        <div class="w-14 h-14 bg-surface rounded-xl flex items-center justify-center text-3xl shadow-sm border border-outline-variant/30 shrink-0" aria-label="Bandera de Marruecos">🇲🇦</div>
+                        <div>
+                            <div class="text-on-background font-boarding-pass-title tracking-[0.2em] uppercase text-xl font-bold">MARRUECOS</div>
+                            <div class="text-on-surface-variant text-xs font-body-md mt-1 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px]" aria-hidden="true">lunch_dining</span> Tagine &amp; Cuscús
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">TIEMPO</span>
+                        <span class="font-boarding-pass-title text-on-surface-variant tracking-widest text-sm flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm" aria-hidden="true">schedule</span> 85 MIN
+                        </span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">EXP.</span>
+                        <span class="font-label-caps text-primary tracking-widest bg-primary/10 px-3 py-1 rounded-full border border-primary/20">AROMÁTICO</span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/12 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">PUERTA</span>
+                        <span class="font-boarding-pass-title text-secondary tracking-widest text-xl bg-surface-container-highest px-3 py-1 rounded-md shadow-inner border border-outline-variant/20">06</span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">ESTADO</span>
+                        <span class="font-label-caps text-on-surface-variant tracking-widest flex items-center gap-2 bg-surface-variant/50 px-4 py-1.5 rounded-full border border-outline-variant/40">
+                            <span class="w-2 h-2 rounded-full bg-outline"></span> EN COCINA
+                        </span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-end">
+                        <button class="w-full lg:w-auto bg-primary text-on-primary px-6 py-3 rounded-full font-label-caps text-label-caps hover:bg-surface-tint hover:shadow-[0_5px_15px_rgba(151,68,0,0.3)] transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105">
+                            RESERVAR <span class="material-symbols-outlined text-sm" aria-hidden="true">bookmark</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- ══ ROW 7: JAPÓN ══ -->
+                <article class="board-row glass-card rounded-2xl p-5 flex flex-col lg:flex-row lg:items-center justify-between gap-4 group">
+                    <div class="row-bg-image" style="background-image: url('https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=600&q=80');" aria-hidden="true"></div>
+                    <div class="content-z w-full lg:w-1/4 flex items-center gap-4">
+                        <div class="w-14 h-14 bg-surface rounded-xl flex items-center justify-center text-3xl shadow-sm border border-outline-variant/30 shrink-0" aria-label="Bandera de Japón">🇯🇵</div>
+                        <div>
+                            <div class="text-on-background font-boarding-pass-title tracking-[0.2em] uppercase text-xl font-bold">JAPÓN</div>
+                            <div class="text-on-surface-variant text-xs font-body-md mt-1 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px]" aria-hidden="true">ramen_dining</span> Sushi &amp; Ramen
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">TIEMPO</span>
+                        <span class="font-boarding-pass-title text-on-surface-variant tracking-widest text-sm flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm" aria-hidden="true">schedule</span> 55 MIN
+                        </span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">EXP.</span>
+                        <span class="font-label-caps text-outline tracking-widest bg-surface-variant/80 px-3 py-1 rounded-full border border-outline/30">ARTESANAL</span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/12 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">PUERTA</span>
+                        <span class="font-boarding-pass-title text-secondary tracking-widest text-xl bg-surface-container-highest px-3 py-1 rounded-md shadow-inner border border-outline-variant/20">07</span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">ESTADO</span>
+                        <span class="font-label-caps text-tertiary-container tracking-widest flex items-center gap-2 bg-tertiary-container/10 px-4 py-1.5 rounded-full border border-tertiary-container/20">
+                            <span class="w-2 h-2 rounded-full bg-tertiary glow-pulse"></span> SIRVIENDO
+                        </span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-end">
+                        <button class="w-full lg:w-auto bg-primary text-on-primary px-6 py-3 rounded-full font-label-caps text-label-caps hover:bg-surface-tint hover:shadow-[0_5px_15px_rgba(151,68,0,0.3)] transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105">
+                            DEGUSTAR <span class="material-symbols-outlined text-sm" aria-hidden="true">restaurant</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- ══ ROW 8: ITALIA ══ -->
+                <article class="board-row glass-card rounded-2xl p-5 flex flex-col lg:flex-row lg:items-center justify-between gap-4 group">
+                    <div class="row-bg-image" style="background-image: url('https://images.unsplash.com/photo-1598866594240-2ef26d857eea?w=600&q=80');" aria-hidden="true"></div>
+                    <div class="content-z w-full lg:w-1/4 flex items-center gap-4">
+                        <div class="w-14 h-14 bg-surface rounded-xl flex items-center justify-center text-3xl shadow-sm border border-outline-variant/30 shrink-0" aria-label="Bandera de Italia">🇮🇹</div>
+                        <div>
+                            <div class="text-on-background font-boarding-pass-title tracking-[0.2em] uppercase text-xl font-bold">ITALIA</div>
+                            <div class="text-on-surface-variant text-xs font-body-md mt-1 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px]" aria-hidden="true">local_pizza</span> Pasta &amp; Risotto
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">TIEMPO</span>
+                        <span class="font-boarding-pass-title text-on-surface-variant tracking-widest text-sm flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm" aria-hidden="true">schedule</span> 70 MIN
+                        </span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">EXP.</span>
+                        <span class="font-label-caps text-on-secondary-fixed tracking-widest bg-secondary-container/30 px-3 py-1 rounded-full border border-secondary-container/50">CLÁSICO</span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/12 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">PUERTA</span>
+                        <span class="font-boarding-pass-title text-secondary tracking-widest text-xl bg-surface-container-highest px-3 py-1 rounded-md shadow-inner border border-outline-variant/20">08</span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-between lg:justify-center">
+                        <span class="lg:hidden font-label-caps text-on-surface-variant">ESTADO</span>
+                        <span class="font-label-caps text-primary tracking-widest flex items-center gap-2 bg-primary/5 px-4 py-1.5 rounded-full border border-primary/20">
+                            <span class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></span> PREPARANDO
+                        </span>
+                    </div>
+                    <div class="content-z w-full lg:w-1/6 flex items-center justify-end">
+                        <button class="w-full lg:w-auto bg-primary text-on-primary px-6 py-3 rounded-full font-label-caps text-label-caps hover:bg-surface-tint hover:shadow-[0_5px_15px_rgba(151,68,0,0.3)] transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105">
+                            DEGUSTAR <span class="material-symbols-outlined text-sm" aria-hidden="true">restaurant</span>
+                        </button>
+                    </div>
+                </article>
+
+            </section>
         </div>
-      </div>
-      <aside class="hero-card reveal">
-        <span>Plato protagonista</span>
-        <h2>Cheverme / Чеверме</h2>
-        <p>Cordero entero asado lentamente sobre brasas, girado durante horas en los Ródopes.</p>
-      </aside>
-    </section>
+    </main>
 
-    <section class="intro section">
-      <div class="intro-grid">
-        <div class="section-copy reveal">
-          <p class="eyebrow">Bulgaria se cuenta con historia</p>
-          <h2>Pero se recuerda con sabor.</h2>
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="w-full bg-surface-container-high flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-gutter gap-4 relative z-10 border-t border-outline-variant/20">
+        <div>
+            <span class="font-boarding-pass-title text-label-caps text-on-surface uppercase tracking-widest flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm" aria-hidden="true">restaurant_menu</span>
+                Comidas del Mundo
+            </span>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm">© 2025 Comidas del Mundo. Un Viaje Gastronómico.</p>
         </div>
-        <p class="intro-text reveal">Bulgaria se descubre a través de su comida: sus montañas, sus costas, sus productos, sus celebraciones y esa hospitalidad que convierte una mesa en memoria. Cada plato habla de territorio, fuego lento, pan caliente, yogur vivo, vino profundo y recetas que han sobrevivido al tiempo.</p>
-      </div>
-    </section>
+        <nav aria-label="Footer links" class="flex gap-6">
+            <a href="#" class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-sm">Términos</a>
+            <a href="#" class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-sm">Privacidad</a>
+            <a href="#" class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-sm">Contacto</a>
+        </nav>
+    </footer>
 
-    <section class="featured section" id="tradicion">
-      <div class="feature-photo reveal">
-        <div class="kenburns image-cheverme"></div>
-      </div>
-      <div class="feature-copy reveal">
-        <p class="eyebrow">Ródopes · Fuego ceremonial</p>
-        <h2>Cheverme / Чеверме</h2>
-        <p>Cordero entero asado lentamente sobre brasas y girado durante horas. Plato ceremonial, festivo y profundamente ligado a la cultura de los Ródopes.</p>
-        <div class="feature-panel">
-          <span>Versión moderna</span>
-          <p>Cordero cocinado a baja temperatura, glaseado con miel de montaña, tomillo silvestre, yogur ahumado y reducción de vino búlgaro.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="worlds section">
-      <div class="world-card traditional reveal">
-        <p class="eyebrow">Cocina tradicional búlgara</p>
-        <h2>Raíces, familia y territorio</h2>
-        <p>Aquí empieza la memoria de una mesa antigua: fuego lento, pan caliente y recetas que han sobrevivido al tiempo.</p>
-      </div>
-      <div class="world-card modern reveal" id="moderna">
-        <p class="eyebrow">Cocina búlgara moderna</p>
-        <h2>Creatividad, técnica y alta cocina</h2>
-        <p>La nueva cocina búlgara no rompe con la tradición: la eleva.</p>
-      </div>
-    </section>
-
-    <section class="section dishes-section" id="regiones">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Mapa gastronómico</p>
-        <h2>Del fuego de los Ródopes a la frescura del Mar Negro</h2>
-      </div>
-      <div class="region-tabs reveal" id="regionTabs" aria-label="Filtrar por regiones"></div>
-      <div class="dish-grid" id="dishGrid" aria-live="polite"></div>
-    </section>
-
-    <section class="modern-section section">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Nueva cocina búlgara</p>
-        <h2>La nueva cocina búlgara transforma la herencia en arte.</h2>
-      </div>
-      <div class="modern-list" id="modernList"></div>
-    </section>
-
-    <section class="gallery section" id="galeria">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Galería inmersiva</p>
-        <h2>Humo, vino, cerámica, pan y costa</h2>
-      </div>
-      <div class="gallery-grid">
-        <figure class="gallery-item tall reveal"><div class="gallery-image image-fire"></div><figcaption>Fuego lento en los Ródopes</figcaption></figure>
-        <figure class="gallery-item reveal"><div class="gallery-image image-banitsa"></div><figcaption>Pan, lino y desayuno búlgaro</figcaption></figure>
-        <figure class="gallery-item reveal"><div class="gallery-image image-salad"></div><figcaption>Sirene, verduras y frescura</figcaption></figure>
-        <figure class="gallery-item wide reveal"><div class="gallery-image image-sea"></div><figcaption>Cocina costera del Mar Negro</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="closing section">
-      <p class="eyebrow reveal">Desde los Ródopes hasta el Mar Negro</p>
-      <h2 class="reveal">Bulgaria no solo se visita. Bulgaria se saborea.</h2>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <span>Fuego Búlgaro</span>
-    <span>Experiencia gastronómica premium</span>
-  </footer>
-
-  <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
