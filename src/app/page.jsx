@@ -1,4 +1,5 @@
 import LegacyRoute from '@/components/legacy/LegacyRoute';
+import { GooeyDemo } from '@/components/ui/gooey-demo';
 import { bodyClassName, html, htmlClassName } from '@/content/legacy/home';
 
 export const metadata = {
@@ -30,12 +31,15 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <LegacyRoute
-      variant="home"
-      html={html}
-      bodyClassName={bodyClassName}
-      htmlClassName={htmlClassName}
-      stylesheets={['/legacy-css/main.css']}
-    />
+    <>
+      <GooeyDemo />
+      <LegacyRoute
+        variant="home"
+        html={html}
+        bodyClassName={bodyClassName}
+        htmlClassName={htmlClassName}
+        stylesheets={['/legacy-css/main.css']}
+      />
+    </>
   );
 }

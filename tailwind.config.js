@@ -1,10 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    './src/app/**/*.{js,jsx}',
-    './src/components/**/*.{js,jsx}',
-    './src/content/**/*.{js,jsx}',
-    './src/lib/**/*.{js,jsx}',
+    './src/app/**/*.{js,jsx,ts,tsx}',
+    './src/components/**/*.{js,jsx,ts,tsx}',
+    './src/content/**/*.{js,jsx,ts,tsx}',
+    './src/hooks/**/*.{js,jsx,ts,tsx}',
+    './src/lib/**/*.{js,jsx,ts,tsx}',
   ],
   safelist: [
     'active',

@@ -1,6 +1,6 @@
 import LegacyRoute from '@/components/legacy/LegacyRoute';
+import VenezuelaCinematicHero from '@/components/venezuela/VenezuelaCinematicHero';
 import { bodyClassName, html, htmlClassName } from '@/content/legacy/venezuela';
-import VenezuelaHero from '@/components/VenezuelaHero';
 
 export const metadata = {
   title: {
@@ -31,7 +31,7 @@ export const metadata = {
 export default function VenezuelaPage() {
   return (
     <>
-      <VenezuelaHero />
+      <VenezuelaCinematicHero />
       <LegacyRoute
         variant="venezuela"
         html={html}
