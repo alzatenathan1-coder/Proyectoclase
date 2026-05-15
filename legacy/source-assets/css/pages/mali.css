@@ -1,0 +1,288 @@
+/* Root variables for a bright, fresh Malian-inspired aesthetic */
+:root {
+    --primary: #2d6a4f; /* Forest Green */
+    --secondary: #52b788; /* Fresh Mint */
+    --accent: #74c69d; /* Light Green */
+    --bg-light: #f7fff7; /* Very Light Green Tint */
+    --bg-white: #ffffff;
+    --text-dark: #1b4332; /* Deep Green Text */
+    --text-muted: #40916c;
+    --font-main: 'Outfit', sans-serif;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-light);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 5px;
+}
+
+/* Navigation - Perfectly Centered Logo */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 1000;
+    border-bottom: 3px solid var(--secondary);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    transition: var(--transition);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    letter-spacing: 7px;
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+/* Hero Section */
+.hero {
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('../../images/mali/mali-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 0 10%;
+    margin-top: 60px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    text-shadow: 2px 2px 0px var(--bg-white);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: var(--primary);
+    max-width: 800px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+}
+
+/* Section Styling */
+section {
+    padding: 6rem 10%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.section-title h2 {
+    font-size: 3rem;
+    color: var(--primary);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 5px;
+    background: var(--secondary);
+    border-radius: 2px;
+}
+
+/* Food Grid - Modern Light Cards */
+.food-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.food-item {
+    background: var(--bg-white);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(116, 198, 157, 0.2);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.food-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(76, 175, 80, 0.15);
+}
+
+.food-item.visible {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.food-image-container {
+    height: 280px;
+    overflow: hidden;
+    display: flex; /* Support for grouped images */
+    gap: 5px;
+}
+
+.food-image-container img {
+    flex: 1; /* Make images take equal space */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.food-item:hover img {
+    transform: scale(1.1);
+}
+
+.food-content {
+    padding: 2rem;
+}
+
+.food-content h3 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.food-content .tag {
+    background: var(--secondary);
+    color: #fff;
+    padding: 0.3rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.food-content p {
+    font-size: 1.05rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.story-box {
+    background: rgba(82, 183, 136, 0.1);
+    border-left: 6px solid var(--secondary);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-top: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.story-box::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 4rem;
+    color: rgba(82, 183, 136, 0.2);
+    font-family: serif;
+}
+
+.story-box h4 {
+    color: var(--primary);
+    margin-bottom: 0.4rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Footer */
+footer {
+    padding: 4rem 10%;
+    text-align: center;
+    background: var(--primary);
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+    z-index: 2000;
+}
+
+#backToTop:hover {
+    background: var(--secondary);
+    transform: scale(1.1);
+}
+
+#backToTop.show {
+    display: flex;
+    animation: fadeInUp 0.3s ease-out;
+}
