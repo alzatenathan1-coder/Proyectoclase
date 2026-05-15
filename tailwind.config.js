@@ -146,6 +146,10 @@ export default {
           '0%, 100%': { opacity: '0.6' },
           '50%': { opacity: '1' },
         },
+        fadeRise: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
       animation: {
         float: 'float 6s ease-in-out infinite',
@@ -153,6 +157,9 @@ export default {
         steam: 'steam 4s ease-in-out infinite',
         glow: 'glowPulse 3s ease-in-out infinite',
         'pulse-soft': 'pulseSoft 4s ease-in-out infinite',
+        'fade-rise': 'fadeRise 0.8s ease-out forwards',
+        'fade-rise-delay': 'fadeRise 0.8s ease-out 0.2s forwards',
+        'fade-rise-delay-2': 'fadeRise 0.8s ease-out 0.4s forwards',
       },
     },
   },
