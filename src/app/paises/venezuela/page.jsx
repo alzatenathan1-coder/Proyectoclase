@@ -8,15 +8,15 @@ export const metadata = {
   description:
     'Venezuela: Cartografía del Mestizaje, un viaje profundo por la geografía del sabor venezolano.',
   alternates: {
-    canonical: '/venezuela',
+    canonical: '/paises/venezuela',
     languages: {
-      es: '/venezuela',
+      es: '/paises/venezuela',
     },
   },
   openGraph: {
     title: 'Venezuela: Cartografía del Mestizaje | Identidad Vibrante',
     description: 'Un viaje vibrante por el mapa del gusto venezolano: arepas, cachapas, pabellón, cacao y más.',
-    url: '/venezuela',
+    url: '/paises/venezuela',
     images: ['/og/venezuela.webp'],
   },
   twitter: {

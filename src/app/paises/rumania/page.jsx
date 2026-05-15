@@ -8,15 +8,15 @@ export const metadata = {
   description:
     'Crónicas del Caldero de Cobre explora la gastronomía rumana con sarmale, mămăligă, papanași, bebidas tradicionales y regiones culinarias.',
   alternates: {
-    canonical: '/rumania',
+    canonical: '/paises/rumania',
     languages: {
-      es: '/rumania',
+      es: '/paises/rumania',
     },
   },
   openGraph: {
     title: 'Crónicas del Caldero de Cobre | Gastronomía de Rumanía',
     description: 'Sarmale, mămăligă, papanași y tradiciones culinarias rumanas en una experiencia visual.',
-    url: '/rumania',
+    url: '/paises/rumania',
     images: ['/og/rumania.jpg'],
   },
   twitter: {

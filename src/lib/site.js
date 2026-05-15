@@ -8,17 +8,22 @@ export const siteRoutes = [
     changeFrequency: 'weekly',
   },
   {
-    path: '/venezuela',
+    path: '/paises',
+    priority: 0.9,
+    changeFrequency: 'monthly',
+  },
+  {
+    path: '/paises/venezuela',
     priority: 0.85,
     changeFrequency: 'monthly',
   },
   {
-    path: '/rumania',
+    path: '/paises/rumania',
     priority: 0.85,
     changeFrequency: 'monthly',
   },
   {
-    path: '/mali',
+    path: '/paises/mali',
     priority: 0.85,
     changeFrequency: 'monthly',
   },

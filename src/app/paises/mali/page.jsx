@@ -8,16 +8,16 @@ export const metadata = {
   description:
     'Découvrez la gastronomie traditionnelle du Mali avec le fonio, le zamei, le fakoye, le djouka, le ngomi et les saveurs de Bamako à Tombouctou.',
   alternates: {
-    canonical: '/mali',
+    canonical: '/paises/mali',
     languages: {
-      fr: '/mali',
+      fr: '/paises/mali',
     },
   },
   openGraph: {
     title: 'Gastronomie du Mali | Patrimoine culinaire authentique',
     description:
       'Un parcours par les plats maliens essentiels : fonio, zamei, fakoye, djouka, ngomi et plus encore.',
-    url: '/mali',
+    url: '/paises/mali',
     images: ['/og/mali.webp'],
     locale: 'fr_FR',
   },
