@@ -18,3 +18,9 @@ assets/bulgaria/platos bulgaros/
 gastronomia-bulgara-premium/
 git-data/
 ssh-wrapper.cmd
+
+# Large video files (exceed GitHub 100MB limit)
+*.mp4
+*.mov
+*.avi
+public/assets/videos/
