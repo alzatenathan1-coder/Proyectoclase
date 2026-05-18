@@ -1,12 +1,25 @@
-import LegacyRoute from '@/components/legacy/LegacyRoute';
-import { bodyClassName, html, htmlClassName } from '@/content/legacy/bulgaria';
+import BulgariaPremiumPage from '@/components/bulgaria/BulgariaPremiumPage';
 
 export const metadata = {
   title: {
-    absolute: 'Bulgaria: Sabores del Imperio | Comidas del Mundo',
+    absolute: 'Sabor de Bulgaria | Gastronomia bulgara elevada al arte',
   },
   description:
-    'Bulgaria: una experiencia gastronómica premium por su historia, regiones, parrilla, postres y folklore.',
+    'Experiencia premium de gastronomia bulgara tradicional y moderna: fuego, montana, vino Mavrud, banitsa, shopska salata, kavarma, postres y mapa gastronomico de Bulgaria.',
+  keywords: [
+    'gastronomia bulgara',
+    'cocina bulgara tradicional',
+    'cocina bulgara moderna',
+    'platos bulgaros',
+    'vino Mavrud',
+    'parrillada bulgara',
+    'banitsa',
+    'shopska salata',
+    'kavarma',
+    'tarta Garash',
+    'baklava bulgara',
+    'mapa gastronomico de Bulgaria',
+  ],
   alternates: {
     canonical: '/paises/bulgaria',
     languages: {
@@ -14,27 +27,20 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Bulgaria: Sabores del Imperio | Comidas del Mundo',
-    description: 'Banitsa, sirene, skara, yogur, rosas y memoria balcánica en una experiencia inmersiva.',
+    title: 'Sabor de Bulgaria | Gastronomia bulgara elevada al arte',
+    description:
+      'Una experiencia entre tradicion, fuego, montana, vino Mavrud y cocina bulgara contemporanea.',
     url: '/paises/bulgaria',
     images: ['/assets/images/bulgaria/hero-bulgarian-feast.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bulgaria: Sabores del Imperio',
-    description: 'Un viaje por la cocina tradicional y moderna de Bulgaria.',
+    title: 'Sabor de Bulgaria',
+    description: 'Cocina bulgara premium, tradicional y moderna, con vino Mavrud y mapa gastronomico.',
     images: ['/assets/images/bulgaria/hero-bulgarian-feast.png'],
   },
 };
 
 export default function BulgariaPage() {
-  return (
-    <LegacyRoute
-      variant="bulgaria"
-      html={html}
-      bodyClassName={bodyClassName}
-      htmlClassName={htmlClassName}
-      stylesheets={['/legacy-css/bulgaria.css']}
-    />
-  );
+  return <BulgariaPremiumPage />;
 }

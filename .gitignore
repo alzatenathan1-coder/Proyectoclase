@@ -24,3 +24,8 @@ ssh-wrapper.cmd
 *.mov
 *.avi
 public/assets/videos/
+
+# Local export packages
+sabor-de-bulgaria-*.zip
+sabor-de-bulgaria-web-*/
+sabor-de-bulgaria-github-pages-*/

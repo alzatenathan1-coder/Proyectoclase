@@ -1,0 +1,1316 @@
+.page {
+  --charcoal: #080706;
+  --coal: #14100d;
+  --ink: #1d1510;
+  --cream: #f7eedf;
+  --creamSoft: #efe1c9;
+  --gold: #c8a15a;
+  --goldDeep: #94713a;
+  --wine: #7b1d2d;
+  --wineDark: #451018;
+  --herb: #30583b;
+  --earth: #8c5634;
+  --line: rgba(247, 238, 223, 0.18);
+  --lineDark: rgba(20, 16, 13, 0.14);
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+  min-height: 100vh;
+  color: var(--cream);
+  background:
+    linear-gradient(180deg, rgba(8, 7, 6, 0.98), rgba(20, 16, 13, 0.98)),
+    repeating-linear-gradient(90deg, rgba(247, 238, 223, 0.045) 0 1px, transparent 1px 48px);
+  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  letter-spacing: 0;
+}
+
+.page *,
+.page *::before,
+.page *::after {
+  box-sizing: border-box;
+  letter-spacing: 0;
+}
+
+.page img {
+  display: block;
+  max-width: 100%;
+}
+
+.page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page button,
+.page input {
+  font: inherit;
+}
+
+.page [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 720ms ease, transform 720ms ease;
+}
+
+.page [data-reveal][data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 22px;
+  padding: 12px 34px;
+  border-bottom: 1px solid rgba(247, 238, 223, 0.12);
+  background: rgba(8, 7, 6, 0.82);
+  backdrop-filter: blur(18px);
+}
+
+.brand,
+.footerBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brandMark {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  color: #16100b;
+  border: 1px solid rgba(255, 250, 240, 0.48);
+  border-radius: 50%;
+  background: linear-gradient(145deg, #f8eacf, #c8a15a);
+  box-shadow: 0 12px 26px rgba(200, 161, 90, 0.22);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.brand strong,
+.footerBrand strong {
+  display: block;
+  color: #fff8ea;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.brand small {
+  display: block;
+  margin-top: 3px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  color: rgba(247, 238, 223, 0.74);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.nav a,
+.footerNav a {
+  position: relative;
+  padding-block: 10px;
+}
+
+.nav a::after,
+.footerNav a::after {
+  position: absolute;
+  right: 0;
+  bottom: 6px;
+  left: 0;
+  height: 1px;
+  content: "";
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.nav a:hover,
+.footerNav a:hover {
+  color: #fff8ea;
+}
+
+.nav a:hover::after,
+.footerNav a:hover::after {
+  transform: scaleX(1);
+}
+
+.reserveButton,
+.menuButton,
+.primaryCta,
+.secondaryCta,
+.regionButtons button,
+.newsletter button {
+  min-height: 44px;
+  border-radius: 8px;
+}
+
+.reserveButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 10px 16px;
+  color: #160f0a;
+  border: 1px solid rgba(255, 248, 234, 0.32);
+  background: linear-gradient(145deg, #f7eedf, #c8a15a);
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 14px 32px rgba(200, 161, 90, 0.18);
+}
+
+.menuButton {
+  display: none;
+  width: 46px;
+  border: 1px solid var(--line);
+  color: var(--cream);
+  background: rgba(247, 238, 223, 0.08);
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  align-items: end;
+  min-height: 86svh;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(247, 238, 223, 0.14);
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.02);
+}
+
+.heroShade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8, 7, 6, 0.9) 0%, rgba(8, 7, 6, 0.66) 42%, rgba(8, 7, 6, 0.18) 100%),
+    linear-gradient(0deg, rgba(8, 7, 6, 0.86) 0%, rgba(8, 7, 6, 0.18) 45%, rgba(8, 7, 6, 0.34) 100%);
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  width: min(780px, calc(100% - 44px));
+  margin: 0 0 78px;
+  padding-left: 46px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.sectionHeading h2,
+.modernIntro h2,
+.mavrudCopy h2,
+.menuHeader h2,
+.reservationInner h2 {
+  margin: 0;
+  color: #fff8ea;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  line-height: 0.98;
+}
+
+.hero h1 {
+  max-width: 720px;
+  font-size: 72px;
+}
+
+.heroInner > p:not(.eyebrow) {
+  max-width: 620px;
+  margin: 22px 0 0;
+  color: rgba(247, 238, 223, 0.86);
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.heroActions,
+.reservationActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.primaryCta,
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 194px;
+  padding: 13px 18px;
+  border: 1px solid rgba(255, 248, 234, 0.24);
+  font-size: 15px;
+  font-weight: 800;
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
+}
+
+.primaryCta {
+  color: #160f0a;
+  background: linear-gradient(145deg, #fff4df, #c8a15a);
+  box-shadow: 0 18px 44px rgba(200, 161, 90, 0.2);
+}
+
+.secondaryCta {
+  color: var(--cream);
+  background: rgba(247, 238, 223, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.primaryCta:hover,
+.secondaryCta:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 248, 234, 0.58);
+}
+
+.heroNote {
+  position: absolute;
+  right: 34px;
+  bottom: 28px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 420px;
+  padding: 14px 16px;
+  color: rgba(247, 238, 223, 0.88);
+  border: 1px solid rgba(247, 238, 223, 0.2);
+  border-radius: 8px;
+  background: rgba(8, 7, 6, 0.58);
+  backdrop-filter: blur(16px);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.section {
+  position: relative;
+  padding: 96px 34px;
+}
+
+.sectionHeading,
+.modernIntro,
+.menuHeader {
+  width: min(980px, 100%);
+  margin: 0 auto 38px;
+}
+
+.sectionHeading h2,
+.modernIntro h2,
+.mavrudCopy h2,
+.menuHeader h2,
+.reservationInner h2 {
+  font-size: 48px;
+}
+
+.sectionHeading > p:not(.eyebrow),
+.modernIntro > p,
+.menuHeader > p,
+.reservationInner > p {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: rgba(247, 238, 223, 0.74);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.introSection {
+  padding-top: 58px;
+  background: #f7eedf;
+  color: #20160f;
+}
+
+.introSection .eyebrow {
+  color: var(--wine);
+}
+
+.introSection .sectionHeading h2 {
+  color: #20160f;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 42px;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.introCopy {
+  display: grid;
+  gap: 18px;
+  color: rgba(32, 22, 15, 0.78);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.introCopy p {
+  margin: 0;
+}
+
+.fireSection {
+  background:
+    linear-gradient(180deg, #14100d, #0b0908),
+    repeating-linear-gradient(0deg, rgba(200, 161, 90, 0.06) 0 1px, transparent 1px 42px);
+}
+
+.fireGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  width: min(1320px, 100%);
+  margin: 0 auto;
+}
+
+.dishCard,
+.dessertCard,
+.modernTile,
+.regionCard,
+.ingredientCard {
+  border: 1px solid rgba(247, 238, 223, 0.16);
+  border-radius: 8px;
+  background: rgba(247, 238, 223, 0.055);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.24);
+  overflow: hidden;
+}
+
+.dishCard {
+  min-height: 100%;
+  transition: transform 240ms ease, border-color 240ms ease, background 240ms ease;
+}
+
+.dishCard:hover,
+.dessertCard:hover,
+.modernTile:hover,
+.ingredientCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200, 161, 90, 0.56);
+  background: rgba(247, 238, 223, 0.08);
+}
+
+.dishCard figure {
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #120d0a;
+}
+
+.dishCard img,
+.dessertCard img,
+.modernTile img,
+.ingredientCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 420ms ease;
+}
+
+.dishCard:hover img,
+.dessertCard:hover img,
+.modernTile:hover img,
+.ingredientCard:hover img {
+  transform: scale(1.045);
+}
+
+.dishCardBody {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+}
+
+.dishCardBody span,
+.regionCard > span,
+.modernTile span,
+.dishCardBody small {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.dishCardBody h3,
+.dessertCard h3,
+.modernTile h3,
+.regionCard h3 {
+  margin: 0;
+  color: #fff8ea;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+.dishCardBody p,
+.dessertCard p,
+.modernTile p,
+.regionCard dd {
+  margin: 0;
+  color: rgba(247, 238, 223, 0.76);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.pairing {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 4px;
+  color: #f8e7c4;
+}
+
+.pairing strong {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.traditionSection {
+  background:
+    linear-gradient(180deg, #f7eedf, #eadbc3),
+    repeating-linear-gradient(90deg, rgba(123, 29, 45, 0.06) 0 1px, transparent 1px 44px);
+  color: #1f160f;
+}
+
+.traditionSection .eyebrow {
+  color: var(--wine);
+}
+
+.traditionSection .sectionHeading h2,
+.traditionSection .dishCardBody h3 {
+  color: #1f160f;
+}
+
+.traditionSection .sectionHeading > p:not(.eyebrow),
+.traditionSection .dishCardBody p {
+  color: rgba(31, 22, 15, 0.72);
+}
+
+.traditionSection .dishCard {
+  border-color: rgba(31, 22, 15, 0.12);
+  background: rgba(255, 252, 246, 0.58);
+  box-shadow: 0 16px 42px rgba(68, 45, 28, 0.12);
+}
+
+.traditionGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  width: min(1320px, 100%);
+  margin: 0 auto;
+}
+
+.modernSection {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.78fr) minmax(0, 1.22fr);
+  gap: 34px;
+  align-items: start;
+  background: linear-gradient(180deg, #0b0908, #17110e);
+}
+
+.modernIntro {
+  position: sticky;
+  top: 96px;
+  margin: 0;
+  padding-left: max(0px, calc((100vw - 1320px) / 2));
+}
+
+.modernGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding-right: max(0px, calc((100vw - 1320px) / 2));
+}
+
+.modernTile {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 420px;
+}
+
+.modernTile img {
+  aspect-ratio: 16 / 10;
+  background: #120d0a;
+}
+
+.modernTile div {
+  padding: 20px;
+}
+
+.modernTile span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.dessertSection {
+  background:
+    linear-gradient(180deg, #1f1215, #0b0908),
+    repeating-linear-gradient(90deg, rgba(247, 238, 223, 0.04) 0 1px, transparent 1px 52px);
+}
+
+.dessertGrid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 14px;
+  width: min(1320px, 100%);
+  margin: 0 auto;
+}
+
+.dessertCard {
+  min-height: 360px;
+  transition: transform 240ms ease, border-color 240ms ease, background 240ms ease;
+}
+
+.dessertCard img {
+  aspect-ratio: 1 / 1;
+}
+
+.dessertCard div {
+  padding: 16px;
+}
+
+.dessertCard h3 {
+  font-size: 23px;
+}
+
+.mavrudSection {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr);
+  gap: 44px;
+  align-items: center;
+  background:
+    linear-gradient(90deg, #090706, #1d1110 52%, #3a1219),
+    repeating-linear-gradient(0deg, rgba(200, 161, 90, 0.04) 0 1px, transparent 1px 46px);
+}
+
+.mavrudMedia {
+  width: min(760px, 100%);
+  margin-left: auto;
+  border: 1px solid rgba(247, 238, 223, 0.18);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.mavrudMedia img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.mavrudCopy {
+  max-width: 620px;
+  padding-right: max(0px, calc((100vw - 1320px) / 2));
+}
+
+.mavrudCopy p {
+  color: rgba(247, 238, 223, 0.78);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.tastingNotes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.tastingNotes span {
+  padding: 9px 12px;
+  color: #f8e7c4;
+  border: 1px solid rgba(200, 161, 90, 0.36);
+  border-radius: 999px;
+  background: rgba(200, 161, 90, 0.08);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.mapSection {
+  background: #f7eedf;
+  color: #1e150f;
+}
+
+.mapSection .eyebrow {
+  color: var(--wine);
+}
+
+.mapSection .sectionHeading h2 {
+  color: #1e150f;
+}
+
+.mapLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+  gap: 22px;
+  width: min(1320px, 100%);
+  margin: 0 auto;
+}
+
+.mapPanel {
+  border: 1px solid rgba(31, 22, 15, 0.14);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, #fff7e7, #e6d2af),
+    repeating-linear-gradient(90deg, rgba(31, 22, 15, 0.05) 0 1px, transparent 1px 42px);
+  box-shadow: 0 20px 60px rgba(73, 49, 31, 0.16);
+  overflow: hidden;
+}
+
+.mapPanel svg {
+  display: block;
+  width: 100%;
+  aspect-ratio: 900 / 520;
+}
+
+.mapSilhouette {
+  fill: rgba(48, 88, 59, 0.16);
+  stroke: rgba(31, 22, 15, 0.26);
+  stroke-width: 2;
+}
+
+.regionPath {
+  cursor: pointer;
+  fill: rgba(140, 86, 52, 0.28);
+  stroke: rgba(31, 22, 15, 0.34);
+  stroke-width: 2;
+  transition: fill 180ms ease, stroke 180ms ease, transform 180ms ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.regionPath:hover,
+.regionPath:focus,
+.regionActive {
+  fill: rgba(123, 29, 45, 0.82);
+  stroke: #c8a15a;
+  outline: none;
+  transform: scale(1.012);
+}
+
+.regionMarker {
+  pointer-events: none;
+}
+
+.regionMarker circle {
+  fill: #c8a15a;
+  stroke: #1e150f;
+  stroke-width: 2;
+}
+
+.regionMarker text {
+  fill: #1e150f;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.regionCard {
+  padding: 26px;
+  background: #20160f;
+  border-color: rgba(200, 161, 90, 0.3);
+}
+
+.regionCard h3 {
+  margin-top: 10px;
+  font-size: 36px;
+}
+
+.regionCard dl {
+  display: grid;
+  gap: 18px;
+  margin: 22px 0 0;
+}
+
+.regionCard div {
+  padding-top: 16px;
+  border-top: 1px solid rgba(247, 238, 223, 0.12);
+}
+
+.regionCard dt {
+  margin-bottom: 6px;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.regionButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  width: min(1320px, 100%);
+  margin: 18px auto 0;
+}
+
+.regionButtons button {
+  cursor: pointer;
+  padding: 9px 12px;
+  color: #241910;
+  border: 1px solid rgba(31, 22, 15, 0.16);
+  background: rgba(255, 252, 246, 0.64);
+  font-size: 13px;
+  font-weight: 800;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.regionButtons button:hover,
+.regionButtonActive {
+  color: #fff8ea !important;
+  border-color: rgba(123, 29, 45, 0.28) !important;
+  background: #7b1d2d !important;
+}
+
+.ingredientsSection {
+  background:
+    linear-gradient(180deg, #0c0a08, #15100d),
+    repeating-linear-gradient(90deg, rgba(200, 161, 90, 0.045) 0 1px, transparent 1px 54px);
+}
+
+.ingredientsGrid {
+  display: grid;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+  gap: 12px;
+  width: min(1320px, 100%);
+  margin: 0 auto;
+}
+
+.ingredientCard {
+  position: relative;
+  min-height: 170px;
+  isolation: isolate;
+  transition: transform 240ms ease, border-color 240ms ease;
+}
+
+.ingredientCard::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background: linear-gradient(0deg, rgba(8, 7, 6, 0.82), rgba(8, 7, 6, 0.1));
+}
+
+.ingredientCard img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.ingredientCard span {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  color: #fff8ea;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+.menuSection {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1.28fr);
+  gap: 42px;
+  background: #f7eedf;
+  color: #1e150f;
+}
+
+.menuHeader {
+  margin: 0;
+  padding-left: max(0px, calc((100vw - 1320px) / 2));
+}
+
+.menuHeader .eyebrow {
+  color: var(--wine);
+}
+
+.menuHeader h2 {
+  color: #1e150f;
+}
+
+.menuHeader > p {
+  color: rgba(30, 21, 15, 0.72);
+}
+
+.tastingMenu {
+  display: grid;
+  gap: 0;
+  width: min(760px, 100%);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tastingMenu li {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(30, 21, 15, 0.16);
+}
+
+.tastingMenu li:first-child {
+  border-top: 1px solid rgba(30, 21, 15, 0.16);
+}
+
+.tastingMenu li > span {
+  color: var(--wine);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.tastingMenu strong {
+  display: block;
+  color: #1e150f;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.tastingMenu p {
+  margin: 4px 0 0;
+  color: rgba(30, 21, 15, 0.78);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 25px;
+  line-height: 1.26;
+}
+
+.reservationSection {
+  padding: 96px 34px;
+  background:
+    linear-gradient(90deg, rgba(8, 7, 6, 0.88), rgba(69, 16, 24, 0.74)),
+    url("/assets/images/bulgaria/meshana-skara-luxury.png") center / cover;
+}
+
+.reservationInner {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.reservationInner > p {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.reservationActions {
+  justify-content: center;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 0.9fr;
+  gap: 28px;
+  padding: 38px 34px;
+  color: rgba(247, 238, 223, 0.78);
+  border-top: 1px solid rgba(247, 238, 223, 0.14);
+  background: #080706;
+}
+
+.footerBrand p,
+.footerInfo p {
+  margin: 7px 0 0;
+  line-height: 1.55;
+}
+
+.footerNav {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+}
+
+.footerInfo {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.footerInfo p {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.newsletter label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.newsletter div {
+  display: grid;
+  grid-template-columns: 1fr 46px;
+  gap: 8px;
+}
+
+.newsletter input {
+  min-width: 0;
+  min-height: 46px;
+  padding: 0 12px;
+  color: var(--cream);
+  border: 1px solid rgba(247, 238, 223, 0.18);
+  border-radius: 8px;
+  background: rgba(247, 238, 223, 0.08);
+}
+
+.newsletter input::placeholder {
+  color: rgba(247, 238, 223, 0.54);
+}
+
+.newsletter button {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  color: #17100b;
+  border: 0;
+  background: var(--gold);
+}
+
+.backTop {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 22;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: #160f0a;
+  border: 1px solid rgba(247, 238, 223, 0.36);
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+  transform: rotate(-90deg);
+}
+
+@media (max-width: 1180px) {
+  .header {
+    grid-template-columns: auto 1fr auto auto;
+    padding: 12px 20px;
+  }
+
+  .nav {
+    position: fixed;
+    top: 67px;
+    right: 16px;
+    left: 16px;
+    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: start;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(8, 7, 6, 0.96);
+    box-shadow: var(--shadow);
+  }
+
+  .navOpen {
+    display: grid;
+  }
+
+  .menuButton {
+    display: grid;
+    place-items: center;
+  }
+
+  .fireGrid,
+  .traditionGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .dessertGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .ingredientsGrid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .footer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .reserveButton {
+    display: none;
+  }
+
+  .header {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .brand strong {
+    font-size: 18px;
+  }
+
+  .hero {
+    min-height: 82svh;
+  }
+
+  .heroInner {
+    width: min(680px, calc(100% - 32px));
+    margin-bottom: 84px;
+    padding-left: 20px;
+  }
+
+  .hero h1 {
+    font-size: 56px;
+  }
+
+  .heroInner > p:not(.eyebrow) {
+    font-size: 19px;
+  }
+
+  .heroNote {
+    right: 16px;
+    bottom: 18px;
+    left: 16px;
+    max-width: none;
+  }
+
+  .section {
+    padding: 72px 18px;
+  }
+
+  .sectionHeading h2,
+  .modernIntro h2,
+  .mavrudCopy h2,
+  .menuHeader h2,
+  .reservationInner h2 {
+    font-size: 40px;
+  }
+
+  .introGrid,
+  .modernSection,
+  .mavrudSection,
+  .mapLayout,
+  .menuSection {
+    grid-template-columns: 1fr;
+  }
+
+  .modernIntro {
+    position: static;
+    padding-left: 0;
+  }
+
+  .modernGrid,
+  .mavrudCopy,
+  .menuHeader {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .fireGrid,
+  .traditionGrid,
+  .modernGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dessertGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ingredientsGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .mavrudMedia {
+    margin: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .header {
+    padding: 10px 14px;
+  }
+
+  .brandMark {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+  .brand strong {
+    max-width: 148px;
+    overflow: hidden;
+    font-size: 17px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .brand small {
+    font-size: 11px;
+  }
+
+  .nav {
+    top: 61px;
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 78svh;
+  }
+
+  .heroShade {
+    background:
+      linear-gradient(90deg, rgba(8, 7, 6, 0.9) 0%, rgba(8, 7, 6, 0.62) 100%),
+      linear-gradient(0deg, rgba(8, 7, 6, 0.9) 0%, rgba(8, 7, 6, 0.2) 62%);
+  }
+
+  .heroInner {
+    width: calc(100% - 28px);
+    margin-bottom: 108px;
+    padding-left: 0;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+    line-height: 1.04;
+  }
+
+  .heroInner > p:not(.eyebrow) {
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .heroActions,
+  .reservationActions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .primaryCta,
+  .secondaryCta {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .heroNote {
+    font-size: 13px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+  }
+
+  .sectionHeading h2,
+  .modernIntro h2,
+  .mavrudCopy h2,
+  .menuHeader h2,
+  .reservationInner h2 {
+    font-size: 32px;
+    line-height: 1.06;
+  }
+
+  .sectionHeading > p:not(.eyebrow),
+  .modernIntro > p,
+  .mavrudCopy p,
+  .menuHeader > p,
+  .reservationInner > p,
+  .introCopy {
+    font-size: 16px;
+  }
+
+  .fireGrid,
+  .traditionGrid,
+  .modernGrid,
+  .dessertGrid,
+  .ingredientsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .modernTile {
+    min-height: 0;
+  }
+
+  .dessertCard {
+    min-height: 0;
+  }
+
+  .mapPanel svg {
+    min-width: 720px;
+  }
+
+  .mapPanel {
+    overflow-x: auto;
+  }
+
+  .regionCard {
+    padding: 20px;
+  }
+
+  .regionCard h3 {
+    font-size: 30px;
+  }
+
+  .tastingMenu li {
+    grid-template-columns: 46px 1fr;
+  }
+
+  .tastingMenu p {
+    font-size: 20px;
+  }
+
+  .reservationSection {
+    padding: 72px 18px;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+    padding: 32px 18px 82px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page [data-reveal],
+  .dishCard,
+  .dishCard img,
+  .dessertCard,
+  .dessertCard img,
+  .modernTile,
+  .modernTile img,
+  .ingredientCard,
+  .ingredientCard img,
+  .primaryCta,
+  .secondaryCta {
+    transition: none;
+  }
+}

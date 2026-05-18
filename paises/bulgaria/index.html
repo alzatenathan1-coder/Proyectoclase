@@ -1,319 +1,317 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bulgaria: Sabores del Imperio, Alma de los Balcanes. Una experiencia premium sobre gastronomía, historia, regiones y folklore búlgaro.">
-  <title>Bulgaria: Sabores del Imperio, Alma de los Balcanes</title>
-  <link rel="preconnect" href="https://images.unsplash.com">
-  <link rel="stylesheet" href="/public/legacy-css/bulgaria-static.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sabor de Bulgaria | Gastronomía búlgara elevada al arte</title>
+  <meta name="description" content="Landing page premium de gastronomía búlgara tradicional y moderna: fuego, montaña, vino Mavrud, banitsa, shopska salata, kavarma, postres y mapa gastronómico de Bulgaria.">
+  <meta name="keywords" content="gastronomía búlgara, cocina búlgara tradicional, cocina búlgara moderna, platos búlgaros, vino Mavrud, parrillada búlgara, banitsa, shopska salata, kavarma, tarta Garash, baklava búlgara, mapa gastronómico de Bulgaria">
+  <meta name="theme-color" content="#0b0907">
+  <meta property="og:title" content="Sabor de Bulgaria | Gastronomía búlgara elevada al arte">
+  <meta property="og:description" content="Una experiencia entre tradición, fuego, montaña, vino y cocina moderna.">
+  <meta property="og:image" content="../../public/assets/images/bulgaria/hero-bulgarian-feast.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
-  <div class="cursor-aura" id="cursorAura" aria-hidden="true"></div>
-  <div class="scroll-meter" aria-hidden="true"><span id="scrollMeter"></span></div>
-
-  <header class="site-header" id="siteHeader">
-    <a class="brand" href="/index.html" aria-label="Volver al portal de comidas del mundo">
-      <span class="brand-emblem">BG</span>
-      <span class="brand-copy">
-        <strong>Bulgaria</strong>
-        <small>Sabores del Imperio</small>
+  <header class="site-header">
+    <a class="brand" href="../../index.html" aria-label="Volver al inicio">
+      <span class="brand-mark">SB</span>
+      <span>
+        <strong>Sabor de Bulgaria</strong>
+        <small>Raíces & Fuego</small>
       </span>
     </a>
-    <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir navegación" aria-expanded="false">
-      <span></span>
-      <span></span>
-    </button>
-    <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
-      <a href="/index.html">Portal</a>
-      <a href="#inicio">Inicio</a>
-      <a href="#historia">Historia</a>
-      <a href="#mapa-imperial">Mapa imperial</a>
-      <a href="#mapa-gastronomico">Mapa gastronómico</a>
-      <a href="#tradicional">Cocina tradicional</a>
-      <a href="#parrilla">Parrilla</a>
-      <a href="#moderna">Cocina moderna</a>
-      <a href="#postres">Postres y cremas</a>
-      <a href="#ingredientes">Ingredientes</a>
-      <a href="#tradiciones">Tradiciones</a>
-      <a href="#musica">Música</a>
-      <a href="#galeria">Galería</a>
-      <a href="#contacto">Contacto</a>
+
+    <details class="nav-details">
+      <summary>Menú</summary>
+      <nav class="nav-menu" aria-label="Navegación principal">
+        <a href="#experiencia">Experiencia</a>
+        <a href="#fuego">Fuego</a>
+        <a href="#tradicion">Tradición</a>
+        <a href="#alta-cocina">Alta cocina</a>
+        <a href="#postres">Postres</a>
+        <a href="#mavrud">Mavrud</a>
+        <a href="#mapa">Mapa</a>
+        <a href="#reservas">Reservas</a>
+      </nav>
+    </details>
+
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <a href="#experiencia">Experiencia</a>
+      <a href="#fuego">Fuego</a>
+      <a href="#tradicion">Tradición</a>
+      <a href="#alta-cocina">Alta cocina</a>
+      <a href="#postres">Postres</a>
+      <a href="#mavrud">Mavrud</a>
+      <a href="#mapa">Mapa</a>
     </nav>
+
+    <a class="reserve-link" href="#reservas">Reservar</a>
   </header>
 
-  <button class="floating-music" id="floatingMusic" type="button" aria-label="Activar o silenciar música">
-    <span class="floating-music__icon">♪</span>
-    <span class="floating-music__state">Off</span>
-  </button>
-
-  <button class="back-top" id="backTop" type="button" aria-label="Volver arriba">↑</button>
-
   <main>
-    <section class="hero section-dark" id="inicio">
-      <div class="hero-bg" data-parallax="0.18" aria-hidden="true"></div>
-      <div class="hero-vignette" aria-hidden="true"></div>
-      <div class="hero-steam steam-a" aria-hidden="true"></div>
-      <div class="hero-steam steam-b" aria-hidden="true"></div>
-      <div class="hero-thread thread-a" aria-hidden="true"></div>
-      <div class="hero-thread thread-b" aria-hidden="true"></div>
-
-      <div class="hero-content reveal">
-        <p class="eyebrow">Restaurante cultural · Museo gastronómico · Bulgaria</p>
-        <h1>Bulgaria: donde la historia se sirve en la mesa</h1>
-        <p class="hero-subtitle">Una travesía premium por la cocina tradicional y moderna de Bulgaria, desde las montañas Ródope hasta el Mar Negro.</p>
+    <section class="hero" id="inicio" aria-label="Portada de Sabor de Bulgaria">
+      <img src="../../public/assets/images/bulgaria/hero-bulgarian-feast.png" alt="Mesa búlgara contemporánea con parrillada, vino, pan artesanal y ensaladas">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Bulgarian Gastronomy Experience</p>
+        <h1>Gastronomía búlgara elevada al arte</h1>
+        <p>Una experiencia entre tradición, fuego, montaña, vino y cocina moderna.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#tradicional">Explorar sabores</a>
-          <a class="btn btn-ghost" href="#mapa-imperial">Ver mapa histórico</a>
-          <button class="btn btn-ghost" id="heroMusicBtn" type="button">Escuchar folklore búlgaro</button>
+          <a class="button button-primary" href="#fuego">Explorar el menú</a>
+          <a class="button button-secondary" href="#mapa">Descubrir el mapa gastronómico</a>
         </div>
       </div>
-
-      <aside class="hero-panel reveal">
-        <span class="panel-kicker">Mesa ceremonial</span>
-        <h2>Banitsa, sirene, vino Mavrud y pan ritual</h2>
-        <p>El blanco del queso, el verde de las montañas y el rojo del vino componen una bandera íntima: la de una casa que recibe al viajero con abundancia.</p>
+      <aside class="hero-note">
+        Mavrud, brasas, sirene, pan artesanal y rosa búlgara en una experiencia de lujo cálido.
       </aside>
     </section>
 
-    <section class="section intro-band">
-      <div class="ornament ornament-top" aria-hidden="true"></div>
-      <div class="intro-grid">
-        <div class="section-copy reveal">
-          <p class="eyebrow">Una revista, un museo, una mesa</p>
-          <h2>En Bulgaria, cada plato es una memoria.</h2>
-        </div>
-        <div class="intro-text reveal">
-          <p>El pan guarda la bendición de la casa, el yogur conserva la sabiduría de las montañas, el vino Mavrud recuerda la fuerza de los antiguos tracios y las rosas perfuman los dulces como si fueran poesía servida en porcelana.</p>
-          <p>Esta web viaja por regiones, imperios, mercados, trajes, montañas y mares para contar una cocina que nunca ha sido solo alimento: ha sido identidad, resistencia y celebración.</p>
-        </div>
+    <section class="section intro" id="experiencia">
+      <div class="section-title">
+        <p class="eyebrow">Tradición balcánica, mirada contemporánea</p>
+        <h2>Una cocina de producto, fuego, hierbas, lácteos, carnes y vino.</h2>
+      </div>
+      <div class="intro-copy">
+        <p>La cocina búlgara nace en un cruce de influencias balcánicas, tracias, otomanas, mediterráneas y de montaña. Su carácter se reconoce en el pan recién abierto, el yogur vivo, el queso sirene, el pimiento asado y las brasas que perfuman la mesa.</p>
+        <p>Esta propuesta presenta Bulgaria como gastronomía de alta gama: recetas familiares reinventadas con estética editorial, vajilla artesanal, vinos profundos y una emoción cálida que une campo, monasterio, valle, costa y ciudad.</p>
       </div>
     </section>
 
-    <section class="section history-section" id="historia">
-      <div class="history-grid">
-        <div class="history-media reveal" data-parallax="0.08">
-          <div class="history-photo"></div>
-          <div class="history-badge">
-            <strong>681</strong>
-            <span>nacimiento simbólico del Primer Imperio Búlgaro</span>
+    <section class="section dark" id="fuego">
+      <div class="section-title">
+        <p class="eyebrow">Cocina al fuego</p>
+        <h2>Brasas búlgaras, humo noble y vinos de carácter.</h2>
+        <p>Galería premium de carnes con origen regional, descripción sensorial y maridaje recomendado.</p>
+      </div>
+      <div class="card-grid fire-grid">
+        <article class="dish-card featured">
+          <img src="../../public/assets/images/bulgaria/meshana-skara-luxury.png" alt="Parrillada mixta búlgara">
+          <div>
+            <span>Tabernas de Tracia y Sofía</span>
+            <h3>Parrillada mixta búlgara</h3>
+            <p>Meshana skara con kebabche, kufte, chuletas y embutidos curados sobre brasa viva.</p>
+            <strong>Maridaje: Mavrud joven con fruta negra y especias.</strong>
           </div>
-        </div>
-        <div class="history-copy reveal">
-          <p class="eyebrow">El sabor de una tierra imperial</p>
-          <h2>El sabor de una tierra imperial</h2>
-          <p class="lead">Bulgaria no solo se recuerda en los libros de historia; también vive en el pan compartido, en el aroma del pimiento asado, en el yogur de montaña y en el vino oscuro de los antiguos tracios.</p>
-          <div class="timeline" id="historyTimeline"></div>
-        </div>
+        </article>
+        <article class="dish-card">
+          <img src="../../public/assets/images/bulgaria/costillas-brasa-luxury.png?v=1" alt="Costillas búlgaras a la brasa">
+          <div>
+            <span>Ródope y Pirin</span>
+            <h3>Costillas a la brasa</h3>
+            <p>Costillas glaseadas con miel búlgara, ajedrea, humo de madera y pimienta negra.</p>
+            <strong>Maridaje: Mavrud reserva con roble discreto.</strong>
+          </div>
+        </article>
+        <article class="dish-card">
+          <img src="../../public/assets/images/bulgaria/kyufte-luxury.png" alt="Kufte búlgaro">
+          <div>
+            <span>Suroeste búlgaro</span>
+            <h3>Kufte</h3>
+            <p>Albóndiga especiada, jugosa y marcada al fuego, servida con lyutenitsa y pan artesanal.</p>
+            <strong>Maridaje: Rubin búlgaro fresco.</strong>
+          </div>
+        </article>
+        <article class="dish-card">
+          <img src="../../public/assets/images/bulgaria/kebapche-luxury.png" alt="Kebabche a la brasa">
+          <div>
+            <span>Tracia</span>
+            <h3>Kebabche</h3>
+            <p>Kebabche tradicional a la brasa, especiado con comino y pimienta negra.</p>
+            <strong>Maridaje: Mavrud de Plovdiv.</strong>
+          </div>
+        </article>
+        <article class="dish-card">
+          <img src="../../public/assets/images/bulgaria/cheverme-luxury.png" alt="Cordero asado búlgaro">
+          <div>
+            <span>Montañas Ródope</span>
+            <h3>Cordero asado</h3>
+            <p>Cordero lento, piel dorada, hierbas silvestres y jugos reducidos al borde del fuego.</p>
+            <strong>Maridaje: Mavrud viejo y profundo.</strong>
+          </div>
+        </article>
+        <article class="dish-card">
+          <img src="../../public/assets/images/bulgaria/ternera-hierbas-balcanicas-luxury.png?v=2" alt="Ternera madurada con hierbas balcánicas">
+          <div>
+            <span>Sofía contemporánea</span>
+            <h3>Ternera madurada</h3>
+            <p>Cortes maduros con hierbas balcánicas, brasas limpias y mantequilla de ajedrea.</p>
+            <strong>Maridaje: Melnik 55.</strong>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="section imperial-section" id="mapa-imperial">
-      <div class="section-heading center reveal">
-        <p class="eyebrow">Mapa imperial</p>
-        <h2>Fortalezas, mares y rutas de una memoria balcánica</h2>
-        <p>Un mapa artístico, inspirado en pergaminos de museo, reúne montañas, mares y caminos comerciales para mirar Bulgaria como cruce entre Europa y Oriente.</p>
+    <section class="section light" id="tradicion">
+      <div class="section-title">
+        <p class="eyebrow">Tradición búlgara</p>
+        <h2>Platos que cuentan territorio, familia y estación.</h2>
+        <p>Una experiencia cultural con ingredientes, regiones y origen de cada plato.</p>
       </div>
-
-      <div class="imperial-map reveal" aria-label="Mapa artístico imperial de Bulgaria">
-        <div class="map-glow" aria-hidden="true"></div>
-        <svg viewBox="0 0 1100 640" role="img" aria-labelledby="imperialTitle imperialDesc">
-          <title id="imperialTitle">Mapa imperial artístico de Bulgaria</title>
-          <desc id="imperialDesc">Mapa de estilo pergamino con mares, montañas, fortalezas y rutas comerciales.</desc>
-          <defs>
-            <filter id="roughPaper">
-              <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="4" seed="5"></feTurbulence>
-              <feColorMatrix type="saturate" values="0.18"></feColorMatrix>
-              <feBlend mode="multiply" in2="SourceGraphic"></feBlend>
-            </filter>
-            <linearGradient id="routeGradient" x1="0%" x2="100%">
-              <stop offset="0%" stop-color="#8b1e2d"></stop>
-              <stop offset="45%" stop-color="#d8b15f"></stop>
-              <stop offset="100%" stop-color="#1f5f45"></stop>
-            </linearGradient>
-          </defs>
-          <rect x="28" y="28" width="1044" height="584" rx="8" class="parchment-base"></rect>
-          <path class="map-land" d="M254 252c66-77 158-110 274-91 70 12 125-8 194-17 94-13 173 21 222 89 36 50 54 104 39 168-18 77-88 123-168 124-66 1-127-27-192-17-90 14-163 62-256 40-78-19-127-77-145-151-13-54-6-100 32-145z"></path>
-          <path class="map-mountain" d="M226 389c48-50 72-76 113-102 50 44 64 83 105 124 36-58 68-91 117-118 35 46 64 91 103 130 32-48 66-82 111-108 44 50 83 91 131 122"></path>
-          <path class="map-route route-one" d="M140 452 C260 382 340 352 470 360 S700 390 944 276"></path>
-          <path class="map-route route-two" d="M258 186 C346 258 455 305 562 292 S752 210 920 236"></path>
-          <path class="map-route route-three" d="M364 520 C444 454 533 410 628 428 S746 490 870 520"></path>
-          <text class="sea-label" x="866" y="358">Mar Negro</text>
-          <text class="sea-label muted" x="518" y="594">Mar Egeo</text>
-          <text class="sea-label muted" x="64" y="488">Mar Adriático</text>
-          <text class="map-label" x="462" y="242">Preslav</text>
-          <text class="map-label" x="374" y="365">Sofía</text>
-          <text class="map-label" x="624" y="332">Tracia</text>
-          <text class="map-label" x="706" y="452">Ródope</text>
-          <g class="fortress" transform="translate(448 222)"><path d="M0 38h58V10h-9V0h-9v10H18V0H9v10H0z"></path></g>
-          <g class="fortress" transform="translate(352 342)"><path d="M0 38h58V10h-9V0h-9v10H18V0H9v10H0z"></path></g>
-          <g class="fortress" transform="translate(612 312)"><path d="M0 38h58V10h-9V0h-9v10H18V0H9v10H0z"></path></g>
-          <g class="ship" transform="translate(884 398)"><path d="M0 28c40 22 76 22 116 0H0z"></path><path d="M50 0v30M50 4l42 22H50z"></path></g>
-          <g class="rose-mark" transform="translate(666 218)">
-            <circle cx="0" cy="0" r="12"></circle><circle cx="12" cy="7" r="10"></circle><circle cx="-11" cy="8" r="10"></circle><circle cx="0" cy="18" r="10"></circle>
-          </g>
-        </svg>
-        <blockquote>
-          “Según la tradición popular búlgara, la bandera búlgara nunca cayó en manos de los enemigos; permanece como símbolo de dignidad, resistencia y orgullo nacional.”
-        </blockquote>
+      <div class="tradition-grid">
+        <article><img src="../../public/assets/images/bulgaria/banitsa-luxury.png" alt="Banitsa"><span>Dobrudja</span><h3>Banitsa</h3><p>Masa filo, sirene, yogur y mantequilla en capas crujientes de desayuno ceremonial.</p></article>
+        <article><img src="../../public/assets/images/bulgaria/shopska-salata-luxury.png" alt="Shopska salata"><span>Sofía occidental</span><h3>Shopska salata</h3><p>Tomate, pepino, pimiento y sirene rallado; fresca, mineral y luminosa.</p></article>
+        <article><img src="../../public/assets/images/bulgaria/lyutenitsa-luxury.png" alt="Zhatvarska salata"><span>Campos de Dobrudja</span><h3>Zhatvarska salata</h3><p>Ensalada de cosecha con verduras, pimientos asados y hierbas de campo.</p></article>
+        <article><img src="../../public/assets/images/bulgaria/kavarma-luxury.png" alt="Kavarma"><span>Tracia</span><h3>Kavarma</h3><p>Carne, vino, cebolla y tomate cocinados en cazuela cerámica hasta quedar melosos.</p></article>
+        <article><img src="../../public/assets/images/bulgaria/gyuvech-luxury.png" alt="Gyuvech"><span>Bulgaria central</span><h3>Gyuvech</h3><p>Hortalizas, carne y especias en horno lento; un jardín servido en barro.</p></article>
+        <article><img src="../../public/assets/images/bulgaria/sarmi-luxury.png" alt="Sarmi"><span>Danubio búlgaro</span><h3>Sarmi</h3><p>Hojas de col o vid con arroz, carne y especias: pequeños paquetes familiares.</p></article>
+        <article><img src="../../public/assets/images/bulgaria/tarator-luxury.png" alt="Tarator"><span>Mar Negro</span><h3>Tarator</h3><p>Sopa fría de yogur, pepino, ajo, eneldo y nueces; verano en porcelana blanca.</p></article>
+        <article><img src="../../public/assets/images/bulgaria/patatnik-luxury.png" alt="Patatnik"><span>Ródope</span><h3>Patatnik</h3><p>Pastel de patata, sirene, mantequilla y hierbas de montaña.</p></article>
+        <article><img src="../../public/assets/images/bulgaria/kapama-luxury.png" alt="Kapama"><span>Pirin</span><h3>Kapama</h3><p>Carnes, col fermentada, arroz y vino en olla sellada de Bansko.</p></article>
+        <article><img src="../../public/assets/images/bulgaria/meshana-skara-luxury.png" alt="Meshana skara"><span>Todo el país</span><h3>Meshana skara</h3><p>Parrilla compartida con kebabche, kufte, karnache, chuletas y lyutenitsa.</p></article>
       </div>
     </section>
 
-    <section class="section gastronomy-map-section" id="mapa-gastronomico">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Mapa gastronómico</p>
-        <h2>Once regiones, once maneras de sentarse a la mesa</h2>
-        <p>Selecciona una región para descubrir sus ingredientes, platos y memoria culinaria.</p>
-      </div>
-
-      <div class="gastro-layout">
-        <div class="bulgaria-map reveal" id="bulgariaMap" aria-label="Mapa gastronómico interactivo de Bulgaria"></div>
-        <article class="region-feature reveal" id="regionFeature" aria-live="polite"></article>
-      </div>
-    </section>
-
-    <section class="section dishes-section" id="tradicional">
-      <div class="section-heading center reveal">
-        <p class="eyebrow">Cocina tradicional</p>
-        <h2>Cocina tradicional: el alma servida en barro, pan y fuego</h2>
-        <p>Veinte platos esenciales de Bulgaria, cada uno con territorio, ingredientes, historia y una imagen viva.</p>
-      </div>
-      <div class="filter-bar reveal" id="traditionalFilters" aria-label="Filtros de cocina tradicional"></div>
-      <div class="card-grid dish-grid" id="traditionalGrid"></div>
-    </section>
-
-    <section class="section grill-section" id="parrilla">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Skara búlgara</p>
-        <h2>Parrilla búlgara: brasas, humo y comunidad</h2>
-        <p>La cultura gastronómica búlgara también se entiende al lado del fuego: carnes especiadas, embutidos curados, pan caliente, lyutenitsa, ensalada fresca, vino y mesas al aire libre.</p>
-      </div>
-      <div class="grill-stage reveal">
-        <div class="grill-hero">
-          <span class="panel-kicker">Ritual de brasas</span>
-          <h3>La skara no es solo carne: es reunión.</h3>
-          <p>En Bulgaria, el humo de la parrilla anuncia feria, taberna, domingo familiar y celebración. El kebapche y el kyufte se sirven con pan, patatas, ensalada shopska, lyutenitsa y una copa de vino o rakia.</p>
-        </div>
-        <div class="grill-grid" id="grillGrid"></div>
-      </div>
-    </section>
-
-    <section class="section modern-section" id="moderna">
-      <div class="section-heading reveal">
+    <section class="section dark editorial" id="alta-cocina">
+      <div class="section-title sticky-title">
         <p class="eyebrow">Alta cocina búlgara</p>
-        <h2>Bulgaria contemporánea: tradición reinventada</h2>
-        <p>La nueva cocina búlgara no borra la memoria: la concentra, la afina y la sirve con silencio de porcelana.</p>
+        <h2>La memoria se afina, no desaparece.</h2>
+        <p>Reinterpretaciones modernas con emplatado artístico, fondos oscuros, detalles dorados y luz suave.</p>
       </div>
-      <div class="modern-showcase" id="modernGrid"></div>
+      <div class="modern-list">
+        <article><img src="../../public/assets/images/bulgaria/cheverme-luxury.png" alt="Cordero de montaña"><div><span>01</span><h3>Cordero de montaña con reducción de Mavrud</h3><p>Jugo oscuro, hierbas Ródope, raíz asada y sal ahumada.</p></div></article>
+        <article><img src="../../public/assets/images/bulgaria/ternera-hierbas-balcanicas-luxury.png?v=2" alt="Ternera madurada con hierbas balcánicas"><div><span>02</span><h3>Ternera madurada con hierbas balcánicas</h3><p>Corte limpio, mantequilla de ajedrea, pimiento quemado y fondo de vino.</p></div></article>
+        <article><img src="../../public/assets/images/bulgaria/banitsa-luxury.png" alt="Banitsa crujiente"><div><span>03</span><h3>Banitsa crujiente de autor</h3><p>Filo ultrafino, sirene cremoso, miel de montaña y polvo de nuez.</p></div></article>
+        <article><img src="../../public/assets/images/bulgaria/kavarma-luxury.png" alt="Kavarma gourmet"><div><span>04</span><h3>Kavarma gourmet en cazuela cerámica</h3><p>Cocción lenta, reducción brillante y vajilla artesanal de tonos tierra.</p></div></article>
+        <article><img src="../../public/assets/images/bulgaria/shopska-salata-luxury.png" alt="Shopska salata deconstruida"><div><span>05</span><h3>Shopska salata deconstruida</h3><p>Tomate maduro, espuma de sirene, pepino frío y aceite verde.</p></div></article>
+        <article><img src="../../public/assets/images/bulgaria/costillas-miel-luxury.png?v=2" alt="Costillas glaseadas con miel búlgara"><div><span>06</span><h3>Costillas glaseadas con miel búlgara</h3><p>Especias dulces, humo suave, ajo negro y acabado de oro envejecido.</p></div></article>
+      </div>
     </section>
 
-    <section class="section desserts-section" id="postres">
-      <div class="section-heading center reveal">
-        <p class="eyebrow">Postres, cremas y pasteles</p>
-        <h2>Dulces de Bulgaria: miel, rosas y memoria</h2>
-        <p>Una vitrina de azúcar, yogur, nueces, vainilla, calabaza, crema y pétalos de rosa.</p>
+    <section class="section wine-section" id="mavrud">
+      <figure>
+        <img src="../../public/assets/images/bulgaria/mavrud-wine-luxury.png" alt="Copa de vino tinto Mavrud y botella sobre mesa oscura">
+      </figure>
+      <div>
+        <p class="eyebrow">Vino Mavrud</p>
+        <h2>Mavrud, el alma tinta de Bulgaria.</h2>
+        <p>Un vino poderoso, profundo y ancestral, perfecto para acompañar carnes a la brasa y platos tradicionales de montaña.</p>
+        <ul class="notes">
+          <li>Origen tracio</li>
+          <li>Rojo profundo</li>
+          <li>Frutos negros</li>
+          <li>Especias</li>
+          <li>Roble</li>
+          <li>Tierra húmeda</li>
+        </ul>
+        <p>Su estructura acompaña cordero, ternera, costillas, kavarma y quesos curados. En la web funciona como eje emocional: copa oscura, mesa de carbón, luz baja y una sensación de tiempo antiguo.</p>
       </div>
-      <div class="card-grid dessert-grid" id="dessertGrid"></div>
     </section>
 
-    <section class="section ingredients-section" id="ingredientes">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Ingredientes sagrados</p>
-        <h2>Ingredientes sagrados: la memoria de la tierra</h2>
-        <p>La identidad búlgara se reconoce en lo humilde: yogur vivo, pan trenzado, pimiento asado, vino oscuro y rosas de Kazanlak.</p>
+    <section class="section desserts" id="postres">
+      <div class="section-title">
+        <p class="eyebrow">Postres búlgaros</p>
+        <h2>Rosa, nuez, miel, cacao, calabaza y yogur.</h2>
+        <p>Una colección dulce inspirada en la rosa búlgara, las nueces, la miel, el cacao, la calabaza y la tradición familiar.</p>
       </div>
-      <div class="ingredient-strip" id="ingredientStrip"></div>
+      <div class="dessert-grid">
+        <article><img src="../../public/assets/images/bulgaria/garash-cake-luxury.png" alt="Tarta Garash"><h3>Tarta Garash</h3><p>Chocolate, nuez y crema oscura en clave de salón europeo.</p></article>
+        <article><img src="../../public/assets/images/bulgaria/baklava-luxury.png" alt="Baklava búlgara"><h3>Baklava</h3><p>Miel, nueces y capas finas de masa con brillo cálido.</p></article>
+        <article><img src="../../public/assets/images/bulgaria/tikvenik-luxury.png" alt="Tikvenik"><h3>Tikvenik</h3><p>Calabaza, canela y filo dorado como otoño envuelto en hojaldre.</p></article>
+        <article><img src="../../public/assets/images/bulgaria/rose-jam-luxury.png" alt="Mermelada de rosas"><h3>Mermelada de rosas</h3><p>La rosa de Kazanlak convertida en perfume comestible.</p></article>
+        <article><img src="../../public/assets/images/bulgaria/torta-biscuit-luxury.png" alt="Tarta artesanal moderna"><h3>Tartas artesanales modernas</h3><p>Pastelería contemporánea con nueces, cacao y yogur búlgaro.</p></article>
+        <article><img src="../../public/assets/images/bulgaria/yogurt-honey-walnuts-luxury.png" alt="Yogur con miel y nueces"><h3>Yogur, miel y nueces</h3><p>Acidez láctea, miel de montaña y textura de nuez tostada.</p></article>
+        <article><img src="../../public/assets/images/bulgaria/rose-yogurt-dessert-luxury.png" alt="Postre de rosa de Kazanlak"><h3>Rosa de Kazanlak</h3><p>Postre floral con yogur, fruta roja y pétalos delicados.</p></article>
+      </div>
     </section>
 
-    <section class="section traditions-section" id="tradiciones">
-      <div class="traditions-copy reveal">
-        <p class="eyebrow">Rituales de mesa</p>
-        <h2>La mesa búlgara: familia, fuego y celebración</h2>
-        <p>Las bodas, los festivales, los Kukeri, los Nestinari, las danzas circulares y los trajes regionales convierten la comida en una ceremonia colectiva.</p>
+    <section class="section light map-section" id="mapa">
+      <div class="section-title">
+        <p class="eyebrow">Mapa gastronómico de Bulgaria</p>
+        <h2>Regiones, vinos, ingredientes y especialidades locales.</h2>
+        <p>Mapa interactivo sin JavaScript: toca una región o abre sus fichas para explorar la cocina búlgara.</p>
       </div>
-      <div class="traditions-grid" id="traditionsGrid"></div>
-    </section>
+      <div class="map-layout">
+        <svg class="bulgaria-map" viewBox="0 0 900 520" role="img" aria-label="Mapa gastronómico de Bulgaria">
+          <path class="map-base" d="M78 238 C118 126 244 78 422 82 C550 86 640 70 764 118 C844 148 862 250 818 344 C760 470 650 498 514 484 C398 470 322 512 194 462 C96 424 44 336 78 238 Z"></path>
+          <a href="#region-sofia"><path d="M102 206 L208 174 L262 224 L228 304 L124 308 Z"><title>Sofía y región occidental</title></path></a>
+          <a href="#region-tracia"><path d="M288 206 L468 176 L566 246 L498 340 L322 312 Z"><title>Plovdiv y Tracia</title></path></a>
+          <a href="#region-rhodopes"><path d="M302 330 L520 328 L626 414 L540 486 L326 466 Z"><title>Rhodopes</title></path></a>
+          <a href="#region-pirin"><path d="M116 322 L286 318 L320 456 L210 500 L90 420 Z"><title>Pirin</title></path></a>
+          <a href="#region-rila"><path d="M206 306 L318 298 L354 374 L304 446 L220 412 Z"><title>Rila</title></path></a>
+          <a href="#region-varna"><path d="M642 136 L788 126 L836 260 L760 330 L622 250 Z"><title>Varna y costa del Mar Negro</title></path></a>
+          <a href="#region-burgas"><path d="M604 272 L756 330 L786 456 L636 468 L542 372 Z"><title>Burgas</title></path></a>
+          <a href="#region-tarnovo"><path d="M292 116 L476 98 L548 170 L448 210 L284 184 Z"><title>Veliko Tarnovo</title></path></a>
+          <a href="#region-dobruja"><path d="M488 88 L674 92 L644 238 L548 234 L466 154 Z"><title>Dobruja</title></path></a>
+          <a href="#region-kazanlak"><path d="M354 208 L502 206 L548 284 L450 326 L338 284 Z"><title>Kazanlak y Valle de las Rosas</title></path></a>
+        </svg>
 
-    <section class="section music-section" id="musica">
-      <div class="music-card reveal">
-        <div class="music-copy">
-          <p class="eyebrow">Música folclórica búlgara</p>
-          <h2>Gaida, kaval, tambura y voces de montaña</h2>
-          <p>El reproductor está listo para un MP3 propio. Mientras tanto, interpreta una pieza ambiental libre generada en el navegador, inspirada en drones de gaida, pulsos de tambura y percusión ritual.</p>
+        <div class="region-list">
+          <details id="region-tracia" open><summary>Plovdiv y Tracia</summary><p>Mavrud, kavarma, cordero, vinos tintos, pimientos asados y cazuelas de vino.</p></details>
+          <details id="region-rhodopes"><summary>Rhodopes</summary><p>Patatnik, platos de montaña, lácteos, cordero, mantequilla y hierbas silvestres.</p></details>
+          <details id="region-pirin"><summary>Pirin</summary><p>Kapama, carnes, embutidos, recetas de montaña, col fermentada y vinos Melnik.</p></details>
+          <details id="region-rila"><summary>Rila</summary><p>Pan ritual, miel, trucha, sopas calientes y cocina monástica de montaña.</p></details>
+          <details id="region-sofia"><summary>Sofía y región occidental</summary><p>Shopska salata, sirene po shopski, kufte, tomate, pepino, perejil y pan de taberna.</p></details>
+          <details id="region-varna"><summary>Varna y costa del Mar Negro</summary><p>Pescados, mejillones, tarator, ensaladas frescas, eneldo y vinos blancos costeros.</p></details>
+          <details id="region-burgas"><summary>Burgas</summary><p>Marisco, pescados a la brasa, tomate, hierbas frescas y platos salinos de puerto.</p></details>
+          <details id="region-tarnovo"><summary>Veliko Tarnovo</summary><p>Guisos, panes festivos, carnes asadas y memoria imperial del centro norte.</p></details>
+          <details id="region-dobruja"><summary>Dobruja</summary><p>Panes, cereales, banitsa, platos rurales, trigo, huevos, yogur y mantequilla.</p></details>
+          <details id="region-kazanlak"><summary>Kazanlak y Valle de las Rosas</summary><p>Rosa búlgara, mermelada de rosas, miel, yogur, nueces y postres florales.</p></details>
         </div>
-        <div class="player-shell" id="playerShell">
-          <div class="track-meta">
-            <span class="panel-kicker">Pista actual</span>
-            <strong id="trackName">Eco de Ródope · pieza generativa</strong>
-          </div>
-          <canvas id="waveCanvas" class="wave-canvas" width="680" height="160" aria-label="Visualizador de ondas"></canvas>
-          <div class="player-controls">
-            <button class="round-control" id="playPause" type="button" aria-label="Reproducir o pausar">▶</button>
-            <label class="volume-control">
-              <span>Volumen</span>
-              <input id="volumeControl" type="range" min="0" max="1" step="0.01" value="0.45">
-            </label>
-          </div>
-          <p class="player-note">Para usar una pista propia, coloca tu archivo MP3 en <strong>public/public/assets/images/bulgaria/folklore.mp3</strong> y actualiza la constante <strong>AUDIO_SOURCE</strong> en JavaScript.</p>
-        </div>
       </div>
     </section>
 
-    <section class="section gallery-section" id="galeria">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Galería de sabores búlgaros</p>
-        <h2>Mercados, panes, rosas, montañas, trajes y Mar Negro</h2>
+    <section class="section dark ingredients" id="ingredientes">
+      <div class="section-title">
+        <p class="eyebrow">Ingredientes de Bulgaria</p>
+        <h2>La despensa que da identidad a la mesa.</h2>
       </div>
-      <div class="filter-bar reveal" id="galleryFilters" aria-label="Filtros de galería"></div>
-      <div class="masonry-gallery" id="galleryGrid"></div>
+      <div class="ingredient-grid">
+        <span>Yogur búlgaro</span><span>Queso sirene</span><span>Kashkaval</span><span>Rosa búlgara</span><span>Miel</span><span>Nueces</span><span>Pimientos asados</span><span>Tomates</span><span>Hierbas silvestres</span><span>Carne de cordero</span><span>Vino Mavrud</span>
+      </div>
     </section>
 
-    <section class="section contact-section" id="contacto">
-      <div class="contact-card reveal">
-        <p class="eyebrow">Reserva imaginaria · Archivo cultural</p>
-        <h2>Una mesa larga espera bajo la luz dorada.</h2>
-        <p>Esta experiencia puede convertirse en carta digital, museo interactivo, página de restaurante, exposición gastronómica o revista cultural dedicada a Bulgaria.</p>
-        <div class="contact-actions">
-          <a class="btn btn-primary" href="#inicio">Volver al viaje</a>
-          <a class="btn btn-ghost" href="#galeria">Abrir galería</a>
+    <section class="section menu-section" id="menu-degustacion">
+      <div class="section-title">
+        <p class="eyebrow">Menú degustación premium</p>
+        <h2>Raíces & Fuego</h2>
+      </div>
+      <ol class="tasting-menu">
+        <li><span>Aperitivo</span>Banitsa mini crujiente con queso sirene</li>
+        <li><span>Entrada</span>Shopska salata reinterpretada</li>
+        <li><span>Plato de fuego</span>Kebabche y kufte premium a la brasa</li>
+        <li><span>Plato principal</span>Cordero con reducción de Mavrud</li>
+        <li><span>Segundo principal</span>Kavarma gourmet en cazuela de autor</li>
+        <li><span>Prepostre</span>Mermelada de rosas con yogur búlgaro</li>
+        <li><span>Postre</span>Tarta Garash con nueces y chocolate</li>
+        <li><span>Maridaje</span>Selección de vinos búlgaros con protagonista Mavrud</li>
+      </ol>
+    </section>
+
+    <section class="reservation" id="reservas">
+      <div>
+        <p class="eyebrow">Reserva</p>
+        <h2>Reserva una experiencia gastronómica búlgara inolvidable</h2>
+        <p>Una mesa de carbón, vino Mavrud, cerámica artesanal y recetas que unen tradición, fuego y cocina moderna.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="mailto:reservas@sabordebulgaria.com">Reservar mesa</a>
+          <a class="button button-secondary" href="#menu-degustacion">Ver menú degustación</a>
+          <a class="button button-secondary" href="#mapa">Explorar regiones</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="footer-brand">
-      <strong>Bulgaria: Sabores del Imperio, Alma de los Balcanes</strong>
-      <p>“Bulgaria se recuerda en la historia, pero se comprende en la mesa.”</p>
+      <span class="brand-mark">SB</span>
+      <div>
+        <strong>Sabor de Bulgaria</strong>
+        <p>Bulgaria se descubre con fuego, vino y memoria.</p>
+      </div>
     </div>
-    <div class="mini-flag" aria-label="Bandera búlgara estilizada">
-      <span></span><span></span><span></span>
-    </div>
-    <nav class="footer-nav" aria-label="Navegación de pie">
-      <a href="/index.html">Portal</a>
-      <a href="#historia">Historia</a>
-      <a href="#tradicional">Platos</a>
-      <a href="#mapa-gastronomico">Regiones</a>
-      <a href="#musica">Música</a>
-      <a href="#contacto">Contacto</a>
+    <nav aria-label="Navegación de pie">
+      <a href="#experiencia">Experiencia</a>
+      <a href="#fuego">Fuego</a>
+      <a href="#tradicion">Tradición</a>
+      <a href="#mapa">Mapa</a>
+      <a href="#reservas">Reservas</a>
     </nav>
-    <div class="footer-credits">
-      <span>Créditos visuales: hero generativo propio; fotografías reales curadas de Wikimedia Commons y recursos editoriales de Unsplash como biblioteca visual sustituible.</span>
-      <button class="footer-player" id="footerPlayer" type="button">♪ Música</button>
-    </div>
+    <address>
+      reservas@sabordebulgaria.com<br>
+      Mar - Dom · 19:00 - 00:30<br>
+      @sabordebulgaria
+    </address>
   </footer>
-
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
-    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Cerrar imagen">×</button>
-    <figure>
-      <img id="lightboxImage" src="" alt="">
-      <figcaption id="lightboxCaption"></figcaption>
-    </figure>
-  </div>
-
-  
-<script src="/public/bulgaria-static.js"></script>
 </body>
 </html>
